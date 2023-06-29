@@ -1,10 +1,10 @@
 name: ci
 
 on:
-  pull_request:
   push:
-    branches:
-      - main
+    branches: [ main, stag, dev ]
+  pull_request:
+    branches: [ main, stag, dev ]
 
 jobs:
 
@@ -26,10 +26,11 @@ jobs:
 
   build:
     needs:
-      [
-        verify-flutter,
+      verify-flutter
+#        [
+#        verify-flutter,
 #        verify-pana-flutter,
-      ]
+#    ]
 
     runs-on: ubuntu-latest
 
