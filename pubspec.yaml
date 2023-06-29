@@ -8,19 +8,40 @@ environment:
 
 dependencies:
   bloc: ^8.1.2
+  connectivity_plus: ^4.0.1
+  device_info_plus: ^9.0.2
+  device_preview: ^1.1.0
+  dio: ^5.2.1+1
+  file_picker: ^5.3.2
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
   flutter_localizations:
     sdk: flutter
+  flutter_native_splash: ^2.3.1
+  flutter_secure_storage: ^8.0.0
+  flutter_udid: ^2.0.1
+  go_router: ^9.0.0
+  image_picker: ^1.0.0
+  in_app_review: ^2.0.6
   intl: ^0.18.0
+  json_annotation: ^4.8.1
+  logger: ^1.4.0
+  lottie: ^2.4.0
+  package_info_plus: ^4.0.2
+  sentry: ^7.8.0
+  shared_preferences: ^2.1.2
+  shimmer: ^3.0.0
 
 dev_dependencies:
-  bloc_test: ^9.1.2
+  bloc_test: ^9.1.3
   flutter_test:
     sdk: flutter
   mocktail: ^0.3.0
-  very_good_analysis: ^5.0.0
+  very_good_analysis: ^5.0.0+1
+  build_runner: ^2.4.5
+  json_serializable: ^6.7.0
+  freezed: ^2.3.5
 
 flutter:
   uses-material-design: true
