@@ -1,8 +1,6 @@
 name: ci
 
 on:
-  push:
-    branches: [ main, stag, dev ]
   pull_request:
     branches: [ main, stag, dev ]
 
