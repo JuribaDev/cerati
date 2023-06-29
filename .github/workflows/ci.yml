@@ -27,7 +27,6 @@ jobs:
   build:
     needs:
       [
-        verify-dart,
         verify-flutter,
 #        verify-pana-flutter,
       ]
