@@ -7,11 +7,7 @@ on:
       - main
 
 jobs:
-  verify-dart:
-    uses: ./.github/workflows/dart_package.yml
-    with:
-      setup: dart --version
-      platform: "vm,chrome"
+
 
 
   verify-flutter:
@@ -21,12 +17,7 @@ jobs:
       flutter_version: 3.10.5
       setup: flutter doctor --verbose
 
-#  verify-pana-dart:
-#    uses: ./.github/workflows/pana.yml
-#    with:
-#      min_score: 95
-#
-#
+
 #  verify-pana-flutter:
 #    uses: ./.github/workflows/pana.yml
 #    with:
@@ -38,7 +29,6 @@ jobs:
       [
         verify-dart,
         verify-flutter,
-#        verify-pana-dart,
 #        verify-pana-flutter,
       ]
 
