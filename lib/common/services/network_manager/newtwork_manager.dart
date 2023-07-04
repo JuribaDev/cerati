@@ -41,7 +41,7 @@ class NetworkManager {
       dio: dio,
       retries: retries,
       retryDelays: retryDelays,
-    ));
+    ),);
     if (kDebugMode) {
       dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
     }
@@ -50,7 +50,7 @@ class NetworkManager {
   void _defaultTimeouts() {
     dio.options.connectTimeout = timeout;
     dio.options.sendTimeout = timeout;
-    dio.options.receiveTimeout = timeout;
+    dio.options.receiveTimeout  = timeout;
   }
 
   void addHeader({required String headerKey, required String headerValue}) {
