@@ -28,7 +28,6 @@ abstract class Either<L, R> {
 
 // Left is a type of Either that represents a left value and its associated operations.
 class Left<L, R> extends Either<L, R> {
-
   const Left(this.value);
   final L value;
 
@@ -57,7 +56,6 @@ class Left<L, R> extends Either<L, R> {
 
 // Right is a type of Either that represents a right value and its associated operations.
 class Right<L, R> extends Either<L, R> {
-
   const Right(this.value);
   final R value;
 

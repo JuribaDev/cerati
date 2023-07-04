@@ -4,17 +4,15 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   const leftValue = 'Left Value';
   const rightValue = 'Right Value';
-  const left = Left<String,dynamic>(leftValue);
-  const right = Right<dynamic,String>(rightValue);
-  setUp(() {
-
-  });
+  const left = Left<String, dynamic>(leftValue);
+  const right = Right<dynamic, String>(rightValue);
+  setUp(() {});
 
   test('Either should return Left as String and Right as bool with correct values', () {
-   testEither(isLeft: true).fold((left) {
-      expect(left,'Juriba');
-    }  ,(right) {
-      expect(right,true);
+    testEither(isLeft: true).fold((left) {
+      expect(left, 'Juriba');
+    }, (right) {
+      expect(right, true);
     });
   });
 
@@ -59,13 +57,13 @@ void main() {
 
   test('flatMap should correctly transform Right', () {
     const transformedValue = 'Transformed Right Value';
-    final transformed = right.flatMap((r) => const Right<dynamic,String>(transformedValue));
+    final transformed = right.flatMap((r) => const Right<dynamic, String>(transformedValue));
     expect(transformed.isRight, true);
     expect(transformed.right, transformedValue);
   });
 }
 
-Either<String,bool> testEither({required bool isLeft}){
+Either<String, bool> testEither({required bool isLeft}) {
   if (isLeft) {
     return const Left('Juriba');
   } else {
