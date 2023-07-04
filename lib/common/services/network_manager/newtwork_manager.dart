@@ -12,11 +12,14 @@ class NetworkManager {
 
   final Dio dio = Dio();
 
-  final duration = const Duration(seconds: 30);
+  final timeout = const Duration(seconds: 30);
+  final int retries = 5;
   final retryDelays =const  [
     Duration(seconds: 1),
     Duration(seconds: 3),
     Duration(seconds: 5),
+    Duration(seconds: 7),
+    Duration(seconds: 9),
   ];
 
   void _setupDioClient(String baseUrl) {
@@ -24,30 +27,30 @@ class NetworkManager {
 
     dio.options.baseUrl = baseUrl;
 
-    _defaultHeaders();
-    _defaultInterceptors();
-    _defaultTimeouts();
+     _defaultHeaders();
+     _defaultInterceptors();
+     _defaultTimeouts();
   }
 
-  void _defaultHeaders() {
+  void  _defaultHeaders() {
     dio.options.headers[Headers.contentTypeHeader] = Headers.jsonContentType;
     dio.options.headers[Headers.acceptHeader] = Headers.jsonContentType;
     //ToDo fetch user's language from local storage.
     dio.options.headers['lang'] = 'ar';
   }
 
-  void _defaultInterceptors() {
+  void  _defaultInterceptors() {
     dio.interceptors.add(SecureInterceptor());
-    dio.interceptors.add(RetryInterceptor(dio: dio, retries: 5, retryDelays:retryDelays, ));
+    dio.interceptors.add(RetryInterceptor(dio: dio, retries: retries, retryDelays:retryDelays, ));
     if (kDebugMode) {
       dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
     }
   }
 
-  void _defaultTimeouts() {
-    dio.options.connectTimeout = duration;
-    dio.options.sendTimeout = duration;
-    dio.options.receiveTimeout = duration;
+  void  _defaultTimeouts() {
+    dio.options.connectTimeout = timeout;
+    dio.options.sendTimeout = timeout;
+    dio.options.receiveTimeout = timeout;
   }
 
 

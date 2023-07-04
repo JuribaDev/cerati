@@ -1,17 +1,18 @@
 import 'package:dio/dio.dart';
 
 class SecureInterceptor extends InterceptorsWrapper{
-  bool _secureResources = true;
+  bool secureResources = true;
+
   void sendRequestWithToken(){
-    _secureResources = true;
+    secureResources = true;
   }
 
   void sendRequestWithOutToken(){
-    _secureResources = false;
+    secureResources = false;
   }
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    if(_secureResources){
+    if(secureResources){
       options.headers['authorization'] = 'token';
     }
     handler.next(options);
