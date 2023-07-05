@@ -62,6 +62,7 @@ void main() {
     expect(transformed.right, transformedValue);
   });
 
+
   test('Left.mapLeft applies the function to the value', () {
     const either = Left<String, String>('left');
     final result = either.mapLeft<int>((left) => left.length);
