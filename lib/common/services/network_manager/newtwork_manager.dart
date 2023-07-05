@@ -4,8 +4,10 @@ import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:flutter/foundation.dart';
 
 class NetworkManager {
-  NetworkManager(String baseUrl) {
-    _setupDioClient(baseUrl);
+
+  NetworkManager({required String baseUrl, required SecureInterceptor secureInterceptor}) {
+    _setupDioClient(baseUrl,secureInterceptor);
+
   }
 
   final Dio dio = Dio();
@@ -20,11 +22,13 @@ class NetworkManager {
     Duration(seconds: 9),
   ];
 
-  void _setupDioClient(String baseUrl) {
+
+  void _setupDioClient(String baseUrl, SecureInterceptor secureInterceptor) {
     dio.options.baseUrl = baseUrl;
 
     _defaultHeaders();
-    _defaultInterceptors();
+    _defaultInterceptors( secureInterceptor);
+
     _defaultTimeouts();
   }
 
@@ -35,8 +39,10 @@ class NetworkManager {
     dio.options.headers['lang'] = 'ar';
   }
 
-  void _defaultInterceptors() {
-    dio.interceptors.add(SecureInterceptor());
+
+  void _defaultInterceptors(SecureInterceptor secureInterceptor) {
+    dio.interceptors.add(secureInterceptor);
+
     dio.interceptors.add(RetryInterceptor(
       dio: dio,
       retries: retries,
@@ -65,11 +71,17 @@ class NetworkManager {
     dio.options.headers.clear();
   }
 
+
+  SecureInterceptor getSecureInterceptor() {
+    return dio.interceptors.whereType<SecureInterceptor>().single;
+  }
+
   void withToken() {
-    dio.interceptors.whereType<SecureInterceptor>().single.sendRequestWithToken();
+    getSecureInterceptor().sendRequestWithToken();
   }
 
   void withoutToken() {
-    dio.interceptors.whereType<SecureInterceptor>().single.sendRequestWithToken();
+    getSecureInterceptor().sendRequestWithOutToken();
+
   }
 }
