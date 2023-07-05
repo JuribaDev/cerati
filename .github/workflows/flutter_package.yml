@@ -93,6 +93,7 @@ jobs:
       - name: ✨ Check Formatting
         run: dart format --line-length ${{inputs.format_line_length}} ${{inputs.format_directories}}
 
+
       - name: ⚙️️ Fix
         run: dart fix --apply
 
