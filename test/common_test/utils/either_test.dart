@@ -61,6 +61,43 @@ void main() {
     expect(transformed.isRight, true);
     expect(transformed.right, transformedValue);
   });
+
+
+  test('Left.mapLeft applies the function to the value', () {
+    const either = Left<String, String>('left');
+    final result = either.mapLeft<int>((left) => left.length);
+    expect(result.left, equals(4));
+    expect(result, isA<Left<int, String>>());
+  });
+
+  test('Right.mapLeft does not change the value', () {
+    const either = Right<String, String>('right');
+    final result = either.mapLeft<int>((left) => left.length);
+    expect(result.right, equals('right'));
+    expect(result, isA<Right<int, String>>());
+  });
+
+  test('Left.map does not change the value', () {
+    const either = Left<String, String>('left');
+    final result = either.map<int>((right) => right.length);
+    expect(result.left, equals('left'));
+    expect(result, isA<Left<String, int>>());
+  });
+
+  test('Right.map applies the function to the value', () {
+    const either = Right<String, String>('right');
+    final result = either.map<int>((right) => right.length);
+    expect(result.right, equals(5));
+    expect(result, isA<Right<String, int>>());
+  });
+  
+  test('Left.flatMap does not change the value or type', () {
+    const either = Left<int, String>(123);
+    final result = either.flatMap<int, String>((right) => Left<int, String>(right.length));
+    expect(result.left, equals(123));
+    expect(result, isA<Left<int, String>>());
+  });
+
 }
 
 Either<String, bool> testEither({required bool isLeft}) {
