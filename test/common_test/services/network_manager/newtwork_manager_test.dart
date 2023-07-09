@@ -1,5 +1,4 @@
-import 'package:cerati/common/services/network_manager/Interceptors/secoure_interceptor.dart';
-import 'package:cerati/common/services/network_manager/newtwork_manager.dart';
+import 'package:cerati/common/services/network_manager/network_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -7,8 +6,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 import 'network_manager_setup.dart';
-
-class MockSecureInterceptor extends Mock implements SecureInterceptor {}
 
 void main() {
   late NetworkManager networkManager;
@@ -30,7 +27,7 @@ void main() {
     test('check default values in NetworkManager class', () {
       expect(networkManager.timeout, timeout);
       expect(networkManager.retryDelays, retryDelays);
-      expect(networkManager.retries, 5);
+      expect(networkManager.retries, 10);
     });
 
     test('check if dio class has default interceptors like secureInterceptor,retryInterceptor and logInterceptor', () {

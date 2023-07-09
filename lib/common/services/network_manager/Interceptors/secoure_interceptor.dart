@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class SecureInterceptor extends InterceptorsWrapper {
   bool secureResources = true;
 

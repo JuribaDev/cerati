@@ -1,5 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:cerati/counter/counter.dart';
+import 'package:cerati/injection.config.dart';
+import 'package:cerati/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -7,9 +9,10 @@ import 'package:mocktail/mocktail.dart';
 
 import '../../helpers/helpers.dart';
 
-class MockCounterCubit extends MockCubit<int> implements CounterCubit {}
+class MockCounterCubit extends MockCubit<int> implements PostCubit {}
 
 void main() {
+  setUpAll(() => getIt.init(environment: Env.dev));
   group('CounterPage', () {
     testWidgets('renders CounterView', (tester) async {
       await tester.pumpApp(const CounterPage());
@@ -18,7 +21,7 @@ void main() {
   });
 
   group('CounterView', () {
-    late CounterCubit counterCubit;
+    late PostCubit counterCubit;
 
     setUp(() {
       counterCubit = MockCounterCubit();
