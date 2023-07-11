@@ -1,4 +1,4 @@
-import 'package:cerati/common/services/network_manager/Interceptors/secoure_interceptor.dart';
+import 'package:cerati/common/services/network_manager/Interceptors/secure_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:mocktail/mocktail.dart';
 

@@ -1,4 +1,4 @@
-import 'package:cerati/common/services/network_manager/Interceptors/secoure_interceptor.dart';
+import 'package:cerati/common/services/network_manager/Interceptors/secure_interceptor.dart';
 import 'package:cerati/injection.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
@@ -9,14 +9,11 @@ import 'package:injectable/injectable.dart';
 class NetworkManager {
   NetworkManager({
     @Named('BaseUrl') required String baseUrl,
-    required SecureInterceptor secureInterceptor,
   }) {
-    envUrl = baseUrl;
-    _setupDioClient(baseUrl, secureInterceptor);
+    _setupDioClient(baseUrl);
   }
 
   final Dio dio = Dio();
-  late String envUrl;
 
   final timeout = const Duration(seconds: 30);
   final int retries = 10;
@@ -33,10 +30,10 @@ class NetworkManager {
     Duration(seconds: 19),
   ];
 
-  void _setupDioClient(String baseUrl, SecureInterceptor secureInterceptor) {
+  void _setupDioClient(String baseUrl) {
     dio.options.baseUrl = baseUrl;
     _defaultHeaders();
-    _defaultInterceptors(secureInterceptor);
+    _defaultInterceptors();
 
     _defaultTimeouts();
   }
@@ -48,8 +45,8 @@ class NetworkManager {
     dio.options.headers['lang'] = 'ar';
   }
 
-  void _defaultInterceptors(SecureInterceptor secureInterceptor) {
-    dio.interceptors.add(secureInterceptor);
+  void _defaultInterceptors() {
+    dio.interceptors.add(getIt<SecureInterceptor>());
     dio.interceptors.add(
       RetryInterceptor(
         dio: dio,
@@ -91,32 +88,4 @@ class NetworkManager {
   void withoutToken() {
     getSecureInterceptor().sendRequestWithOutToken();
   }
-}
-
-@module
-abstract class TestModule {
-  @Named('BaseUrl')
-  @Singleton(env: [Env.test])
-  String get baseUrl => 'http://locale.com/';
-}
-
-@module
-abstract class DevModule {
-  @Named('BaseUrl')
-  @Singleton(env: [Env.dev])
-  String get baseUrl => 'https://jsonplaceholder.typicode.com/';
-}
-
-@module
-abstract class StagModule {
-  @Named('BaseUrl')
-  @Singleton(env: [Env.stag])
-  String get baseUrl => 'https://stag.com/';
-}
-
-@module
-abstract class ProdModule {
-  @Named('BaseUrl')
-  @Singleton(env: [Env.prod])
-  String get baseUrl => 'https://prod.com/';
 }

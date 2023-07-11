@@ -1,4 +1,5 @@
 import 'package:cerati/common/services/network_manager/network_manager.dart';
+import 'package:cerati/injection.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -17,7 +18,7 @@ void main() {
   setUp(() {
     logInterceptor = LogInterceptor();
     secureInterceptor = MockSecureInterceptor();
-    networkManager = NetworkManager(baseUrl: 'http://test.com', secureInterceptor: secureInterceptor);
+    networkManager = NetworkManager(baseUrl: 'http://test.com');
     retryInterceptor = RetryInterceptor(dio: networkManager.dio);
     networkManager.dio.interceptors.add(logInterceptor);
     networkManager.dio.interceptors.add(retryInterceptor);
