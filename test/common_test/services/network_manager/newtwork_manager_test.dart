@@ -8,13 +8,12 @@ import 'package:mocktail/mocktail.dart';
 
 import 'network_manager_setup.dart';
 
-
 class MockSecureInterceptor extends Mock implements SecureInterceptor {}
 
 void main() {
   late NetworkManager networkManager;
   late MockSecureInterceptor secureInterceptor;
-    late LogInterceptor logInterceptor;
+  late LogInterceptor logInterceptor;
   late RetryInterceptor retryInterceptor;
   const timeout = Duration(seconds: 30);
 
@@ -25,7 +24,6 @@ void main() {
     retryInterceptor = RetryInterceptor(dio: networkManager.dio);
     networkManager.dio.interceptors.add(logInterceptor);
     networkManager.dio.interceptors.add(retryInterceptor);
-
   });
 
   group('All unit test that belong to NetworkManager', () {
@@ -71,7 +69,6 @@ void main() {
     });
   });
 
-
   test('calls SecureInterceptor.sendRequestWithToken() when withToken is called', () {
     networkManager.withToken();
 
@@ -84,4 +81,3 @@ void main() {
     verify(() => secureInterceptor.sendRequestWithOutToken()).called(1);
   });
 }
-
