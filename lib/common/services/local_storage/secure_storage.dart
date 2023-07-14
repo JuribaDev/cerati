@@ -1,5 +1,5 @@
 import 'package:cerati/common/constants/storage.dart';
-import 'package:cerati/main_staging.dart';
+import 'package:cerati/main.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 abstract class SecureStorage {
@@ -30,14 +30,12 @@ class SecureLocalStorage extends FlutterSecureStorage implements SecureStorage {
   /// Get value by key
   @override
   Future<String?> getFromStorage(String key) async {
-    // ignore: unnecessary_await_in_return
     return await read(key: key);
   }
 
   /// Get all values
   @override
   Future<Map<String, String>> getAllFromStorage() async {
-    // ignore: unnecessary_await_in_return
     return await readAll();
   }
 
@@ -52,7 +50,6 @@ class SecureLocalStorage extends FlutterSecureStorage implements SecureStorage {
   /// Delete all values from storage
   @override
   Future<bool> clearSecureStorage() async {
-    // ignore: unnecessary_await_in_return
     return await deleteAll().then((void data) {
       logger.i('Secure storage has been cleared');
       return true;

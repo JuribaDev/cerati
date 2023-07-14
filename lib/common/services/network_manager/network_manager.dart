@@ -1,19 +1,39 @@
 import 'package:cerati/common/services/network_manager/Interceptors/secure_interceptor.dart';
-import 'package:cerati/injection.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:flutter/foundation.dart';
-import 'package:injectable/injectable.dart';
 
-@Singleton()
-class NetworkManager {
-  NetworkManager({
-    @Named('BaseUrl') required String baseUrl,
-  }) {
-    _setupDioClient(baseUrl);
+abstract class Network {
+  Network({required this.dio, required this.baseUrl});
+
+  final Dio dio;
+  final String baseUrl;
+
+  void setupDioClient(String baseUrl);
+
+  void defaultHeaders();
+
+  void defaultInterceptors();
+
+  void defaultTimeouts();
+
+  void addHeader({required String headerKey, required String headerValue});
+
+  void removeHeader({required String headerKey});
+
+  void clearHeaders();
+
+  SecureInterceptor getSecureInterceptor();
+
+  void withToken();
+
+  void withoutToken();
+}
+
+class NetworkManager extends Network {
+  NetworkManager({required super.dio, required String baseUrl}) : super(baseUrl: baseUrl) {
+    setupDioClient(baseUrl);
   }
-
-  final Dio dio = Dio();
 
   final timeout = const Duration(seconds: 30);
   final int retries = 10;
@@ -30,23 +50,26 @@ class NetworkManager {
     Duration(seconds: 19),
   ];
 
-  void _setupDioClient(String baseUrl) {
+  @override
+  void setupDioClient(String baseUrl) {
     dio.options.baseUrl = baseUrl;
-    _defaultHeaders();
-    _defaultInterceptors();
+    defaultHeaders();
+    defaultInterceptors();
 
-    _defaultTimeouts();
+    defaultTimeouts();
   }
 
-  void _defaultHeaders() {
+  @override
+  void defaultHeaders() {
     dio.options.headers[Headers.contentTypeHeader] = Headers.jsonContentType;
     dio.options.headers[Headers.acceptHeader] = Headers.jsonContentType;
     //ToDo fetch user's language from local storage.
     dio.options.headers['lang'] = 'ar';
   }
 
-  void _defaultInterceptors() {
-    dio.interceptors.add(getIt<SecureInterceptor>());
+  @override
+  void defaultInterceptors() {
+    dio.interceptors.add(SecureInterceptor());
     dio.interceptors.add(
       RetryInterceptor(
         dio: dio,
@@ -59,32 +82,39 @@ class NetworkManager {
     }
   }
 
-  void _defaultTimeouts() {
+  @override
+  void defaultTimeouts() {
     dio.options.connectTimeout = timeout;
     dio.options.sendTimeout = timeout;
     dio.options.receiveTimeout = timeout;
   }
 
+  @override
   void addHeader({required String headerKey, required String headerValue}) {
     dio.options.headers[headerKey] = headerValue;
   }
 
-  void removeHeader(String headerKey) {
+  @override
+  void removeHeader({required String headerKey}) {
     dio.options.headers.remove(headerKey);
   }
 
+  @override
   void clearHeaders() {
     dio.options.headers.clear();
   }
 
+  @override
   SecureInterceptor getSecureInterceptor() {
     return dio.interceptors.whereType<SecureInterceptor>().single;
   }
 
+  @override
   void withToken() {
     getSecureInterceptor().sendRequestWithToken();
   }
 
+  @override
   void withoutToken() {
     getSecureInterceptor().sendRequestWithOutToken();
   }
