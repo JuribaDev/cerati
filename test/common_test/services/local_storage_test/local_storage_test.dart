@@ -1,4 +1,4 @@
-import 'package:cerati/common/services/local_storage/secure_storage.dart';
+import 'package:cerati/common/services/datasource/local_storage/secure_storage.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -50,7 +50,7 @@ void main() {
 
     test('deletes a value', () async {
       // Arrange
-      when(() => secureStorage.deleteFromStorage('testKey')).thenAnswer((_) async => null);
+      when(() => secureStorage.deleteFromStorage('testKey')).thenAnswer((_) async {});
 
       // Act
       await secureStorage.deleteFromStorage('testKey');

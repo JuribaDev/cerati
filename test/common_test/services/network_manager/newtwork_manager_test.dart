@@ -3,9 +3,6 @@ import 'package:cerati/common/services/network_manager/network_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
-
-import 'network_manager_setup.dart';
 
 void main() {
   late NetworkManager networkManager;
@@ -50,7 +47,7 @@ void main() {
 
   test('clearHeaders() clears all headers', () {
     networkManager.clearHeaders();
-    expect(networkManager.dio.options.headers, {});
+    expect(networkManager.dio.options.headers, null);
   });
 
   test('getSecureInterceptor() returns the SecureInterceptor', () {
