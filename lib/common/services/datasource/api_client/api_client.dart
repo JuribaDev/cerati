@@ -15,29 +15,25 @@ class ApiClient implements ApiClientInterface {
   final ApiConstants _apiConstants = ApiConstants();
 
   @override
-  Future<LoginResponseModel> login(LoginRequestModel loginRequestModel) async{
-    try{
-      final response = await _networkManager.dio.post(_apiConstants.auth.login,data: {
-        loginRequestModel.toJson()
-      },);
-      final body = response.data['asd'] as Map<String,dynamic>;
-      if(response.statusCode != 200 || body['status']  == 'error'){
+  Future<LoginResponseModel> login(LoginRequestModel loginRequestModel) async {
+    try {
+      final response = await _networkManager.dio.post(
+        _apiConstants.auth.login,
+        data: {loginRequestModel.toJson()},
+      );
+      final body = response.data['asd'] as Map<String, dynamic>;
+      if (response.statusCode != 200 || body['status'] == 'error') {
         throw parseHttpErrors(DioException(requestOptions: response.requestOptions));
       }
       return LoginResponseModel.fromJson(body);
-    }on DioException catch (error){
+    } on DioException catch (error) {
       throw parseHttpErrors(error);
     }
   }
-
-
-
-
 }
 
 class Failure extends Error {
-  Failure({required this.message, required this.statusCode});
+  Failure({required this.message});
 
   final String message;
-  final int statusCode;
 }

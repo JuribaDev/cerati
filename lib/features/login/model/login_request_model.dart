@@ -8,7 +8,7 @@ part 'login_request_model.g.dart';
 @Freezed(fromJson: true)
 class LoginRequestModel with _$LoginModel {
   const factory LoginRequestModel({
-    @JsonKey(name: 'email') required String email,
+    required String email,
     required String password,
   }) = _LoginModel;
 
