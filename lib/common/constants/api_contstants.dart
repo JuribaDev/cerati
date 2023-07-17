@@ -1,7 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
 class ApiConstants {
-
   factory ApiConstants() {
     return _instance;
   }
@@ -10,13 +9,13 @@ class ApiConstants {
 
   static final ApiConstants _instance = ApiConstants._privateConstructor();
 
-  final _Auth auth = _Auth();
-  final _SocialMediaLink socialMediaLink = _SocialMediaLink();
-  final _Skill skill = _Skill();
-  final _Education education = _Education();
-  final _Project project = _Project();
-  final _Profile profile = _Profile();
-  final _Experience experience = _Experience();
+  static final _Auth auth = _Auth();
+  static final _SocialMediaLink socialMediaLink = _SocialMediaLink();
+  static final _Skill skill = _Skill();
+  static final _Education education = _Education();
+  static final _Project project = _Project();
+  static final _Profile profile = _Profile();
+  static final _Experience experience = _Experience();
 }
 
 class _Auth {

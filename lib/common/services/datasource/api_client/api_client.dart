@@ -13,22 +13,26 @@ class ApiClient implements ApiClientInterface {
   ApiClient(this._networkManager);
 
   final NetworkManager _networkManager;
-  final ApiConstants _apiConstants = ApiConstants();
+
+  @override
+  Map<String, dynamic> body(Response<dynamic> response) {
+    final body = response.data as Map<String, dynamic>;
+    if (response.statusCode != 200 || body['status'] == 'error') {
+      throw parseHttpErrors(DioException(requestOptions: response.requestOptions));
+    }
+    _networkManager.withToken();
+    return body;
+  }
 
   @override
   Future<LoginResponseModel> login(LoginRequestModel loginRequestModel) async {
     try {
       _networkManager.withoutToken();
       final response = await _networkManager.dio.post(
-        _apiConstants.auth.login,
-        data: {loginRequestModel.toJson()},
+        ApiConstants.auth.login,
+        data: loginRequestModel.toJson(),
       );
-      final body = response.data as Map<String, dynamic>;
-      if (response.statusCode != 200 || body['status'] == 'error') {
-        throw parseHttpErrors(DioException(requestOptions: response.requestOptions));
-      }
-      _networkManager.withToken();
-      return LoginResponseModel.fromJson(body);
+      return LoginResponseModel.fromJson(body(response));
     } on DioException catch (error) {
       logger.d(error.toString());
       throw parseHttpErrors(error);
