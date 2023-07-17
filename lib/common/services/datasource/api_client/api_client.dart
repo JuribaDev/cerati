@@ -6,6 +6,7 @@ import 'package:cerati/common/services/datasource/api_client/api_client_interfac
 import 'package:cerati/common/services/network_manager/network_manager.dart';
 import 'package:cerati/features/login/model/login_request_model.dart';
 import 'package:cerati/features/login/model/login_response_model.dart';
+import 'package:cerati/main.dart';
 import 'package:dio/dio.dart';
 
 class ApiClient implements ApiClientInterface {
@@ -17,16 +18,19 @@ class ApiClient implements ApiClientInterface {
   @override
   Future<LoginResponseModel> login(LoginRequestModel loginRequestModel) async {
     try {
+      _networkManager.withoutToken();
       final response = await _networkManager.dio.post(
         _apiConstants.auth.login,
         data: {loginRequestModel.toJson()},
       );
-      final body = response.data['asd'] as Map<String, dynamic>;
+      final body = response.data as Map<String, dynamic>;
       if (response.statusCode != 200 || body['status'] == 'error') {
         throw parseHttpErrors(DioException(requestOptions: response.requestOptions));
       }
+      _networkManager.withToken();
       return LoginResponseModel.fromJson(body);
     } on DioException catch (error) {
+      logger.d(error.toString());
       throw parseHttpErrors(error);
     }
   }

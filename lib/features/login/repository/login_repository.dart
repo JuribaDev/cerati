@@ -5,6 +5,7 @@ import 'package:cerati/common/utils/either.dart';
 import 'package:cerati/features/login/model/login_request_model.dart';
 import 'package:cerati/features/login/model/login_response_model.dart';
 import 'package:cerati/features/login/repository/login_repository_interface.dart';
+import 'package:cerati/main.dart';
 
 class LoginRepository implements LoginRepositoryInterface {
   LoginRepository(this._apiClient);
@@ -19,6 +20,7 @@ class LoginRepository implements LoginRepositoryInterface {
     } on HttpException catch (e) {
       return Left(Failure(message: e.message()));
     } catch (e) {
+      logger.d(e.toString());
       return Left(Failure(message: 'Unexpected error occurred: $e'));
     }
   }

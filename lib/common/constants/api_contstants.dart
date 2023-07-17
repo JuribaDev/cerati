@@ -20,8 +20,8 @@ class ApiConstants {
 }
 
 class _Auth {
-  String login = 'register';
-  String register = 'login';
+  String login = 'login';
+  String register = 'register';
   String logout = 'user/logout';
   String getUserAccount = 'user/user-account';
   String updateUserAccount = 'user/update-user-account';
