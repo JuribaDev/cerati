@@ -1,3 +1,5 @@
+// ignore_for_file: inference_failure_on_collection_literal
+
 import 'package:cerati/common/services/network_manager/Interceptors/secure_interceptor.dart';
 import 'package:cerati/common/services/network_manager/network_manager.dart';
 import 'package:dio/dio.dart';
@@ -47,7 +49,7 @@ void main() {
 
   test('clearHeaders() clears all headers', () {
     networkManager.clearHeaders();
-    expect(networkManager.dio.options.headers, null);
+    expect(networkManager.dio.options.headers, {});
   });
 
   test('getSecureInterceptor() returns the SecureInterceptor', () {

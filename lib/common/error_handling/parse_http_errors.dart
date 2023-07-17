@@ -20,7 +20,7 @@ Exception parseHttpErrors(DioException error) {
 
   switch (response.statusCode) {
     case 400:
-      return BadRequest(error: body['message'].toString() ?? 'Bad Request');
+      return BadRequest(error: body['message'].toString());
     case 401:
       return UnauthorizedException();
     case 403:
@@ -30,7 +30,7 @@ Exception parseHttpErrors(DioException error) {
     case 422:
       return LaravelValidationErrors.fromJson(body);
     case 500:
-      return InternalServerError(body['message'].toString() ?? 'Internal Server Error');
+      return InternalServerError(body['message'].toString());
     case 504:
       return GatewayTimeoutException();
     default:
@@ -68,8 +68,8 @@ class NotFoundError extends HttpException {
 }
 
 class BadRequest extends HttpException {
-
   BadRequest({required this.error});
+
   final String error;
 
   @override
@@ -77,19 +77,18 @@ class BadRequest extends HttpException {
 }
 
 class LaravelValidationErrors extends HttpException {
-
   LaravelValidationErrors({required this.error, required this.errors});
 
   factory LaravelValidationErrors.fromJson(Map<String, dynamic> json) {
     final errors = (json['errors'] as Map<String, dynamic>)
         .map((key, value) => MapEntry(key, (value as List).map((e) => e as String).toList()));
 
-
     return LaravelValidationErrors(
       error: json['message'].toString(),
       errors: errors,
     );
   }
+
   final String error;
   final Map<String, List<String>> errors;
 
@@ -98,8 +97,8 @@ class LaravelValidationErrors extends HttpException {
 }
 
 class InternalServerError extends HttpException {
-
   InternalServerError(this.error);
+
   final String error;
 
   @override

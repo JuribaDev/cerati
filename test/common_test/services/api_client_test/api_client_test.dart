@@ -1,3 +1,5 @@
+// ignore_for_file: inference_failure_on_function_invocation
+
 import 'package:cerati/common/services/datasource/api_client/api_client.dart';
 import 'package:cerati/common/services/network_manager/network_manager.dart';
 import 'package:cerati/features/login/model/login_request_model.dart';
