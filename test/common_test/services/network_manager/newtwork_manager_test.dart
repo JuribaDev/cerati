@@ -1,5 +1,6 @@
 // ignore_for_file: inference_failure_on_collection_literal
 
+import 'package:cerati/common/services/network_manager/Interceptors/secure_interceptor.dart';
 import 'package:cerati/common/services/network_manager/network_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
@@ -26,9 +27,8 @@ void main() {
   });
 
   test('defaultInterceptors() adds the SecureInterceptor and the RetryInterceptor', () {
-    expect(networkManager.dio.interceptors
-        .whereType<RetryInterceptor>()
-        .length, 1);
+    expect(networkManager.dio.interceptors.whereType<SecureInterceptor>().length, 1);
+    expect(networkManager.dio.interceptors.whereType<RetryInterceptor>().length, 1);
   });
 
   test('defaultTimeouts() sets the default timeouts', () {
@@ -50,5 +50,9 @@ void main() {
   test('clearHeaders() clears all headers', () {
     networkManager.clearHeaders();
     expect(networkManager.dio.options.headers, {});
+  });
+
+  test('getSecureInterceptor() returns the SecureInterceptor', () {
+    expect(networkManager.getSecureInterceptor(), isA<SecureInterceptor>());
   });
 }
