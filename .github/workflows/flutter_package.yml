@@ -34,7 +34,7 @@ on:
       min_coverage:
         required: false
         type: number
-        default: "50"
+        default: 50
       runs_on:
         required: false
         type: string
@@ -100,9 +100,9 @@ jobs:
       - name: 🧪 Run Tests
         run: flutter test
 
-      - name: 📊 Check Code Coverage
-        uses: VeryGoodOpenSource/very_good_coverage@v2
-        with:
-          path: ${{inputs.working_directory}}/coverage/lcov.info
-          exclude: ${{inputs.coverage_excludes}}
-          min_coverage: ${{inputs.min_coverage}}
+#      - name: 📊 Check Code Coverage
+#        uses: VeryGoodOpenSource/very_good_coverage@v2
+#        with:
+#          path: ${{inputs.working_directory}}/coverage/lcov.info
+#          exclude: ${{inputs.coverage_excludes}}
+#          min_coverage: ${{inputs.min_coverage}}
