@@ -25,7 +25,7 @@ MultiRepositoryProvider multiRepositoryProvider({required Widget child}) {
         create: (secureLocalStorageContext) => SecureLocalStorage(),
       ),
       RepositoryProvider<LoginRepository>(
-        create: (loginRepositoryContext)=> LoginRepository(
+        create: (loginRepositoryContext) => LoginRepository(
           loginRepositoryContext.read<ApiClient>(),
         ),
       )

@@ -2,7 +2,7 @@ import 'package:cerati/common/services/datasource/local_storage/secure_storage.d
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockSecureStorage extends Mock implements SecureStorage {}
+class MockSecureStorage extends Mock implements SecureLocalStorage {}
 
 void main() {
   late SecureStorage secureStorage;

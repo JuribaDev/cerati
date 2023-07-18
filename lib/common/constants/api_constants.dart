@@ -1,14 +1,6 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, unused_element
 
 class ApiConstants {
-  factory ApiConstants() {
-    return _instance;
-  }
-
-  ApiConstants._privateConstructor();
-
-  static final ApiConstants _instance = ApiConstants._privateConstructor();
-
   static final _Auth auth = _Auth();
   static final _SocialMediaLink socialMediaLink = _SocialMediaLink();
   static final _Skill skill = _Skill();
@@ -16,6 +8,7 @@ class ApiConstants {
   static final _Project project = _Project();
   static final _Profile profile = _Profile();
   static final _Experience experience = _Experience();
+  static final _Certificate certificate = _Certificate();
 }
 
 class _Auth {
@@ -58,16 +51,18 @@ class _Project {
   String getProjects = 'user/project';
   String createProject = 'user/project';
 
+  String getOneProject({required int projectId}) => 'user/project/$projectId';
+
   String updateProject({required int projectId}) => 'user/project/$projectId';
 
   String deleteProject({required int projectId}) => 'user/project/$projectId';
 
-  String attachImageToProject(int id) => 'user/project/$id/upload-image';
+  String attachImageToProject({required int projectId}) => 'user/project/$projectId/upload-image';
 
   String deleteImageFromProject({required int projectId, required int imageId}) =>
       'user/project/$projectId/destroy-image/$imageId';
 
-  String attachFileToProject(int id) => 'user/project/$id/upload-file';
+  String attachFileToProject({required int projectId}) => 'user/project/$projectId/upload-file';
 
   String deleteFileFromProject({required int projectId, required int fileId}) =>
       'user/project/$projectId/destroy-file/$fileId';

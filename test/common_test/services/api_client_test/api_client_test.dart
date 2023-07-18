@@ -8,7 +8,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import 'api_responses.dart';
+import '../../../helpers/json.dart';
 
 class MockNetworkManager extends Mock implements NetworkManager {}
 
@@ -34,7 +34,7 @@ void main() {
 
   test('login request returns a LoginResponseModel when successful', () async {
     // Arrange
-    when(() => mockResponse.data).thenReturn(loginResponse);
+    when(() => mockResponse.data).thenReturn(loginJsonResponse);
     when(() => mockResponse.statusCode).thenReturn(200);
     when(() => mockDio.post(any(), data: any(named: 'data'))).thenAnswer((_) async => mockResponse);
     // Act
@@ -51,6 +51,6 @@ void main() {
     when(() => mockDio.post(any(), data: any(named: 'data'))).thenThrow(DioException(requestOptions: RequestOptions()));
 
     // Act & Assert
-    expect(() async => await apiClient.login(mockLoginRequest), throwsA(isA<DioException>()));
+    expect(() => apiClient.login(mockLoginRequest), throwsA(isA<DioException>()));
   });
 }
