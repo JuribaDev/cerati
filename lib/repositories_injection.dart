@@ -10,26 +10,23 @@ MultiRepositoryProvider multiRepositoryProvider({required Widget child}) {
   return MultiRepositoryProvider(
     providers: [
       RepositoryProvider<NetworkManager>(
-        create: (networkManagerContext) =>
-            NetworkManager(
-              baseUrl: 'http://localhost:8000/api/',
-              dio: Dio(),
-            ),
+        create: (networkManagerContext) => NetworkManager(
+          baseUrl: 'http://localhost:8000/api/',
+          dio: Dio(),
+        ),
       ),
       RepositoryProvider<ApiClient>(
-        create: (apiClientContext) =>
-            ApiClient(
-              apiClientContext.read<NetworkManager>(),
-            ),
+        create: (apiClientContext) => ApiClient(
+          apiClientContext.read<NetworkManager>(),
+        ),
       ),
       RepositoryProvider<SecureLocalStorage>(
         create: (secureLocalStorageContext) => SecureLocalStorage(),
       ),
       RepositoryProvider<LoginRepository>(
-        create: (loginRepositoryContext) =>
-            LoginRepository(
-              loginRepositoryContext.read<ApiClient>(),
-            ),
+        create: (loginRepositoryContext) => LoginRepository(
+          loginRepositoryContext.read<ApiClient>(),
+        ),
       )
     ],
     child: child,
