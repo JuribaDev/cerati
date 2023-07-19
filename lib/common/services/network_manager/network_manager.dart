@@ -1,4 +1,4 @@
-import 'package:cerati/common/services/network_manager/Interceptors/secure_interceptor.dart';
+import 'package:cerati/common/services/network_manager/interceptors/secure_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:flutter/foundation.dart';

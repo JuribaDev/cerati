@@ -1,6 +1,6 @@
 // ignore_for_file: inference_failure_on_collection_literal
 
-import 'package:cerati/common/services/network_manager/Interceptors/secure_interceptor.dart';
+import 'package:cerati/common/services/network_manager/interceptors/secure_interceptor.dart';
 import 'package:cerati/common/services/network_manager/network_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
