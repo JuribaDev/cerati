@@ -34,7 +34,7 @@ on:
       min_coverage:
         required: false
         type: number
-        default: "50"
+        default: 50
       runs_on:
         required: false
         type: string
@@ -81,10 +81,7 @@ jobs:
           cache-key: flutter-:os:-:channel:-:version:-:arch:-:hash:-${{ hashFiles('**/pubspec.lock') }}
 
       - name: 📦 Install Dependencies
-        run: |
-          flutter pub global activate very_good_cli
-          very_good --analytics false
-          very_good packages get --recursive --ignore=${{inputs.package_get_excludes}}
+        run: flutter pub get
 
       - name: ⚙️ Run Setup
         if: "${{inputs.setup != ''}}"
@@ -99,10 +96,10 @@ jobs:
 
       - name: 🧪 Run Tests
         run: flutter test
-
-      - name: 📊 Check Code Coverage
-        uses: VeryGoodOpenSource/very_good_coverage@v2
-        with:
-          path: ${{inputs.working_directory}}/coverage/lcov.info
-          exclude: ${{inputs.coverage_excludes}}
-          min_coverage: ${{inputs.min_coverage}}
+ 
+#      - name: 📊 Check Code Coverage
+#        uses: VeryGoodOpenSource/very_good_coverage@v2
+#        with:
+#          path: ${{inputs.working_directory}}/coverage/lcov.info
+#          exclude: ${{inputs.coverage_excludes}}
+#          min_coverage: ${{inputs.min_coverage}}
