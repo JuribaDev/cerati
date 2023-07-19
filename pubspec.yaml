@@ -11,7 +11,6 @@ dependencies:
   device_preview: ^1.1.0
   dio: ^5.2.1+1
   dio_smart_retry: ^5.0.0
-  equatable: ^2.0.5
   file_picker: ^5.3.2
   flutter:
     sdk: flutter
@@ -47,3 +46,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/

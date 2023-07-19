@@ -1,4 +1,4 @@
-import 'package:cerati/counter/counter.dart';
+import 'package:cerati/features/login/screen/login_screen.dart';
 import 'package:cerati/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      home: const LoginScreen(),
     );
   }
 }
