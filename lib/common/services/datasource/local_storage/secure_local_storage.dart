@@ -2,7 +2,7 @@ import 'package:cerati/common/constants/storage.dart';
 import 'package:cerati/main.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-abstract class SecureStorage {
+abstract class SecureLocalStorageInterface {
   Future<void> addToStorage(String key, String value);
 
   Future<String?> getFromStorage(String key);
@@ -18,7 +18,7 @@ abstract class SecureStorage {
   Future<bool> persistAccessToken(String accessToken);
 }
 
-class SecureLocalStorage extends FlutterSecureStorage implements SecureStorage {
+class SecureLocalStorage extends FlutterSecureStorage implements SecureLocalStorageInterface {
   /// Add value
   @override
   Future<void> addToStorage(String key, String value) async {
