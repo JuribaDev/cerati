@@ -33,7 +33,7 @@ void main() {
     when(() => mockGetStorage.write('key', {'data': 'value'})).thenAnswer((_) async {});
 
     // Act
-    await localStorage.write(key: 'key', json: {'data': 'value'});
+    await localStorage.write(key: 'key', data: {'data': 'value'});
 
     // Assert
     verify(() => mockGetStorage.write('key', {'data': 'value'})).called(1);
@@ -78,7 +78,7 @@ void main() {
     when(() => mockGetStorage.write('key', {'data': 'value'})).thenAnswer((_) async {});
 
     // Act
-    await localStorage.writeIfNull(key: 'key', json: {'data': 'value'});
+    await localStorage.writeIfNull(key: 'key', data: {'data': 'value'});
 
     // Assert
     verify(() => mockGetStorage.write('key', {'data': 'value'})).called(1);
