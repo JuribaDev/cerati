@@ -34,8 +34,8 @@ MultiRepositoryProvider multiRepositoryProvider({required Widget child}) {
       RepositoryProvider<LocalStorage>(
         create: (localStorageContext) => LocalStorage(GetStorage()),
       ),
-      RepositoryProvider<LanguageManager>(
-        create: (languageManagerContext) => LanguageManager(languageManagerContext.read<LocalStorage>()),
+      RepositoryProvider<UserSettingManager>(
+        create: (languageManagerContext) => UserSettingManager(languageManagerContext.read<LocalStorage>()),
       ),
     ],
     child: child,

@@ -10,11 +10,11 @@ class MockLocalStorage extends Mock implements LocalStorage {}
 void main() {
   group('LanguageManager', () {
     late LocalStorage localStorage;
-    late LanguageManager languageManager;
+    late UserSettingManager languageManager;
 
     setUp(() {
       localStorage = MockLocalStorage();
-      languageManager = LanguageManager(localStorage);
+      languageManager = UserSettingManager(localStorage);
     });
 
     test('changeLanguage writes locale.languageCode to storage', () async {
@@ -24,7 +24,7 @@ void main() {
           .thenAnswer((_) async => true);
 
       // Act
-      await languageManager.changeLanguage(locale: locale);
+      await languageManager.setLocale(locale: locale);
 
       // Assert
       verify(() => localStorage.write<String>(key: StorageConstants.languageKey, data: locale.languageCode)).called(1);

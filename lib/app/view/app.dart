@@ -1,4 +1,5 @@
-import 'package:cerati/common/blocs/language_bloc/language.dart';
+import 'package:cerati/common/blocs/user_setting_bloc/user_setting.dart';
+import 'package:cerati/common/theme/color_scheme.dart';
 import 'package:cerati/features/login/screen/login_screen.dart';
 import 'package:cerati/l10n/l10n.dart';
 import 'package:flutter/material.dart';
@@ -9,16 +10,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LanguageBloc, LanguageState>(
+    return BlocBuilder<UserSettingBloc, UserSettingState>(
       builder: (context, state) {
         return MaterialApp(
-          theme: ThemeData(
-            appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
-            colorScheme: ColorScheme.fromSwatch(
-              accentColor: const Color(0xFF13B9FF),
-            ),
-          ),
-          locale: state.locale,
+          theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
+          darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: const [Locale('ar'), Locale('en')],
           home: const LoginScreen(),
