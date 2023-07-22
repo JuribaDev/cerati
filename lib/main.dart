@@ -18,6 +18,7 @@ Future<void> main() async {
           BlocProvider<LanguageBloc>(
             create: (context) {
               final bloc = LanguageBloc(context.read<LanguageManager>());
+              // ignore: cascade_invocations
               bloc.add(AppStarted());
               return bloc;
             },

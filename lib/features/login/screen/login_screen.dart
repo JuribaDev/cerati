@@ -1,5 +1,4 @@
 import 'package:cerati/common/blocs/language_bloc/language.dart';
-import 'package:cerati/features/login/repository/login_repository.dart';
 import 'package:cerati/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,7 +16,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final repo = context.read<LoginRepository>();
     return Scaffold(
       drawer: const Drawer(),
       appBar: AppBar(
