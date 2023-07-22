@@ -4,15 +4,15 @@ import 'package:cerati/main.dart';
 import 'package:get_storage/get_storage.dart';
 
 abstract class LocalStorageInterface {
-  Future<Map<String, dynamic>> read({required String key});
+  Future<T> read<T>({required String key});
 
   Future<List<Map<String, dynamic>>> getValues();
 
   Future<List<String>> getKeys();
 
-  Future<bool> write({required String key, required Map<String, dynamic> json});
+  Future<bool> write<T>({required String key, required T data});
 
-  Future<bool> writeIfNull({required String key, required Map<String, dynamic> json});
+  Future<bool> writeIfNull<T>({required String key, required T data});
 
   bool hasData({required String key});
 
@@ -62,10 +62,10 @@ class LocalStorage implements LocalStorageInterface {
   }
 
   @override
-  Future<Map<String, dynamic>> read({required String key}) async {
+  Future<T> read<T>({required String key}) async {
     try {
       logger.i('$key data fetched from storage');
-      return await _storage.read(key) as Map<String, dynamic>;
+      return await _storage.read(key) as T;
     } on Exception catch (e) {
       logger.e('$e Unknown error occurred ');
       throw Exception('There are no data!');
@@ -73,9 +73,9 @@ class LocalStorage implements LocalStorageInterface {
   }
 
   @override
-  Future<bool> write({required String key, required Map<String, dynamic> json}) async {
+  Future<bool> write<T>({required String key, required T data}) async {
     try {
-      await _storage.write(key, json);
+      await _storage.write(key, data);
       logger.i('all data saved to storage');
       return true;
     } on Exception catch (e) {
@@ -85,9 +85,9 @@ class LocalStorage implements LocalStorageInterface {
   }
 
   @override
-  Future<bool> writeIfNull({required String key, required Map<String, dynamic> json}) async {
+  Future<bool> writeIfNull<T>({required String key, required T data}) async {
     try {
-      await _storage.write(key, json);
+      await _storage.write(key, data);
       logger.i('all data saved to storage in case if it was null');
       return true;
     } on Exception catch (e) {
