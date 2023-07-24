@@ -9,7 +9,7 @@ abstract class UserSettingManagerInterface {
 
   Future<void> setThemeMode({required bool isDark});
 
-  Future<bool> getThemeMode();
+  Future<String> getThemeMode();
 }
 
 class UserSettingManager implements UserSettingManagerInterface {
@@ -30,25 +30,15 @@ class UserSettingManager implements UserSettingManagerInterface {
   }
 
   @override
-  Future<bool> getThemeMode() async {
+  Future<String> getThemeMode() async {
     final hasData = _localStorage.hasData(key: StorageConstants.themeModeKey);
-    final isDark = hasData ? await _localStorage.read<String>(key: StorageConstants.themeModeKey) : false;
+    final isDark = hasData ? await _localStorage.read<String>(key: StorageConstants.themeModeKey) : 'false';
 
-    return isDark.toString().toBoolean();
+    return isDark;
   }
 
   @override
   Future<void> setThemeMode({required bool isDark}) async {
-    await _localStorage.write(key: StorageConstants.themeModeKey, data: !isDark);
-  }
-}
-
-extension CastStringToBool on String {
-  bool toBoolean() {
-    if (toLowerCase() == 'true' || toLowerCase() == '1') {
-      return true;
-    } else {
-      return (toLowerCase() == 'false' || toLowerCase() == '0') ? false : throw UnsupportedError('Unsupported String');
-    }
+    await _localStorage.write(key: StorageConstants.themeModeKey, data: (!isDark).toString());
   }
 }

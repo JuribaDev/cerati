@@ -1,6 +1,6 @@
 import 'package:cerati/common/constants/storage_constants.dart';
 import 'package:cerati/common/services/datasource/local_storage/local_storage.dart';
-import 'package:cerati/common/services/language_manager/language_manager.dart';
+import 'package:cerati/common/services/user_setting_manager/user_setting_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';

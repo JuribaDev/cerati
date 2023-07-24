@@ -1,7 +1,7 @@
 import 'package:cerati/app/app.dart';
 import 'package:cerati/bootstrap.dart';
 import 'package:cerati/common/blocs/user_setting_bloc/user_setting.dart';
-import 'package:cerati/common/services/language_manager/language_manager.dart';
+import 'package:cerati/common/services/user_setting_manager/user_setting_manager.dart';
 import 'package:cerati/repositories_injection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,9 +19,10 @@ Future<void> main() async {
             create: (context) {
               final bloc = UserSettingBloc(context.read<UserSettingManager>());
               // ignore: cascade_invocations
-              bloc.add(AppStartedEvent());
+              bloc.add(AppStarted());
               return bloc;
             },
+            lazy: false,
           ),
         ],
         child: const App(),

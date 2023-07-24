@@ -14,4 +14,4 @@ class ThemeModeChangedEvent extends UserSettingEvent {
   final bool isDark;
 }
 
-class AppStartedEvent extends UserSettingEvent {}
+class AppStarted extends UserSettingEvent {}

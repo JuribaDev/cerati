@@ -16,6 +16,8 @@ class App extends StatelessWidget {
           theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
           darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
+          locale: state.locale,
+          themeMode: state.isDark ? ThemeMode.dark : ThemeMode.light,
           supportedLocales: const [Locale('ar'), Locale('en')],
           home: const LoginScreen(),
         );

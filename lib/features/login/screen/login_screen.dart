@@ -1,5 +1,6 @@
 import 'package:cerati/common/blocs/user_setting_bloc/user_setting.dart';
 import 'package:cerati/l10n/l10n.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -62,6 +63,12 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(
               height: 10,
             ),
+            BlocBuilder<UserSettingBloc, UserSettingState>(builder: (context, state) {
+              return CupertinoSwitch(
+                  value: state.isDark,
+                  onChanged: (val) =>
+                      BlocProvider.of<UserSettingBloc>(context).add(ThemeModeChangedEvent(isDark: val)));
+            }),
             // BlocBuilder<UserSettingBloc, ThemeModeLoadedState>(
             //   builder: (context, state) {
             //     return CupertinoSwitch(
