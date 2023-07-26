@@ -76,7 +76,7 @@ class LocalStorage implements LocalStorageInterface {
   Future<bool> write<T>({required String key, required T data}) async {
     try {
       await _storage.write(key, data);
-      logger.i('all data saved to storage');
+      logger.i('$key data saved to storage');
       return true;
     } on Exception catch (e) {
       logger.e('$e Unknown error occurred ');
@@ -88,7 +88,7 @@ class LocalStorage implements LocalStorageInterface {
   Future<bool> writeIfNull<T>({required String key, required T data}) async {
     try {
       await _storage.write(key, data);
-      logger.i('all data saved to storage in case if it was null');
+      logger.i('$key data saved to storage in case if it was null');
       return true;
     } on Exception catch (e) {
       logger.e('$e Unknown error occurred ');
