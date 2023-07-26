@@ -9,4 +9,5 @@ class StorageConstants {
 
   static const String appVersion = 'appVersionKey';
   static const String appBuildNumber = 'appBuildNumberKey';
+  static const String themeModeKey = 'themeMode';
 }
