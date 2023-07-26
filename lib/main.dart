@@ -1,7 +1,7 @@
 import 'package:cerati/app/app.dart';
 import 'package:cerati/bootstrap.dart';
-import 'package:cerati/common/blocs/language_bloc/language.dart';
-import 'package:cerati/common/services/language_manager/language_manager.dart';
+import 'package:cerati/common/blocs/user_setting_bloc/user_setting.dart';
+import 'package:cerati/common/services/user_setting_manager/user_setting_manager.dart';
 import 'package:cerati/repositories_injection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,13 +15,14 @@ Future<void> main() async {
     return multiRepositoryProvider(
       child: MultiBlocProvider(
         providers: [
-          BlocProvider<LanguageBloc>(
+          BlocProvider<UserSettingBloc>(
             create: (context) {
-              final bloc = LanguageBloc(context.read<LanguageManager>());
+              final bloc = UserSettingBloc(context.read<UserSettingManager>());
               // ignore: cascade_invocations
               bloc.add(AppStarted());
               return bloc;
             },
+            lazy: false,
           ),
         ],
         child: const App(),
