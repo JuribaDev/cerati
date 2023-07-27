@@ -2,13 +2,13 @@
 
 import 'package:cerati/common/services/datasource/api_client/api_client.dart';
 import 'package:cerati/common/services/network_manager/network_manager.dart';
-import 'package:cerati/features/login/model/login_request_model.dart';
 import 'package:cerati/features/login/model/login_response_model.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../helpers/json.dart';
+import '../../../helpers/models.dart';
 
 class MockNetworkManager extends Mock implements NetworkManager {}
 
@@ -21,7 +21,6 @@ void main() {
   late MockNetworkManager mockNetworkManager;
   late MockDio mockDio;
   late MockResponse mockResponse;
-  late LoginRequestModel mockLoginRequest;
 
   setUp(() {
     mockNetworkManager = MockNetworkManager();
@@ -29,7 +28,6 @@ void main() {
     mockDio = MockDio();
     when(() => mockNetworkManager.dio).thenReturn(mockDio);
     apiClient = ApiClient(mockNetworkManager);
-    mockLoginRequest = const LoginRequestModel(email: 'test@test.com', password: '123456');
   });
 
   test('login request returns a LoginResponseModel when successful', () async {
@@ -38,7 +36,7 @@ void main() {
     when(() => mockResponse.statusCode).thenReturn(200);
     when(() => mockDio.post(any(), data: any(named: 'data'))).thenAnswer((_) async => mockResponse);
     // Act
-    final response = await apiClient.login(mockLoginRequest);
+    final response = await apiClient.login(loginRequestModel);
 
     // Assert
     expect(response, isA<LoginResponseModel>());
@@ -51,6 +49,29 @@ void main() {
     when(() => mockDio.post(any(), data: any(named: 'data'))).thenThrow(DioException(requestOptions: RequestOptions()));
 
     // Act & Assert
-    expect(() => apiClient.login(mockLoginRequest), throwsA(isA<DioException>()));
+    expect(() => apiClient.login(loginRequestModel), throwsA(isA<DioException>()));
+  });
+
+  // Register endpoint
+  test('register request returns a LoginResponseModel when successful', () async {
+    // Arrange
+    when(() => mockResponse.data).thenReturn(loginJsonResponse);
+    when(() => mockResponse.statusCode).thenReturn(200);
+    when(() => mockDio.post(any(), data: any(named: 'data'))).thenAnswer((_) async => mockResponse);
+    // Act
+    final response = await apiClient.register(registerRequestModel);
+
+    // Assert
+    expect(response, isA<LoginResponseModel>());
+    expect(response.token, equals('userToken'));
+    expect(response.userModel.id, equals(2));
+    verify(() => mockDio.post(any(), data: any(named: 'data'))).called(1);
+  });
+  test('register request throws an error when request fails', () async {
+    // Arrange
+    when(() => mockDio.post(any(), data: any(named: 'data'))).thenThrow(DioException(requestOptions: RequestOptions()));
+
+    // Act & Assert
+    expect(() => apiClient.register(registerRequestModel), throwsA(isA<DioException>()));
   });
 }
