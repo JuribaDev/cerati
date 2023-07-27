@@ -7,10 +7,18 @@ final loginJsonResponse = {
     'last_name': 'Doe',
     'full_name': 'John Doe',
     'email': 'john.doe@example.com',
-    'subdomain': 'johndoe',
     'created_at': '2023-01-01T00:00:00.000',
     'updated_at': '2023-01-01T00:00:00.000'
   }
 };
 
-final loginJsonRequest = {'email': 'juriba@example.com', 'password': 'admin'};
+final loginJsonRequest = {
+  'email': 'juriba@example.com',
+  'password': 'admin',
+};
+final registerJsonRequest = {
+  'first_name': 'Juriba',
+  'last_name': 'Saleh',
+  'email': 'juriba@example.com',
+  'password': 'admin@1211',
+};
