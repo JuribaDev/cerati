@@ -24,7 +24,6 @@ _$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(
       lastName: json['last_name'] as String,
       fullName: json['full_name'] as String,
       email: json['email'] as String,
-      subdomain: json['subdomain'] as String,
       createdAt: DateTime.parse(json['created_at'] as String),
       updatedAt: DateTime.parse(json['updated_at'] as String),
     );
@@ -35,7 +34,6 @@ Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) => <String, dyna
       'last_name': instance.lastName,
       'full_name': instance.fullName,
       'email': instance.email,
-      'subdomain': instance.subdomain,
       'created_at': instance.createdAt.toIso8601String(),
       'updated_at': instance.updatedAt.toIso8601String(),
     };

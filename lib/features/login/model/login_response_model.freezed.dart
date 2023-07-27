@@ -207,7 +207,6 @@ mixin _$UserModel {
   @JsonKey(name: 'full_name')
   String get fullName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String get subdomain => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
   DateTime get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
@@ -228,7 +227,6 @@ abstract class $UserModelCopyWith<$Res> {
       @JsonKey(name: 'last_name') String lastName,
       @JsonKey(name: 'full_name') String fullName,
       String email,
-      String subdomain,
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'updated_at') DateTime updatedAt});
 }
@@ -250,7 +248,6 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel> implements $UserMode
     Object? lastName = null,
     Object? fullName = null,
     Object? email = null,
-    Object? subdomain = null,
     Object? createdAt = null,
     Object? updatedAt = null,
   }) {
@@ -274,10 +271,6 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel> implements $UserMode
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      subdomain: null == subdomain
-          ? _value.subdomain
-          : subdomain // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
           ? _value.createdAt
@@ -303,7 +296,6 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
       @JsonKey(name: 'last_name') String lastName,
       @JsonKey(name: 'full_name') String fullName,
       String email,
-      String subdomain,
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'updated_at') DateTime updatedAt});
 }
@@ -321,7 +313,6 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res, _$_
     Object? lastName = null,
     Object? fullName = null,
     Object? email = null,
-    Object? subdomain = null,
     Object? createdAt = null,
     Object? updatedAt = null,
   }) {
@@ -346,10 +337,6 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res, _$_
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      subdomain: null == subdomain
-          ? _value.subdomain
-          : subdomain // ignore: cast_nullable_to_non_nullable
-              as String,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -371,7 +358,6 @@ class _$_UserModel implements _UserModel {
       @JsonKey(name: 'last_name') required this.lastName,
       @JsonKey(name: 'full_name') required this.fullName,
       required this.email,
-      required this.subdomain,
       @JsonKey(name: 'created_at') required this.createdAt,
       @JsonKey(name: 'updated_at') required this.updatedAt});
 
@@ -391,8 +377,6 @@ class _$_UserModel implements _UserModel {
   @override
   final String email;
   @override
-  final String subdomain;
-  @override
   @JsonKey(name: 'created_at')
   final DateTime createdAt;
   @override
@@ -401,7 +385,7 @@ class _$_UserModel implements _UserModel {
 
   @override
   String toString() {
-    return 'UserModel(id: $id, firstName: $firstName, lastName: $lastName, fullName: $fullName, email: $email, subdomain: $subdomain, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'UserModel(id: $id, firstName: $firstName, lastName: $lastName, fullName: $fullName, email: $email, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -414,15 +398,13 @@ class _$_UserModel implements _UserModel {
             (identical(other.lastName, lastName) || other.lastName == lastName) &&
             (identical(other.fullName, fullName) || other.fullName == fullName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.subdomain, subdomain) || other.subdomain == subdomain) &&
             (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, firstName, lastName, fullName, email, subdomain, createdAt, updatedAt);
+  int get hashCode => Object.hash(runtimeType, id, firstName, lastName, fullName, email, createdAt, updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -444,7 +426,6 @@ abstract class _UserModel implements UserModel {
       @JsonKey(name: 'last_name') required final String lastName,
       @JsonKey(name: 'full_name') required final String fullName,
       required final String email,
-      required final String subdomain,
       @JsonKey(name: 'created_at') required final DateTime createdAt,
       @JsonKey(name: 'updated_at') required final DateTime updatedAt}) = _$_UserModel;
 
@@ -463,8 +444,6 @@ abstract class _UserModel implements UserModel {
   String get fullName;
   @override
   String get email;
-  @override
-  String get subdomain;
   @override
   @JsonKey(name: 'created_at')
   DateTime get createdAt;

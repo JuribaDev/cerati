@@ -30,7 +30,6 @@ void main() {
         firstName: '',
         fullName: '',
         email: '',
-        subdomain: '',
         createdAt: DateTime.now(),
         updatedAt: DateTime.now(),
       ),
