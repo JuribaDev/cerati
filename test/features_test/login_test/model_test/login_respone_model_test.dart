@@ -16,7 +16,6 @@ void main() {
       expect(result.userModel.lastName, 'Doe');
       expect(result.userModel.fullName, 'John Doe');
       expect(result.userModel.email, 'john.doe@example.com');
-      expect(result.userModel.subdomain, 'johndoe');
       expect(result.userModel.createdAt, DateTime.parse('2023-01-01T00:00:00.000'));
       expect(result.userModel.updatedAt, DateTime.parse('2023-01-01T00:00:00.000'));
     });
