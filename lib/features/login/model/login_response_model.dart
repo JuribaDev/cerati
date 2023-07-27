@@ -25,7 +25,6 @@ class UserModel with _$UserModel {
     @JsonKey(name: 'last_name') required String lastName,
     @JsonKey(name: 'full_name') required String fullName,
     required String email,
-    required String subdomain,
     @JsonKey(name: 'created_at') required DateTime createdAt,
     @JsonKey(name: 'updated_at') required DateTime updatedAt,
   }) = _UserModel;
