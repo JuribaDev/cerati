@@ -36,7 +36,7 @@ void main() {
     when(() => mockResponse.statusCode).thenReturn(200);
     when(() => mockDio.post(any(), data: any(named: 'data'))).thenAnswer((_) async => mockResponse);
     // Act
-    final response = await apiClient.login(loginRequestModel);
+    final response = await apiClient.login(loginRequestModelTest);
 
     // Assert
     expect(response, isA<LoginResponseModel>());
@@ -49,7 +49,7 @@ void main() {
     when(() => mockDio.post(any(), data: any(named: 'data'))).thenThrow(DioException(requestOptions: RequestOptions()));
 
     // Act & Assert
-    expect(() => apiClient.login(loginRequestModel), throwsA(isA<DioException>()));
+    expect(() => apiClient.login(loginRequestModelTest), throwsA(isA<DioException>()));
   });
 
   // Register endpoint
@@ -59,7 +59,7 @@ void main() {
     when(() => mockResponse.statusCode).thenReturn(200);
     when(() => mockDio.post(any(), data: any(named: 'data'))).thenAnswer((_) async => mockResponse);
     // Act
-    final response = await apiClient.register(registerRequestModel);
+    final response = await apiClient.register(registerRequestModelTest);
 
     // Assert
     expect(response, isA<LoginResponseModel>());
@@ -72,6 +72,6 @@ void main() {
     when(() => mockDio.post(any(), data: any(named: 'data'))).thenThrow(DioException(requestOptions: RequestOptions()));
 
     // Act & Assert
-    expect(() => apiClient.register(registerRequestModel), throwsA(isA<DioException>()));
+    expect(() => apiClient.register(registerRequestModelTest), throwsA(isA<DioException>()));
   });
 }

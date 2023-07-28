@@ -21,7 +21,7 @@ void main() {
     });
 
     test('should correctly convert to json', () {
-      final result = loginResponseModel.toJson();
+      final result = loginResponseModelTest.toJson();
 
       expect(result, loginJsonResponse);
     });

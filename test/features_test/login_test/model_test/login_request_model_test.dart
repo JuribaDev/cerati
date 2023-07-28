@@ -9,12 +9,12 @@ void main() {
     test('should correctly parse from json', () {
       final result = LoginRequestModel.fromJson(loginJsonRequest);
 
-      expect(result.email, 'juriba@example.com');
-      expect(result.password, 'admin');
+      expect(result.email, 'juriba1@gmail.comd');
+      expect(result.password, 'Admin1211');
     });
 
     test('should correctly convert to json', () {
-      final result = loginRequestModel.toJson();
+      final result = loginRequestModelTest.toJson();
 
       expect(result, loginJsonRequest);
     });

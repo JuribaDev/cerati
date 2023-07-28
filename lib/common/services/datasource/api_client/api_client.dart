@@ -55,9 +55,3 @@ class ApiClient implements ApiClientInterface {
     }
   }
 }
-
-class Failure extends Error {
-  Failure({required this.message});
-
-  final String message;
-}
