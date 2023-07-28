@@ -13,8 +13,8 @@ final loginJsonResponse = {
 };
 
 final loginJsonRequest = {
-  'email': 'juriba@example.com',
-  'password': 'admin',
+  'email': 'juriba1@gmail.comd',
+  'password': 'Admin1211',
 };
 final registerJsonRequest = {
   'first_name': 'Juriba',

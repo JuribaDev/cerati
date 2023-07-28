@@ -2,7 +2,7 @@ import 'package:cerati/features/login/model/login_request_model.dart';
 import 'package:cerati/features/login/model/login_response_model.dart';
 import 'package:cerati/features/register/model/register_request_model.dart';
 
-final userModel = UserModel(
+final userModelTest = UserModel(
   id: 2,
   firstName: 'John',
   lastName: 'Doe',
@@ -12,17 +12,17 @@ final userModel = UserModel(
   updatedAt: DateTime.parse('2023-01-01T00:00:00.000'),
 );
 
-final loginResponseModel = LoginResponseModel(
+final loginResponseModelTest = LoginResponseModel(
   status: 'success',
   token: 'userToken',
-  userModel: userModel,
+  userModel: userModelTest,
 );
 
-const loginRequestModel = LoginRequestModel(
-  email: 'juriba@example.com',
-  password: 'admin',
+const loginRequestModelTest = LoginRequestModel(
+  email: 'juriba1@gmail.comd',
+  password: 'Admin1211',
 );
-const registerRequestModel = RegisterRequestModel(
+const registerRequestModelTest = RegisterRequestModel(
   email: 'juriba@example.com',
   password: 'admin@1211',
   firstName: 'Juriba',
