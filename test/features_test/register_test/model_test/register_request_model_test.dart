@@ -16,7 +16,7 @@ void main() {
     });
 
     test('should correctly convert to json', () {
-      final result = registerRequestModel.toJson();
+      final result = registerRequestModelTest.toJson();
 
       expect(result, registerJsonRequest);
     });
