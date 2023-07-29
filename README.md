@@ -141,14 +141,14 @@ the new locale.
 }
 ```
 
-`app_es.arb`
+`app_شق.arb`
 
 ```arb
 {
-    "@@locale": "es",
-    "counterAppBarTitle": "Contador",
+    "@@locale": "ar",
+    "counterAppBarTitle": "عداد",
     "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
+        "description": "Text shown in the AppBar of the Counter Page"
     }
 }
 ```
