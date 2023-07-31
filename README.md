@@ -1,6 +1,6 @@
 # Cerati
 
-![coverage][coverage_badge]
+
 
 
 
@@ -153,7 +153,7 @@ the new locale.
 }
 ```
 
-[coverage_badge]: coverage_badge.svg
+
 
 [flutter_localizations_link]: https://api.flutter.dev/flutter/flutter_localizations/flutter_localizations-library.html
 
