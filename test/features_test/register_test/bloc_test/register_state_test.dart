@@ -1,7 +1,6 @@
 import 'package:cerati/features/register/bloc/register_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../../../helpers/helpers.dart';
 
 void main() {
   group('RegisterState', () {
