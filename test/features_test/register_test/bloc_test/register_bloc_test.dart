@@ -2,13 +2,10 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:cerati/common/error_handling/failure.dart';
 import 'package:cerati/common/utils/either.dart';
 import 'package:cerati/features/register/bloc/register_bloc.dart';
-import 'package:cerati/features/register/repository/register_repository.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:test/test.dart';
 
 import '../../../helpers/helpers.dart';
-
-class MockRegisterRepository extends Mock implements RegisterRepository {}
 
 void main() {
   late MockRegisterRepository mockRegisterRepository;
@@ -21,7 +18,7 @@ void main() {
   });
 
   blocTest<RegisterBloc, RegisterState>(
-    'emits [loading, success] when repository returns a valid model',
+    'emits [loading, success] when register repository returns a valid model',
     build: () {
       when(
         () => mockRegisterRepository.register(
@@ -37,7 +34,7 @@ void main() {
   );
 
   blocTest<RegisterBloc, RegisterState>(
-    'emits [loading, error] when repository returns an error',
+    'emits [loading, error] when register repository returns a failure',
     build: () {
       when(
         () => mockRegisterRepository.register(
@@ -46,13 +43,13 @@ void main() {
       ).thenAnswer(
         (_) async => Left(
           Failure(
-            message: 'An error occurred',
+            message: errorMessage,
           ),
         ),
       );
       return registerBloc;
     },
     act: (bloc) => bloc.add(const RegisterEvent.register(registerRequestModel: registerRequestModelTest)),
-    expect: () => [const RegisterState.loading(), const RegisterState.error(errorMessage: 'An error occurred')],
+    expect: () => [const RegisterState.loading(), const RegisterState.error(errorMessage: errorMessage)],
   );
 }

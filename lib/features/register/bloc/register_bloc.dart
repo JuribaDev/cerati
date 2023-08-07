@@ -19,7 +19,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
 
   final RegisterRepository _registerRepository;
 
-  FutureOr<void> _onRegisterEvent(RegisterEvent event, Emitter<RegisterState> emit) async {
+  Future<void> _onRegisterEvent(RegisterEvent event, Emitter<RegisterState> emit) async {
     emit(const RegisterState.loading());
     final registerResponse = await _registerRepository.register(registerRequestModel: event.registerRequestModel);
     registerResponse.fold(
