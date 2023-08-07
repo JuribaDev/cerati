@@ -1,6 +1,7 @@
 import 'package:cerati/features/register/bloc/register_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import '../../../helpers/helpers.dart';
 
 void main() {
   group('RegisterState', () {
@@ -26,13 +27,13 @@ void main() {
       );
     });
 
-    // test('Success state is created correctly', () {
-    //   final state = RegisterState.success(registerResponseModel: loginResponseModelTest);
-    //   expect(state, isA<RegisterState>());
-    //   state.maybeMap(
-    //     success: (loginResponse) => expect(loginResponse, loginResponseModelTest),
-    //     orElse: () => fail('Expected Error state'),
-    //   );
-    // });
+    test('Success state is created correctly', () {
+      final state = RegisterState.success(registerResponseModel: loginResponseModelTest);
+      expect(state, isA<RegisterState>());
+      state.maybeMap(
+        success: (loginResponse) => expect(loginResponse.registerResponseModel, loginResponseModelTest),
+        orElse: () => fail('Expected Error state'),
+      );
+    });
   });
 }
