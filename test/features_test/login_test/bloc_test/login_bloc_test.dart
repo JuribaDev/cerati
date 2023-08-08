@@ -5,7 +5,6 @@ import 'package:cerati/features/login/bloc/login_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../../helpers/constants.dart';
 import '../../../helpers/helpers.dart';
 
 void main() {
@@ -23,7 +22,7 @@ void main() {
         when(
           () => mockLoginRepository.login(loginRequestModel: any(named: 'loginRequestModel')),
         ).thenAnswer((invocation) async => Right(loginResponseModelTest));
-        return LoginBloc(mockLoginRepository);
+        return loginBloc;
       },
       act: (bloc) => bloc.add(const LoginEvent.login(loginRequestModel: loginRequestModelTest)),
       expect: () => [const LoginState.loading(), LoginState.success(loginResponseModel: loginResponseModelTest)]);
@@ -39,7 +38,7 @@ void main() {
             Failure(message: errorMessage),
           ),
         );
-        return LoginBloc(mockLoginRepository);
+        return loginBloc;
       },
       act: (bloc) => bloc.add(const LoginEvent.login(loginRequestModel: loginRequestModelTest)),
       expect: () => [const LoginState.loading(), const LoginState.error(errorMessage: errorMessage)]);

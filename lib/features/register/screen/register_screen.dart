@@ -37,7 +37,7 @@ class RegisterScreen extends StatelessWidget {
                         ],
                       ),
                   success: (res) => Center(
-                        child: Text(res.userModel.fullName),
+                        child: Text(res.userAccountResponseModel.fullName),
                       ),
                   loading: () => const Center(child: CircularProgressIndicator()),
                   error: (error) => Center(child: Text(error)));

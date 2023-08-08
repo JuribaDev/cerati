@@ -7,7 +7,7 @@ import '../../../helpers/models.dart';
 void main() {
   group('RegisterRequestModel', () {
     test('should correctly parse from json', () {
-      final result = RegisterRequestModel.fromJson(registerJsonRequest);
+      final result = RegisterRequestModel.fromJson(registerJsonRequestTest);
 
       expect(result.firstName, 'Juriba');
       expect(result.lastName, 'Saleh');
@@ -18,7 +18,7 @@ void main() {
     test('should correctly convert to json', () {
       final result = registerRequestModelTest.toJson();
 
-      expect(result, registerJsonRequest);
+      expect(result, registerJsonRequestTest);
     });
   });
 }
