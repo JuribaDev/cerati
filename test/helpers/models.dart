@@ -16,8 +16,8 @@ final userAccountResponseModelTest = UserAccountResponseModel(
   updatedAt: DateTime.parse('2023-01-01T00:00:00.000'),
 );
 
-const updateUserAccountResponseModelTest = UpdateUserAccountRequestModel(
-  id: 1,
+const updateUserAccountRequestModelTest = UpdateUserAccountRequestModel(
+  id: 2,
   firstName: 'Juriba',
   lastName: 'Alsiari',
   email: 'juriba@example.com',
@@ -33,12 +33,12 @@ const loginRequestModelTest = LoginRequestModel(
   email: 'juriba1@gmail.comd',
   password: 'Admin1211',
 );
-const updatePasswordRequestModelTest = UpdateUserPasswordRequestModel(
+const updateUserPasswordRequestModelTest = UpdateUserPasswordRequestModel(
   currentPassword: 'Admin@123',
   newPassword: 'Admin@12345',
 );
 
-const updatePasswordResponseModelTest = UpdateUserPasswordResponseModel(
+const updateUserPasswordResponseModelTest = UpdateUserPasswordResponseModel(
   message: 'Password updated successfully',
 );
 const registerRequestModelTest = RegisterRequestModel(
