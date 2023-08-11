@@ -6,7 +6,7 @@ import '../../../helpers/helpers.dart';
 void main() {
   group('UserAccountResponseModel', () {
     test('should correctly parse from json', () {
-      final userAccount = UserAccountResponseModel.fromJson(userAccountJsonResponseTest);
+      final userAccount = UserAccountResponseModel.fromJson(userAccountResponseJsonTest);
       expect(userAccount.id, 1);
       expect(userAccount.firstName, 'Juriba');
       expect(userAccount.lastName, 'Alsiari');
@@ -18,7 +18,7 @@ void main() {
 
     test('should correctly convert to json', () {
       final userAccountJson = userAccountResponseModelTest.toJson();
-      expect(userAccountJson, userAccountJsonResponseTest);
+      expect(userAccountJson, userAccountResponseJsonTest);
     });
   });
 }

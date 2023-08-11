@@ -7,7 +7,7 @@ import '../../../helpers/models.dart';
 void main() {
   group('LoginResponseModel', () {
     test('should correctly parse from json', () {
-      final result = LoginResponseModel.fromJson(loginJsonResponseTest);
+      final result = LoginResponseModel.fromJson(loginResponseJsonTest);
 
       expect(result.status, 'success');
       expect(result.token, 'userToken');
@@ -23,7 +23,7 @@ void main() {
     test('should correctly convert to json', () {
       final result = loginResponseModelTest.toJson();
 
-      expect(result, loginJsonResponseTest);
+      expect(result, loginResponseJsonTest);
     });
   });
 }

@@ -6,14 +6,14 @@ import '../../../helpers/helpers.dart';
 void main() {
   group('UpdateUserPasswordRequestTest', () {
     test('should correctly parse from json', () {
-      final updatePasswordRequest = UpdateUserPasswordRequestModel.fromJson(updateUserPasswordJsonRequestTest);
+      final updatePasswordRequest = UpdateUserPasswordRequestModel.fromJson(updateUserPasswordRequestJsonTest);
       expect(updatePasswordRequest.currentPassword, 'Admin@123');
       expect(updatePasswordRequest.newPassword, 'Admin@12345');
     });
 
     test('should correctly convert to json', () {
-      final updatePasswordJson = updatePasswordRequestModelTest.toJson();
-      expect(updatePasswordJson, updateUserPasswordJsonRequestTest);
+      final updatePasswordJson = updateUserPasswordRequestModelTest.toJson();
+      expect(updatePasswordJson, updateUserPasswordRequestJsonTest);
     });
   });
 }
