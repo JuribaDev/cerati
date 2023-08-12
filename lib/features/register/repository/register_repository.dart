@@ -14,18 +14,13 @@ class RegisterRepository implements RegisterRepositoryInterface {
   final ApiClient _apiClient;
 
   @override
-  EitherSuccessOrFailure<LoginResponseModel> register({required RegisterRequestModel registerRequestModel}) async {
-    registerRequestModel = const RegisterRequestModel(
-      email: 'juriba@example.com',
-      password: 'admin@1211',
-      firstName: 'Juriba',
-      lastName: 'Saleh',
-    );
+  EitherFailureOrSuccess<LoginResponseModel> register({required RegisterRequestModel registerRequestModel}) async {
     try {
       final registerResponse = await _apiClient.register(registerRequestModel);
       return Right(registerResponse);
-    } on HttpException catch (e) {
-      return Left(Failure(message: e.message()));
+    } on AllHttpException catch (error) {
+      logger.e(error.message());
+      return Left(Failure(message: error.message()));
     } catch (e) {
       logger.e(e.toString());
       return Left(Failure(message: 'Unexpected error occurred: $e'));
