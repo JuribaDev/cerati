@@ -14,13 +14,13 @@ class LoginRepository implements LoginRepositoryInterface {
   final ApiClient _apiClient;
 
   @override
-  EitherSuccessOrFailure<LoginResponseModel> login({required LoginRequestModel loginRequestModel}) async {
-    loginRequestModel = const LoginRequestModel(email: 'juriba1@gmail.comd', password: 'Admin1211');
+  EitherFailureOrSuccess<LoginResponseModel> login({required LoginRequestModel loginRequestModel}) async {
     try {
       final res = await _apiClient.login(loginRequestModel);
       return Right(res);
-    } on HttpException catch (e) {
-      return Left(Failure(message: e.message()));
+    } on AllHttpException catch (error) {
+      logger.e(error.message());
+      return Left(Failure(message: error.message()));
     } catch (e) {
       logger.e(e.toString());
       return Left(Failure(message: 'Unexpected error occurred: $e'));
