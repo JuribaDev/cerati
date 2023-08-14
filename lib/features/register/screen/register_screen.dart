@@ -16,31 +16,36 @@ class RegisterScreen extends StatelessWidget {
           child: BlocBuilder<RegisterBloc, RegisterState>(
             builder: (context, state) {
               return state.when(
+                registerSuccess: (res) => Center(
+                  child: Text(res.userAccountResponseModel.fullName),
+                ),
+                commonState: (commonState) => commonState.when(
                   initial: () => Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              context.read<RegisterBloc>().add(
-                                    const RegisterEvent.register(
-                                      registerRequestModel: RegisterRequestModel(
-                                        email: 'juriba@example.com',
-                                        password: 'admin@1211',
-                                        firstName: 'Juriba',
-                                        lastName: 'Saleh',
-                                      ),
-                                    ),
-                                  );
-                            },
-                            child: const Text('Register'),
-                          ),
-                        ],
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          context.read<RegisterBloc>().add(
+                                const RegisterEvent.register(
+                                  registerRequestModel: RegisterRequestModel(
+                                    email: 'juriba@example.com',
+                                    password: 'admin@1211',
+                                    firstName: 'Juriba',
+                                    lastName: 'Saleh',
+                                  ),
+                                ),
+                              );
+                        },
+                        child: const Text('Register'),
                       ),
-                  success: (res) => Center(
-                        child: Text(res.userAccountResponseModel.fullName),
-                      ),
+                    ],
+                  ),
                   loading: () => const Center(child: CircularProgressIndicator()),
-                  error: (error) => Center(child: Text(error)));
+                  error: (error) => Center(
+                    child: Text(error),
+                  ),
+                ),
+              );
             },
           ),
         ),

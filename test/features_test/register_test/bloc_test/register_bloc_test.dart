@@ -1,4 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
+import 'package:cerati/common/blocs/generic_state/generic_state.dart';
 import 'package:cerati/common/error_handling/failure.dart';
 import 'package:cerati/common/utils/either.dart';
 import 'package:cerati/features/register/bloc/register_bloc.dart';
@@ -30,7 +31,10 @@ void main() {
       return registerBloc;
     },
     act: (bloc) => bloc.add(const RegisterEvent.register(registerRequestModel: registerRequestModelTest)),
-    expect: () => [const RegisterState.loading(), RegisterState.success(registerResponseModel: loginResponseModelTest)],
+    expect: () => [
+      const RegisterState.commonState(commonState: CommonState.loading()),
+      RegisterState.registerSuccess(registerResponseModel: loginResponseModelTest)
+    ],
   );
 
   blocTest<RegisterBloc, RegisterState>(
@@ -50,6 +54,9 @@ void main() {
       return registerBloc;
     },
     act: (bloc) => bloc.add(const RegisterEvent.register(registerRequestModel: registerRequestModelTest)),
-    expect: () => [const RegisterState.loading(), const RegisterState.error(errorMessage: errorMessage)],
+    expect: () => [
+      const RegisterState.commonState(commonState: CommonState.loading()),
+      const RegisterState.commonState(commonState: CommonState.error(errorMessage: errorMessage)),
+    ],
   );
 }

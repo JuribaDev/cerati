@@ -38,36 +38,36 @@ Exception parseHttpErrors(DioException error) {
   }
 }
 
-abstract class HttpException implements Exception {
+abstract class AllHttpException implements Exception {
   String message();
 }
 
-class UnauthorizedException extends HttpException {
+class UnauthorizedException extends AllHttpException {
   @override
   String message() => 'Unauthorized';
 }
 
-class ForbiddenException extends HttpException {
+class ForbiddenException extends AllHttpException {
   @override
   String message() => 'Forbidden';
 }
 
-class NoInternetException extends HttpException {
+class NoInternetException extends AllHttpException {
   @override
   String message() => 'No Internet';
 }
 
-class FormatException extends HttpException {
+class FormatException extends AllHttpException {
   @override
   String message() => 'Format Exception';
 }
 
-class NotFoundError extends HttpException {
+class NotFoundError extends AllHttpException {
   @override
   String message() => 'Not Found';
 }
 
-class BadRequest extends HttpException {
+class BadRequest extends AllHttpException {
   BadRequest({required this.error});
 
   final String error;
@@ -76,7 +76,7 @@ class BadRequest extends HttpException {
   String message() => error;
 }
 
-class LaravelValidationErrors extends HttpException {
+class LaravelValidationErrors extends AllHttpException {
   LaravelValidationErrors({required this.error, required this.errors});
 
   factory LaravelValidationErrors.fromJson(Map<String, dynamic> json) {
@@ -96,7 +96,7 @@ class LaravelValidationErrors extends HttpException {
   String message() => error;
 }
 
-class InternalServerError extends HttpException {
+class InternalServerError extends AllHttpException {
   InternalServerError(this.error);
 
   final String error;
@@ -105,7 +105,7 @@ class InternalServerError extends HttpException {
   String message() => error;
 }
 
-class GatewayTimeoutException extends HttpException {
+class GatewayTimeoutException extends AllHttpException {
   @override
   String message() => 'Gateway Timeout';
 }
