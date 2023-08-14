@@ -15,7 +15,7 @@ void main() {
   late MockNetworkManager mockNetworkManager;
   late MockDio mockDio;
   late MockResponse mockResponse;
-  late Response response;
+  late Response<dynamic> response;
 
   setUp(() {
     mockNetworkManager = MockNetworkManager();

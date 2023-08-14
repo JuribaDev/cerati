@@ -1,4 +1,4 @@
 import 'package:cerati/common/error_handling/failure.dart';
 import 'package:cerati/common/utils/either.dart';
 
-typedef EitherSuccessOrFailure<T> = Future<Either<Failure, T>>;
+typedef EitherFailureOrSuccess<T> = Future<Either<Failure, T>>;

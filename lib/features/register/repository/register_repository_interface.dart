@@ -5,5 +5,5 @@ import 'package:cerati/features/login/model/login_response_model.dart';
 import 'package:cerati/features/register/model/register_request_model.dart';
 
 abstract class RegisterRepositoryInterface {
-  EitherSuccessOrFailure<LoginResponseModel> register({required RegisterRequestModel registerRequestModel});
+  EitherFailureOrSuccess<LoginResponseModel> register({required RegisterRequestModel registerRequestModel});
 }
