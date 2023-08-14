@@ -1,4 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
+import 'package:cerati/common/blocs/generic_state/generic_state.dart';
 import 'package:cerati/common/error_handling/failure.dart';
 import 'package:cerati/common/utils/either.dart';
 import 'package:cerati/features/login/bloc/login_bloc.dart';
@@ -25,7 +26,10 @@ void main() {
         return loginBloc;
       },
       act: (bloc) => bloc.add(const LoginEvent.login(loginRequestModel: loginRequestModelTest)),
-      expect: () => [const LoginState.loading(), LoginState.success(loginResponseModel: loginResponseModelTest)]);
+      expect: () => [
+            const LoginState.commonState(commonState: CommonState.loading()),
+            LoginState.loginSuccess(loginResponseModel: loginResponseModelTest)
+          ]);
 
   blocTest<LoginBloc, LoginState>('emits [loading, error] when login repository return failure',
       build: () {
@@ -41,5 +45,8 @@ void main() {
         return loginBloc;
       },
       act: (bloc) => bloc.add(const LoginEvent.login(loginRequestModel: loginRequestModelTest)),
-      expect: () => [const LoginState.loading(), const LoginState.error(errorMessage: errorMessage)]);
+      expect: () => [
+            const LoginState.commonState(commonState: CommonState.loading()),
+            const LoginState.commonState(commonState: CommonState.error(errorMessage: errorMessage))
+          ]);
 }

@@ -242,51 +242,41 @@ abstract class _Register implements RegisterEvent {
 mixin _$RegisterState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(LoginResponseModel registerResponseModel) success,
-    required TResult Function() loading,
-    required TResult Function(String errorMessage) error,
+    required TResult Function(CommonState commonState) commonState,
+    required TResult Function(LoginResponseModel registerResponseModel)
+        registerSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(LoginResponseModel registerResponseModel)? success,
-    TResult? Function()? loading,
-    TResult? Function(String errorMessage)? error,
+    TResult? Function(CommonState commonState)? commonState,
+    TResult? Function(LoginResponseModel registerResponseModel)?
+        registerSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(LoginResponseModel registerResponseModel)? success,
-    TResult Function()? loading,
-    TResult Function(String errorMessage)? error,
+    TResult Function(CommonState commonState)? commonState,
+    TResult Function(LoginResponseModel registerResponseModel)? registerSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
+    required TResult Function(_Success value) commonState,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
+    TResult? Function(_Success value)? commonState,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Success value)? success,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
+    TResult Function(_Success value)? commonState,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -311,127 +301,14 @@ class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$RegisterStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_Initial implements _Initial {
-  const _$_Initial();
-
-  @override
-  String toString() {
-    return 'RegisterState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(LoginResponseModel registerResponseModel) success,
-    required TResult Function() loading,
-    required TResult Function(String errorMessage) error,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(LoginResponseModel registerResponseModel)? success,
-    TResult? Function()? loading,
-    TResult? Function(String errorMessage)? error,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(LoginResponseModel registerResponseModel)? success,
-    TResult Function()? loading,
-    TResult Function(String errorMessage)? error,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Success value)? success,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements RegisterState {
-  const factory _Initial() = _$_Initial;
-}
-
-/// @nodoc
 abstract class _$$_SuccessCopyWith<$Res> {
   factory _$$_SuccessCopyWith(
           _$_Success value, $Res Function(_$_Success) then) =
       __$$_SuccessCopyWithImpl<$Res>;
   @useResult
-  $Res call({LoginResponseModel registerResponseModel});
+  $Res call({CommonState commonState});
 
-  $LoginResponseModelCopyWith<$Res> get registerResponseModel;
+  $CommonStateCopyWith<$Res> get commonState;
 }
 
 /// @nodoc
@@ -444,9 +321,155 @@ class __$$_SuccessCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? registerResponseModel = null,
+    Object? commonState = null,
   }) {
     return _then(_$_Success(
+      commonState: null == commonState
+          ? _value.commonState
+          : commonState // ignore: cast_nullable_to_non_nullable
+              as CommonState,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CommonStateCopyWith<$Res> get commonState {
+    return $CommonStateCopyWith<$Res>(_value.commonState, (value) {
+      return _then(_value.copyWith(commonState: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_Success implements _Success {
+  const _$_Success({required this.commonState});
+
+  @override
+  final CommonState commonState;
+
+  @override
+  String toString() {
+    return 'RegisterState.commonState(commonState: $commonState)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Success &&
+            (identical(other.commonState, commonState) ||
+                other.commonState == commonState));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, commonState);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SuccessCopyWith<_$_Success> get copyWith =>
+      __$$_SuccessCopyWithImpl<_$_Success>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CommonState commonState) commonState,
+    required TResult Function(LoginResponseModel registerResponseModel)
+        registerSuccess,
+  }) {
+    return commonState(this.commonState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CommonState commonState)? commonState,
+    TResult? Function(LoginResponseModel registerResponseModel)?
+        registerSuccess,
+  }) {
+    return commonState?.call(this.commonState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CommonState commonState)? commonState,
+    TResult Function(LoginResponseModel registerResponseModel)? registerSuccess,
+    required TResult orElse(),
+  }) {
+    if (commonState != null) {
+      return commonState(this.commonState);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Success value) commonState,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
+  }) {
+    return commonState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Success value)? commonState,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
+  }) {
+    return commonState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Success value)? commonState,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
+    required TResult orElse(),
+  }) {
+    if (commonState != null) {
+      return commonState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Success implements RegisterState {
+  const factory _Success({required final CommonState commonState}) = _$_Success;
+
+  CommonState get commonState;
+  @JsonKey(ignore: true)
+  _$$_SuccessCopyWith<_$_Success> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_RegisterSuccessCopyWith<$Res> {
+  factory _$$_RegisterSuccessCopyWith(
+          _$_RegisterSuccess value, $Res Function(_$_RegisterSuccess) then) =
+      __$$_RegisterSuccessCopyWithImpl<$Res>;
+  @useResult
+  $Res call({LoginResponseModel registerResponseModel});
+
+  $LoginResponseModelCopyWith<$Res> get registerResponseModel;
+}
+
+/// @nodoc
+class __$$_RegisterSuccessCopyWithImpl<$Res>
+    extends _$RegisterStateCopyWithImpl<$Res, _$_RegisterSuccess>
+    implements _$$_RegisterSuccessCopyWith<$Res> {
+  __$$_RegisterSuccessCopyWithImpl(
+      _$_RegisterSuccess _value, $Res Function(_$_RegisterSuccess) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? registerResponseModel = null,
+  }) {
+    return _then(_$_RegisterSuccess(
       registerResponseModel: null == registerResponseModel
           ? _value.registerResponseModel
           : registerResponseModel // ignore: cast_nullable_to_non_nullable
@@ -466,22 +489,22 @@ class __$$_SuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Success implements _Success {
-  const _$_Success({required this.registerResponseModel});
+class _$_RegisterSuccess implements _RegisterSuccess {
+  const _$_RegisterSuccess({required this.registerResponseModel});
 
   @override
   final LoginResponseModel registerResponseModel;
 
   @override
   String toString() {
-    return 'RegisterState.success(registerResponseModel: $registerResponseModel)';
+    return 'RegisterState.registerSuccess(registerResponseModel: $registerResponseModel)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Success &&
+            other is _$_RegisterSuccess &&
             (identical(other.registerResponseModel, registerResponseModel) ||
                 other.registerResponseModel == registerResponseModel));
   }
@@ -492,42 +515,38 @@ class _$_Success implements _Success {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuccessCopyWith<_$_Success> get copyWith =>
-      __$$_SuccessCopyWithImpl<_$_Success>(this, _$identity);
+  _$$_RegisterSuccessCopyWith<_$_RegisterSuccess> get copyWith =>
+      __$$_RegisterSuccessCopyWithImpl<_$_RegisterSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(LoginResponseModel registerResponseModel) success,
-    required TResult Function() loading,
-    required TResult Function(String errorMessage) error,
+    required TResult Function(CommonState commonState) commonState,
+    required TResult Function(LoginResponseModel registerResponseModel)
+        registerSuccess,
   }) {
-    return success(registerResponseModel);
+    return registerSuccess(registerResponseModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(LoginResponseModel registerResponseModel)? success,
-    TResult? Function()? loading,
-    TResult? Function(String errorMessage)? error,
+    TResult? Function(CommonState commonState)? commonState,
+    TResult? Function(LoginResponseModel registerResponseModel)?
+        registerSuccess,
   }) {
-    return success?.call(registerResponseModel);
+    return registerSuccess?.call(registerResponseModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(LoginResponseModel registerResponseModel)? success,
-    TResult Function()? loading,
-    TResult Function(String errorMessage)? error,
+    TResult Function(CommonState commonState)? commonState,
+    TResult Function(LoginResponseModel registerResponseModel)? registerSuccess,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(registerResponseModel);
+    if (registerSuccess != null) {
+      return registerSuccess(registerResponseModel);
     }
     return orElse();
   }
@@ -535,304 +554,42 @@ class _$_Success implements _Success {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
+    required TResult Function(_Success value) commonState,
+    required TResult Function(_RegisterSuccess value) registerSuccess,
   }) {
-    return success(this);
+    return registerSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
+    TResult? Function(_Success value)? commonState,
+    TResult? Function(_RegisterSuccess value)? registerSuccess,
   }) {
-    return success?.call(this);
+    return registerSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Success value)? success,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
+    TResult Function(_Success value)? commonState,
+    TResult Function(_RegisterSuccess value)? registerSuccess,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (registerSuccess != null) {
+      return registerSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class _Success implements RegisterState {
-  const factory _Success(
-      {required final LoginResponseModel registerResponseModel}) = _$_Success;
+abstract class _RegisterSuccess implements RegisterState {
+  const factory _RegisterSuccess(
+          {required final LoginResponseModel registerResponseModel}) =
+      _$_RegisterSuccess;
 
   LoginResponseModel get registerResponseModel;
   @JsonKey(ignore: true)
-  _$$_SuccessCopyWith<_$_Success> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_LoadingCopyWithImpl<$Res>
-    extends _$RegisterStateCopyWithImpl<$Res, _$_Loading>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_Loading implements _Loading {
-  const _$_Loading();
-
-  @override
-  String toString() {
-    return 'RegisterState.loading()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(LoginResponseModel registerResponseModel) success,
-    required TResult Function() loading,
-    required TResult Function(String errorMessage) error,
-  }) {
-    return loading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(LoginResponseModel registerResponseModel)? success,
-    TResult? Function()? loading,
-    TResult? Function(String errorMessage)? error,
-  }) {
-    return loading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(LoginResponseModel registerResponseModel)? success,
-    TResult Function()? loading,
-    TResult Function(String errorMessage)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Success value)? success,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Loading implements RegisterState {
-  const factory _Loading() = _$_Loading;
-}
-
-/// @nodoc
-abstract class _$$_ErrorCopyWith<$Res> {
-  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
-      __$$_ErrorCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String errorMessage});
-}
-
-/// @nodoc
-class __$$_ErrorCopyWithImpl<$Res>
-    extends _$RegisterStateCopyWithImpl<$Res, _$_Error>
-    implements _$$_ErrorCopyWith<$Res> {
-  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? errorMessage = null,
-  }) {
-    return _then(_$_Error(
-      errorMessage: null == errorMessage
-          ? _value.errorMessage
-          : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_Error implements _Error {
-  const _$_Error({required this.errorMessage});
-
-  @override
-  final String errorMessage;
-
-  @override
-  String toString() {
-    return 'RegisterState.error(errorMessage: $errorMessage)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Error &&
-            (identical(other.errorMessage, errorMessage) ||
-                other.errorMessage == errorMessage));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, errorMessage);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
-      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(LoginResponseModel registerResponseModel) success,
-    required TResult Function() loading,
-    required TResult Function(String errorMessage) error,
-  }) {
-    return error(errorMessage);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(LoginResponseModel registerResponseModel)? success,
-    TResult? Function()? loading,
-    TResult? Function(String errorMessage)? error,
-  }) {
-    return error?.call(errorMessage);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(LoginResponseModel registerResponseModel)? success,
-    TResult Function()? loading,
-    TResult Function(String errorMessage)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(errorMessage);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Error value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Error value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Success value)? success,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Error implements RegisterState {
-  const factory _Error({required final String errorMessage}) = _$_Error;
-
-  String get errorMessage;
-  @JsonKey(ignore: true)
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+  _$$_RegisterSuccessCopyWith<_$_RegisterSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }
