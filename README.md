@@ -1,9 +1,21 @@
 # Cerati
+## Introduction
+Cerati is a mobile application designed for professionals, freelancers, and creatives who want to showcase their work to the world. With Cerati, you can effortlessly create and customize your own website portfolio, presenting your projects, skills, and services in a professional and appealing manner.
 
+## Features
+- **User-Friendly Interface:** Cerati offers an intuitive design experience, making it simple for users without technical expertise to create stunning portfolios.
+- **Customizable Templates:** Select from a variety of pre-designed templates that suit your profession and personalize them to reflect your unique style.
+- **Responsive Design:** Your portfolio will look great on any device, from smartphones to tablets to desktop computers.
+- **Social Media Integration:** Link your social media profiles directly, letting visitors connect with you across various platforms.
+- **SEO Optimization:** Built-in SEO tools help your portfolio rank higher in search results, increasing your visibility online.
+- **Analytics:** Track visitors and engagement on your portfolio to understand what captures interest and optimize accordingly.
 
+## Technology Stack
+Cerati is built using modern technologies, including:
 
-
-
+- Flutter framework for mobile development.
+- Backend services with Laravel and Go gRPC service for analytics.
+- Nex.js for web-based components.
 ---
 
 ## Getting Started 🚀
