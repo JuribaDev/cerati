@@ -1,8 +1,5 @@
 import 'package:cerati/common/blocs/generic_state/generic_state.dart';
-import 'package:cerati/features/login/bloc/login_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import '../../../helpers/helpers.dart';
 
 void main() {
   group('CommonState', () {
