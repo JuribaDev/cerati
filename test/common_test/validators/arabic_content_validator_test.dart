@@ -24,13 +24,14 @@ void main() {
       // Act
       final result = arabicContentValidator(b6a6sContent);
       // Assert
-      expect(result, 'Please enter at least 60% Arabic content');
+      expect(result, 'Please enter at least 70% Arabic content');
     });
 
     test('Validates Arabic content successfully', () {
       // Act & Assert
       expect(isArabicValidator('اليوم بنتكلم عن البطاطس. البطاطس مثل ما حنا عارفين يكبر البطاطسات.'), true);
-      expect(isArabicValidator('اليوم بنتكلم عن Boteto.  مثل ما حنا عارفين يكبر Botetos.'), false);
+      expect(isArabicValidator('اليوم بنتكلم عن Boteto.  مثل ما حنا عارفين يكبر  Botetos Botetos Botetos Botetos.'),
+          false);
     });
   });
 }
