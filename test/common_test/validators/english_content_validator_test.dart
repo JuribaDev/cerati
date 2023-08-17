@@ -20,11 +20,11 @@ void main() {
       // Assert
       expect(result, null);
     });
-    test('Invalid English content which is less than %60 of English content returns error string', () {
+    test('Invalid English content which is less than %70 of English content returns error string', () {
       // Act
       final result = englishContentValidator(b6a6sContent);
       // Assert
-      expect(result, 'Please enter at least 60% English content');
+      expect(result, 'Please enter at least 70% English content');
     });
 
     test('Validates English content successfully', () {
