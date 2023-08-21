@@ -153,7 +153,7 @@ the new locale.
 }
 ```
 
-`app_ar.arb`
+`app_شق.arb`
 
 ```arb
 {
