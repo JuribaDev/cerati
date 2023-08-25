@@ -1,4 +1,4 @@
-import 'package:cerati/common/services/network_manager/Interceptors/user_device_interceptor.dart';
+import 'package:cerati/common/services/network_manager/interceptors/user_device_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 
