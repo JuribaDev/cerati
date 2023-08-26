@@ -1,7 +1,8 @@
-import 'package:cerati/common/services/network_manager/Interceptors/secoure_interceptor.dart';
+import 'package:cerati/common/services/network_manager/interceptors/secure_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+
 import '../network_manager_setup.dart';
 
 void main() {
@@ -17,7 +18,7 @@ void main() {
   });
 
   group('All unit test that belong to SecureInterceptor', () {
-    test('Check the default value for _secureResources flag', () {
+    test('Check the default value for _secureResources `flag', () {
       expect(secureInterceptor.secureResources, true);
     });
 

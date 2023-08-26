@@ -6,8 +6,7 @@ part of 'user_account_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserAccountResponseModel _$$_UserAccountResponseModelFromJson(
-        Map<String, dynamic> json) =>
+_$_UserAccountResponseModel _$$_UserAccountResponseModelFromJson(Map<String, dynamic> json) =>
     _$_UserAccountResponseModel(
       id: json['id'] as int,
       firstName: json['first_name'] as String,
@@ -18,9 +17,7 @@ _$_UserAccountResponseModel _$$_UserAccountResponseModelFromJson(
       updatedAt: DateTime.parse(json['updated_at'] as String),
     );
 
-Map<String, dynamic> _$$_UserAccountResponseModelToJson(
-        _$_UserAccountResponseModel instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_UserAccountResponseModelToJson(_$_UserAccountResponseModel instance) => <String, dynamic>{
       'id': instance.id,
       'first_name': instance.firstName,
       'last_name': instance.lastName,
