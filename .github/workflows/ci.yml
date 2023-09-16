@@ -7,28 +7,27 @@ on:
 jobs:
 
 
-
   verify-flutter:
     uses: ./.github/workflows/flutter_package.yml
     with:
       flutter_channel: stable
-      flutter_version: 3.10.5
+      flutter_version: 3.13.4
       setup: flutter doctor --verbose
 
 
-#  verify-pana-flutter:
-#    uses: ./.github/workflows/pana.yml
-#    with:
-#      min_score: 95
+  #  verify-pana-flutter:
+  #    uses: ./.github/workflows/pana.yml
+  #    with:
+  #      min_score: 95
 
 
   build:
     needs:
       verify-flutter
-#        [
-#        verify-flutter,
-#        verify-pana-flutter,
-#    ]
+    #        [
+    #        verify-flutter,
+    #        verify-pana-flutter,
+    #    ]
 
     runs-on: ubuntu-latest
 
