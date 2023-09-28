@@ -5,6 +5,8 @@ import 'package:cerati/features/user_account/model/update_user_account_request_m
 import 'package:cerati/features/user_account/model/update_user_password_request_model.dart';
 import 'package:cerati/features/user_account/model/update_user_password_response_model.dart';
 import 'package:cerati/features/user_account/model/user_account_response_model.dart';
+import 'package:cerati/features/website/model/website_request_model.dart';
+import 'package:cerati/features/website/model/website_response_model.dart';
 
 final userAccountResponseModelTest = UserAccountResponseModel(
   id: 1,
@@ -46,4 +48,25 @@ const registerRequestModelTest = RegisterRequestModel(
   password: 'admin@1211',
   firstName: 'Juriba',
   lastName: 'Saleh',
+);
+
+const websiteRequestModelTest = WebsiteRequestModel(
+  languageId: 1,
+  languageCode: 'en',
+  languageName: 'English',
+);
+
+final websiteResponseModelTest = WebsiteResponseModel(
+  id: 1,
+  languageId: 1,
+  languageCode: 'ar',
+  languageName: 'Arabic',
+  hasCertificate: 0,
+  hasEducation: 0,
+  hasProject: 0,
+  hasExperience: 0,
+  hasSkill: 0,
+  hasSMLink: 0,
+  createdAt: DateTime.parse('2023-09-26T15:30:42.000000Z'),
+  updatedAt: DateTime.parse('2023-09-26T15:30:42.000000Z'),
 );

@@ -13,9 +13,9 @@ class UserSettingBloc extends Bloc<UserSettingEvent, UserSettingState> {
   Future<void> _onAppStarted(AppStarted event, Emitter<UserSettingState> emit) async {
     final locale = await _userSettingManager.getLocal();
     final isDark = await _userSettingManager.getThemeMode();
-    await _userSettingManager.setThemeMode(isDark: isDark.toBoolean());
+    await _userSettingManager.setThemeMode(isDark: isDark.sToBool());
     await _userSettingManager.setLocale(locale: locale);
-    emit(UserSettingState.loaded(locale: locale, isDark: isDark.toBoolean()));
+    emit(UserSettingState.loaded(locale: locale, isDark: isDark.sToBool()));
   }
 
   final UserSettingManager _userSettingManager;
@@ -23,7 +23,7 @@ class UserSettingBloc extends Bloc<UserSettingEvent, UserSettingState> {
   Future<void> _onLanguageChanged(LanguageChangedEvent event, Emitter<UserSettingState> emit) async {
     await _userSettingManager.setLocale(locale: event.locale);
     final isDark = await _userSettingManager.getThemeMode();
-    emit(UserSettingState.loaded(locale: event.locale, isDark: isDark.toBoolean()));
+    emit(UserSettingState.loaded(locale: event.locale, isDark: isDark.sToBool()));
   }
 
   Future<void> _onThemeModeChanged(ThemeModeChangedEvent event, Emitter<UserSettingState> emit) async {
