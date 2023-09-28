@@ -14,7 +14,8 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-UserAccountResponseModel _$UserAccountResponseModelFromJson(Map<String, dynamic> json) {
+UserAccountResponseModel _$UserAccountResponseModelFromJson(
+    Map<String, dynamic> json) {
   return _UserAccountResponseModel.fromJson(json);
 }
 
@@ -35,13 +36,14 @@ mixin _$UserAccountResponseModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserAccountResponseModelCopyWith<UserAccountResponseModel> get copyWith => throw _privateConstructorUsedError;
+  $UserAccountResponseModelCopyWith<UserAccountResponseModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserAccountResponseModelCopyWith<$Res> {
-  factory $UserAccountResponseModelCopyWith(
-          UserAccountResponseModel value, $Res Function(UserAccountResponseModel) then) =
+  factory $UserAccountResponseModelCopyWith(UserAccountResponseModel value,
+          $Res Function(UserAccountResponseModel) then) =
       _$UserAccountResponseModelCopyWithImpl<$Res, UserAccountResponseModel>;
   @useResult
   $Res call(
@@ -55,7 +57,8 @@ abstract class $UserAccountResponseModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserAccountResponseModelCopyWithImpl<$Res, $Val extends UserAccountResponseModel>
+class _$UserAccountResponseModelCopyWithImpl<$Res,
+        $Val extends UserAccountResponseModel>
     implements $UserAccountResponseModelCopyWith<$Res> {
   _$UserAccountResponseModelCopyWithImpl(this._value, this._then);
 
@@ -109,9 +112,11 @@ class _$UserAccountResponseModelCopyWithImpl<$Res, $Val extends UserAccountRespo
 }
 
 /// @nodoc
-abstract class _$$_UserAccountResponseModelCopyWith<$Res> implements $UserAccountResponseModelCopyWith<$Res> {
+abstract class _$$_UserAccountResponseModelCopyWith<$Res>
+    implements $UserAccountResponseModelCopyWith<$Res> {
   factory _$$_UserAccountResponseModelCopyWith(
-          _$_UserAccountResponseModel value, $Res Function(_$_UserAccountResponseModel) then) =
+          _$_UserAccountResponseModel value,
+          $Res Function(_$_UserAccountResponseModel) then) =
       __$$_UserAccountResponseModelCopyWithImpl<$Res>;
   @override
   @useResult
@@ -127,10 +132,11 @@ abstract class _$$_UserAccountResponseModelCopyWith<$Res> implements $UserAccoun
 
 /// @nodoc
 class __$$_UserAccountResponseModelCopyWithImpl<$Res>
-    extends _$UserAccountResponseModelCopyWithImpl<$Res, _$_UserAccountResponseModel>
+    extends _$UserAccountResponseModelCopyWithImpl<$Res,
+        _$_UserAccountResponseModel>
     implements _$$_UserAccountResponseModelCopyWith<$Res> {
-  __$$_UserAccountResponseModelCopyWithImpl(
-      _$_UserAccountResponseModel _value, $Res Function(_$_UserAccountResponseModel) _then)
+  __$$_UserAccountResponseModelCopyWithImpl(_$_UserAccountResponseModel _value,
+      $Res Function(_$_UserAccountResponseModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -189,7 +195,8 @@ class _$_UserAccountResponseModel implements _UserAccountResponseModel {
       @JsonKey(name: 'created_at') required this.createdAt,
       @JsonKey(name: 'updated_at') required this.updatedAt});
 
-  factory _$_UserAccountResponseModel.fromJson(Map<String, dynamic> json) => _$$_UserAccountResponseModelFromJson(json);
+  factory _$_UserAccountResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$$_UserAccountResponseModelFromJson(json);
 
   @override
   final int id;
@@ -222,23 +229,30 @@ class _$_UserAccountResponseModel implements _UserAccountResponseModel {
         (other.runtimeType == runtimeType &&
             other is _$_UserAccountResponseModel &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.firstName, firstName) || other.firstName == firstName) &&
-            (identical(other.lastName, lastName) || other.lastName == lastName) &&
-            (identical(other.fullName, fullName) || other.fullName == fullName) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.fullName, fullName) ||
+                other.fullName == fullName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, firstName, lastName, fullName, email, createdAt, updatedAt);
+  int get hashCode => Object.hash(runtimeType, id, firstName, lastName,
+      fullName, email, createdAt, updatedAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserAccountResponseModelCopyWith<_$_UserAccountResponseModel> get copyWith =>
-      __$$_UserAccountResponseModelCopyWithImpl<_$_UserAccountResponseModel>(this, _$identity);
+  _$$_UserAccountResponseModelCopyWith<_$_UserAccountResponseModel>
+      get copyWith => __$$_UserAccountResponseModelCopyWithImpl<
+          _$_UserAccountResponseModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -250,15 +264,17 @@ class _$_UserAccountResponseModel implements _UserAccountResponseModel {
 
 abstract class _UserAccountResponseModel implements UserAccountResponseModel {
   const factory _UserAccountResponseModel(
-      {required final int id,
-      @JsonKey(name: 'first_name') required final String firstName,
-      @JsonKey(name: 'last_name') required final String lastName,
-      @JsonKey(name: 'full_name') required final String fullName,
-      required final String email,
-      @JsonKey(name: 'created_at') required final DateTime createdAt,
-      @JsonKey(name: 'updated_at') required final DateTime updatedAt}) = _$_UserAccountResponseModel;
+          {required final int id,
+          @JsonKey(name: 'first_name') required final String firstName,
+          @JsonKey(name: 'last_name') required final String lastName,
+          @JsonKey(name: 'full_name') required final String fullName,
+          required final String email,
+          @JsonKey(name: 'created_at') required final DateTime createdAt,
+          @JsonKey(name: 'updated_at') required final DateTime updatedAt}) =
+      _$_UserAccountResponseModel;
 
-  factory _UserAccountResponseModel.fromJson(Map<String, dynamic> json) = _$_UserAccountResponseModel.fromJson;
+  factory _UserAccountResponseModel.fromJson(Map<String, dynamic> json) =
+      _$_UserAccountResponseModel.fromJson;
 
   @override
   int get id;
@@ -281,5 +297,6 @@ abstract class _UserAccountResponseModel implements UserAccountResponseModel {
   DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
-  _$$_UserAccountResponseModelCopyWith<_$_UserAccountResponseModel> get copyWith => throw _privateConstructorUsedError;
+  _$$_UserAccountResponseModelCopyWith<_$_UserAccountResponseModel>
+      get copyWith => throw _privateConstructorUsedError;
 }

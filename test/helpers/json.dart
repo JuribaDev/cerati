@@ -28,3 +28,24 @@ final updateUserAccountRequestJsonTest = {
 final updateUserPasswordRequestJsonTest = {'current_password': 'Admin@123', 'new_password': 'Admin@12345'};
 
 final updateUserPasswordResponseJsonTest = {'message': 'Password updated successfully'};
+
+final websiteRequestJsonTest = {
+  'language_id': 1,
+  'language_code': 'en',
+  'language_name': 'English',
+};
+
+final websiteResponseJsonTest = {
+  'id': 1,
+  'language_id': 1,
+  'language_code': 'ar',
+  'language_name': 'Arabic',
+  'has_certificate': 0,
+  'has_education': 0,
+  'has_project': 0,
+  'has_experience': 0,
+  'has_skill': 0,
+  'has_s_m_link': 0,
+  'created_at': '2023-09-26T15:30:42.000Z',
+  'updated_at': '2023-09-26T15:30:42.000Z',
+};
