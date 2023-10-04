@@ -175,11 +175,9 @@ class _$_UpdateUserPasswordRequestModel
 abstract class _UpdateUserPasswordRequestModel
     implements UpdateUserPasswordRequestModel {
   const factory _UpdateUserPasswordRequestModel(
-          {@JsonKey(name: 'current_password')
-              required final String currentPassword,
-          @JsonKey(name: 'new_password')
-              required final String newPassword}) =
-      _$_UpdateUserPasswordRequestModel;
+      {@JsonKey(name: 'current_password') required final String currentPassword,
+      @JsonKey(name: 'new_password')
+      required final String newPassword}) = _$_UpdateUserPasswordRequestModel;
 
   factory _UpdateUserPasswordRequestModel.fromJson(Map<String, dynamic> json) =
       _$_UpdateUserPasswordRequestModel.fromJson;

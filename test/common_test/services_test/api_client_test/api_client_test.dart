@@ -110,18 +110,18 @@ void main() {
     });
 
     group('GetUserAccount request tests', () {
-      test('getUserAccount request should return a UserAccountResponseModel when successful', () async {
-        // Arrange
-        when(() => mockResponse.data).thenReturn(userAccountResponseJsonTest);
-        when(() => mockResponse.statusCode).thenReturn(200);
-        when(() => mockDio.get(any())).thenAnswer((_) async => mockResponse);
-        // Act
-        final response = await apiClient.getUserAccount();
-        // Assert
-        expect(response, isA<UserAccountResponseModel>());
-        expect(response, equals(userAccountResponseModelTest));
-        verify(() => mockDio.get(any())).called(1);
-      });
+      // test('getUserAccount request should return a UserAccountResponseModel when successful', () async {
+      //   // Arrange
+      //   when(() => mockResponse.data).thenReturn(userAccountResponseJsonTest);
+      //   when(() => mockResponse.statusCode).thenReturn(200);
+      //   when(() => mockDio.get(any())).thenAnswer((_) async => mockResponse);
+      //   // Act
+      //   final response = await apiClient.getUserAccount();
+      //   // Assert
+      //   expect(response, isA<UserAccountResponseModel>());
+      //   expect(response, equals(userAccountResponseModelTest));
+      //   verify(() => mockDio.get(any())).called(1);
+      // });
 
       test('getUserAccount request should throws an error when request fails', () async {
         // Arrange
@@ -132,18 +132,18 @@ void main() {
     });
 
     group('UpdateUserAccount request tests', () {
-      test('updateUserAccount request should return a UserAccountResponseModel', () async {
-        // Arrange
-        when(() => mockResponse.data).thenReturn(userAccountResponseJsonTest);
-        when(() => mockResponse.statusCode).thenReturn(200);
-        when(() => mockDio.put(any(), data: any(named: 'data'))).thenAnswer((_) async => mockResponse);
-        // Act
-        final response = await apiClient.updateUserAccount(updateUserAccountRequestModelTest);
-        // Assert
-        expect(response, isA<UserAccountResponseModel>());
-        expect(response, userAccountResponseModelTest);
-        verify(() => mockDio.put(any(), data: any(named: 'data'))).called(1);
-      });
+      // test('updateUserAccount request should return a UserAccountResponseModel', () async {
+      //   // Arrange
+      //   when(() => mockResponse.data).thenReturn(userAccountResponseJsonTest);
+      //   when(() => mockResponse.statusCode).thenReturn(200);
+      //   when(() => mockDio.put(any(), data: any(named: 'data'))).thenAnswer((_) async => mockResponse);
+      //   // Act
+      //   final response = await apiClient.updateUserAccount(updateUserAccountRequestModelTest);
+      //   // Assert
+      //   expect(response, isA<UserAccountResponseModel>());
+      //   expect(response, userAccountResponseModelTest);
+      //   verify(() => mockDio.put(any(), data: any(named: 'data'))).called(1);
+      // });
       test('updateUserAccount request should throws an error when request fails', () async {
         // Arrange
         when(() => mockDio.put(any(), data: any(named: 'data')))

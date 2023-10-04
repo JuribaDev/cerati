@@ -42,7 +42,7 @@ abstract class $LoginResponseModelCopyWith<$Res> {
       {String status,
       String token,
       @JsonKey(name: 'user', includeToJson: true)
-          UserAccountResponseModel userAccountResponseModel});
+      UserAccountResponseModel userAccountResponseModel});
 
   $UserAccountResponseModelCopyWith<$Res> get userAccountResponseModel;
 }
@@ -102,7 +102,7 @@ abstract class _$$_LoginResponseModelCopyWith<$Res>
       {String status,
       String token,
       @JsonKey(name: 'user', includeToJson: true)
-          UserAccountResponseModel userAccountResponseModel});
+      UserAccountResponseModel userAccountResponseModel});
 
   @override
   $UserAccountResponseModelCopyWith<$Res> get userAccountResponseModel;
@@ -147,7 +147,7 @@ class _$_LoginResponseModel implements _LoginResponseModel {
       {required this.status,
       required this.token,
       @JsonKey(name: 'user', includeToJson: true)
-          required this.userAccountResponseModel});
+      required this.userAccountResponseModel});
 
   factory _$_LoginResponseModel.fromJson(Map<String, dynamic> json) =>
       _$$_LoginResponseModelFromJson(json);
@@ -199,11 +199,11 @@ class _$_LoginResponseModel implements _LoginResponseModel {
 
 abstract class _LoginResponseModel implements LoginResponseModel {
   const factory _LoginResponseModel(
-      {required final String status,
-      required final String token,
-      @JsonKey(name: 'user', includeToJson: true)
-          required final UserAccountResponseModel
-              userAccountResponseModel}) = _$_LoginResponseModel;
+          {required final String status,
+          required final String token,
+          @JsonKey(name: 'user', includeToJson: true)
+          required final UserAccountResponseModel userAccountResponseModel}) =
+      _$_LoginResponseModel;
 
   factory _LoginResponseModel.fromJson(Map<String, dynamic> json) =
       _$_LoginResponseModel.fromJson;

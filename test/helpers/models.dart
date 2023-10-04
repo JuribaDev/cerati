@@ -1,3 +1,4 @@
+import 'package:cerati/common/model/api_response_wrapper.dart';
 import 'package:cerati/features/login/model/login_request_model.dart';
 import 'package:cerati/features/login/model/login_response_model.dart';
 import 'package:cerati/features/register/model/register_request_model.dart';
@@ -7,6 +8,9 @@ import 'package:cerati/features/user_account/model/update_user_password_response
 import 'package:cerati/features/user_account/model/user_account_response_model.dart';
 import 'package:cerati/features/website/model/website_request_model.dart';
 import 'package:cerati/features/website/model/website_response_model.dart';
+
+final apiResponseWrapperModelTest =
+    ApiResponseWrapper<UserAccountResponseModel>(status: 'success', data: userAccountResponseModelTest);
 
 final userAccountResponseModelTest = UserAccountResponseModel(
   id: 1,
