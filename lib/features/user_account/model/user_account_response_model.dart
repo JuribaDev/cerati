@@ -18,5 +18,6 @@ class UserAccountResponseModel with _$UserAccountResponseModel {
     @JsonKey(name: 'updated_at') required DateTime updatedAt,
   }) = _UserAccountResponseModel;
 
-  factory UserAccountResponseModel.fromJson(Map<String, Object?> json) => _$UserAccountResponseModelFromJson(json);
+  factory UserAccountResponseModel.fromJson(dynamic json) =>
+      _$UserAccountResponseModelFromJson(json as Map<String, dynamic>);
 }

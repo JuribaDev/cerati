@@ -3,6 +3,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'website_response_model.freezed.dart';
+
 part 'website_response_model.g.dart';
 
 @Freezed(fromJson: true, toJson: true)
@@ -22,5 +23,5 @@ class WebsiteResponseModel with _$WebsiteResponseModel {
     @JsonKey(name: 'updated_at') required DateTime updatedAt,
   }) = _WebsiteResponseModel;
 
-  factory WebsiteResponseModel.fromJson(Map<String, Object?> json) => _$WebsiteResponseModelFromJson(json);
+  factory WebsiteResponseModel.fromJson(dynamic json) => _$WebsiteResponseModelFromJson(json as Map<String, dynamic>);
 }
