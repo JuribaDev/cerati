@@ -24,13 +24,14 @@ void main() {
           build: () {
             when(
               () => mockUserAccountRepository.getUserAccount(),
-            ).thenAnswer((invocation) async => Right(apiResponseWrapperModelTest));
+            ).thenAnswer((invocation) async => Right(apiResponseWrapperUserAccountResponseModelTest));
             return userAccountBloc;
           },
           act: (bloc) => bloc.add(const UserAccountEvent.getUserAccount()),
           expect: () => [
                 const UserAccountState.commonState(commonState: CommonState.loading()),
-                UserAccountState.userAccountLoaded(userAccountResponseModel: apiResponseWrapperModelTest)
+                UserAccountState.userAccountLoaded(
+                    userAccountResponseModel: apiResponseWrapperUserAccountResponseModelTest)
               ]);
 
       blocTest<UserAccountBloc, UserAccountState>(
@@ -59,14 +60,15 @@ void main() {
             when(
               () => mockUserAccountRepository.updateUserAccount(
                   updateUserAccountRequestModel: updateUserAccountRequestModelTest),
-            ).thenAnswer((invocation) async => Right(apiResponseWrapperModelTest));
+            ).thenAnswer((invocation) async => Right(apiResponseWrapperUserAccountResponseModelTest));
             return userAccountBloc;
           },
           act: (bloc) => bloc.add(const UserAccountEvent.updateUserAccount(
               updateUserAccountRequestModel: updateUserAccountRequestModelTest)),
           expect: () => [
                 const UserAccountState.commonState(commonState: CommonState.loading()),
-                UserAccountState.userAccountLoaded(userAccountResponseModel: apiResponseWrapperModelTest)
+                UserAccountState.userAccountLoaded(
+                    userAccountResponseModel: apiResponseWrapperUserAccountResponseModelTest)
               ]);
 
       blocTest<UserAccountBloc, UserAccountState>(

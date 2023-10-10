@@ -67,8 +67,8 @@ class LocalStorage implements LocalStorageInterface {
       logger.i('$key data fetched from storage');
       return await _storage.read(key) as T;
     } on Exception catch (e) {
-      logger.e('$e Unknown error occurred ');
-      throw Exception('There are no data!');
+      logger.e('Error occurred when read methode called: $e');
+      throw Exception('Error occurred when read methode called: $e');
     }
   }
 

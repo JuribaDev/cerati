@@ -8,7 +8,6 @@ import 'package:cerati/features/user_account/model/update_user_password_request_
 import 'package:cerati/features/user_account/model/update_user_password_response_model.dart';
 import 'package:cerati/features/user_account/model/user_account_response_model.dart';
 import 'package:cerati/features/user_account/repository/user_account_repository.dart';
-import 'package:cerati/main.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user_account_event.dart';
@@ -39,15 +38,9 @@ class UserAccountBloc extends Bloc<UserAccountEvent, UserAccountState> {
   Future<void> _handleGetUserAccount(Emitter<UserAccountState> emit) async {
     final userAccountResponse = await _userAccountRepository.getUserAccount();
     userAccountResponse.fold(
-      (failure) {
-        logger.e(failure.message);
-        emit(UserAccountState.commonState(commonState: CommonState.error(errorMessage: failure.message)));
-      },
-      (userAccountResponseModel) {
-        logger.e(userAccountResponseModel.data);
-
-        emit(UserAccountState.userAccountLoaded(userAccountResponseModel: userAccountResponseModel));
-      },
+      (failure) => emit(UserAccountState.commonState(commonState: CommonState.error(errorMessage: failure.message))),
+      (userAccountResponseModel) =>
+          emit(UserAccountState.userAccountLoaded(userAccountResponseModel: userAccountResponseModel)),
     );
   }
 

@@ -1,3 +1,4 @@
+import 'package:cerati/common/model/api_list_response_wrapper.dart';
 import 'package:cerati/common/model/api_response_wrapper.dart';
 import 'package:cerati/features/login/model/login_request_model.dart';
 import 'package:cerati/features/login/model/login_response_model.dart';
@@ -11,7 +12,7 @@ import 'package:cerati/features/website/model/website_response_model.dart';
 import 'package:dio/dio.dart';
 
 abstract class ApiClientInterface {
-  Map<String, dynamic> body(Response<dynamic> response);
+  void checkStatus(Response<dynamic> response);
 
   Future<LoginResponseModel> login(LoginRequestModel loginRequestModel);
 
@@ -27,7 +28,7 @@ abstract class ApiClientInterface {
 
   Future<ApiResponseWrapper<WebsiteResponseModel>> createWebsite(WebsiteRequestModel websiteRequestModel);
 
-  // Future<List<WebsiteResponseModel>> getAllWebsites();
+  Future<ApiListResponseWrapper<WebsiteResponseModel>> getAllWebsites();
 
   Future<ApiResponseWrapper<WebsiteResponseModel>> getWebsiteById(int websiteId);
 }

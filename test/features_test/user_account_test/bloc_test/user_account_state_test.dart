@@ -34,11 +34,12 @@ void main() {
     });
 
     test('UserAccountLoaded state is created correctly', () {
-      final state = UserAccountState.userAccountLoaded(userAccountResponseModel: apiResponseWrapperModelTest);
+      final state =
+          UserAccountState.userAccountLoaded(userAccountResponseModel: apiResponseWrapperUserAccountResponseModelTest);
       expect(state, isA<UserAccountState>());
       state.maybeMap(
         userAccountLoaded: (userAccountResponse) =>
-            expect(userAccountResponse.userAccountResponseModel, apiResponseWrapperModelTest),
+            expect(userAccountResponse.userAccountResponseModel, apiResponseWrapperUserAccountResponseModelTest),
         orElse: () => fail('Expected UserAccountLoaded state'),
       );
     });

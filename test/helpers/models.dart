@@ -1,3 +1,4 @@
+import 'package:cerati/common/model/api_list_response_wrapper.dart';
 import 'package:cerati/common/model/api_response_wrapper.dart';
 import 'package:cerati/features/login/model/login_request_model.dart';
 import 'package:cerati/features/login/model/login_response_model.dart';
@@ -9,8 +10,14 @@ import 'package:cerati/features/user_account/model/user_account_response_model.d
 import 'package:cerati/features/website/model/website_request_model.dart';
 import 'package:cerati/features/website/model/website_response_model.dart';
 
-final apiResponseWrapperModelTest =
+final apiResponseWrapperUserAccountResponseModelTest =
     ApiResponseWrapper<UserAccountResponseModel>(status: 'success', data: userAccountResponseModelTest);
+
+final apiResponseWrapperWebsiteResponseModelTest =
+    ApiResponseWrapper<WebsiteResponseModel>(status: 'success', data: websiteResponseModelTest);
+
+final apiListResponseWrapperWebsiteResponseModelTest = ApiListResponseWrapper<WebsiteResponseModel>(
+    status: 'success', list: [websiteResponseModelTest, websiteResponseModelTest]);
 
 final userAccountResponseModelTest = UserAccountResponseModel(
   id: 1,
@@ -45,6 +52,7 @@ const updateUserPasswordRequestModelTest = UpdateUserPasswordRequestModel(
 );
 
 const updateUserPasswordResponseModelTest = UpdateUserPasswordResponseModel(
+  status: 'success',
   message: 'Password updated successfully',
 );
 const registerRequestModelTest = RegisterRequestModel(
@@ -65,12 +73,12 @@ final websiteResponseModelTest = WebsiteResponseModel(
   languageId: 1,
   languageCode: 'ar',
   languageName: 'Arabic',
-  hasCertificate: 0,
-  hasEducation: 0,
-  hasProject: 0,
-  hasExperience: 0,
-  hasSkill: 0,
-  hasSMLink: 0,
+  hasCertificate: false,
+  hasEducation: false,
+  hasProject: false,
+  hasExperience: false,
+  hasSkill: false,
+  hasSMLink: false,
   createdAt: DateTime.parse('2023-09-26T15:30:42.000000Z'),
   updatedAt: DateTime.parse('2023-09-26T15:30:42.000000Z'),
 );
