@@ -11,8 +11,7 @@ _$_LoginResponseModel _$$_LoginResponseModelFromJson(
     _$_LoginResponseModel(
       status: json['status'] as String,
       token: json['token'] as String,
-      userAccountResponseModel: UserAccountResponseModel.fromJson(
-          json['user'] as Map<String, dynamic>),
+      userAccountResponseModel: UserAccountResponseModel.fromJson(json['user']),
     );
 
 Map<String, dynamic> _$$_LoginResponseModelToJson(

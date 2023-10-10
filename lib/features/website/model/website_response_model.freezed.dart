@@ -28,17 +28,17 @@ mixin _$WebsiteResponseModel {
   @JsonKey(name: 'language_name')
   String get languageName => throw _privateConstructorUsedError;
   @JsonKey(name: 'has_certificate')
-  int get hasCertificate => throw _privateConstructorUsedError;
+  bool get hasCertificate => throw _privateConstructorUsedError;
   @JsonKey(name: 'has_education')
-  int get hasEducation => throw _privateConstructorUsedError;
+  bool get hasEducation => throw _privateConstructorUsedError;
   @JsonKey(name: 'has_project')
-  int get hasProject => throw _privateConstructorUsedError;
+  bool get hasProject => throw _privateConstructorUsedError;
   @JsonKey(name: 'has_experience')
-  int get hasExperience => throw _privateConstructorUsedError;
+  bool get hasExperience => throw _privateConstructorUsedError;
   @JsonKey(name: 'has_skill')
-  int get hasSkill => throw _privateConstructorUsedError;
+  bool get hasSkill => throw _privateConstructorUsedError;
   @JsonKey(name: 'has_s_m_link')
-  int get hasSMLink => throw _privateConstructorUsedError;
+  bool get hasSMLink => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
   DateTime get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
@@ -61,12 +61,12 @@ abstract class $WebsiteResponseModelCopyWith<$Res> {
       @JsonKey(name: 'language_id') int languageId,
       @JsonKey(name: 'language_code') String languageCode,
       @JsonKey(name: 'language_name') String languageName,
-      @JsonKey(name: 'has_certificate') int hasCertificate,
-      @JsonKey(name: 'has_education') int hasEducation,
-      @JsonKey(name: 'has_project') int hasProject,
-      @JsonKey(name: 'has_experience') int hasExperience,
-      @JsonKey(name: 'has_skill') int hasSkill,
-      @JsonKey(name: 'has_s_m_link') int hasSMLink,
+      @JsonKey(name: 'has_certificate') bool hasCertificate,
+      @JsonKey(name: 'has_education') bool hasEducation,
+      @JsonKey(name: 'has_project') bool hasProject,
+      @JsonKey(name: 'has_experience') bool hasExperience,
+      @JsonKey(name: 'has_skill') bool hasSkill,
+      @JsonKey(name: 'has_s_m_link') bool hasSMLink,
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'updated_at') DateTime updatedAt});
 }
@@ -118,27 +118,27 @@ class _$WebsiteResponseModelCopyWithImpl<$Res,
       hasCertificate: null == hasCertificate
           ? _value.hasCertificate
           : hasCertificate // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       hasEducation: null == hasEducation
           ? _value.hasEducation
           : hasEducation // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       hasProject: null == hasProject
           ? _value.hasProject
           : hasProject // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       hasExperience: null == hasExperience
           ? _value.hasExperience
           : hasExperience // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       hasSkill: null == hasSkill
           ? _value.hasSkill
           : hasSkill // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       hasSMLink: null == hasSMLink
           ? _value.hasSMLink
           : hasSMLink // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -164,12 +164,12 @@ abstract class _$$_WebsiteResponseModelCopyWith<$Res>
       @JsonKey(name: 'language_id') int languageId,
       @JsonKey(name: 'language_code') String languageCode,
       @JsonKey(name: 'language_name') String languageName,
-      @JsonKey(name: 'has_certificate') int hasCertificate,
-      @JsonKey(name: 'has_education') int hasEducation,
-      @JsonKey(name: 'has_project') int hasProject,
-      @JsonKey(name: 'has_experience') int hasExperience,
-      @JsonKey(name: 'has_skill') int hasSkill,
-      @JsonKey(name: 'has_s_m_link') int hasSMLink,
+      @JsonKey(name: 'has_certificate') bool hasCertificate,
+      @JsonKey(name: 'has_education') bool hasEducation,
+      @JsonKey(name: 'has_project') bool hasProject,
+      @JsonKey(name: 'has_experience') bool hasExperience,
+      @JsonKey(name: 'has_skill') bool hasSkill,
+      @JsonKey(name: 'has_s_m_link') bool hasSMLink,
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'updated_at') DateTime updatedAt});
 }
@@ -218,27 +218,27 @@ class __$$_WebsiteResponseModelCopyWithImpl<$Res>
       hasCertificate: null == hasCertificate
           ? _value.hasCertificate
           : hasCertificate // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       hasEducation: null == hasEducation
           ? _value.hasEducation
           : hasEducation // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       hasProject: null == hasProject
           ? _value.hasProject
           : hasProject // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       hasExperience: null == hasExperience
           ? _value.hasExperience
           : hasExperience // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       hasSkill: null == hasSkill
           ? _value.hasSkill
           : hasSkill // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       hasSMLink: null == hasSMLink
           ? _value.hasSMLink
           : hasSMLink // ignore: cast_nullable_to_non_nullable
-              as int,
+              as bool,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -284,22 +284,22 @@ class _$_WebsiteResponseModel implements _WebsiteResponseModel {
   final String languageName;
   @override
   @JsonKey(name: 'has_certificate')
-  final int hasCertificate;
+  final bool hasCertificate;
   @override
   @JsonKey(name: 'has_education')
-  final int hasEducation;
+  final bool hasEducation;
   @override
   @JsonKey(name: 'has_project')
-  final int hasProject;
+  final bool hasProject;
   @override
   @JsonKey(name: 'has_experience')
-  final int hasExperience;
+  final bool hasExperience;
   @override
   @JsonKey(name: 'has_skill')
-  final int hasSkill;
+  final bool hasSkill;
   @override
   @JsonKey(name: 'has_s_m_link')
-  final int hasSMLink;
+  final bool hasSMLink;
   @override
   @JsonKey(name: 'created_at')
   final DateTime createdAt;
@@ -380,12 +380,12 @@ abstract class _WebsiteResponseModel implements WebsiteResponseModel {
           @JsonKey(name: 'language_id') required final int languageId,
           @JsonKey(name: 'language_code') required final String languageCode,
           @JsonKey(name: 'language_name') required final String languageName,
-          @JsonKey(name: 'has_certificate') required final int hasCertificate,
-          @JsonKey(name: 'has_education') required final int hasEducation,
-          @JsonKey(name: 'has_project') required final int hasProject,
-          @JsonKey(name: 'has_experience') required final int hasExperience,
-          @JsonKey(name: 'has_skill') required final int hasSkill,
-          @JsonKey(name: 'has_s_m_link') required final int hasSMLink,
+          @JsonKey(name: 'has_certificate') required final bool hasCertificate,
+          @JsonKey(name: 'has_education') required final bool hasEducation,
+          @JsonKey(name: 'has_project') required final bool hasProject,
+          @JsonKey(name: 'has_experience') required final bool hasExperience,
+          @JsonKey(name: 'has_skill') required final bool hasSkill,
+          @JsonKey(name: 'has_s_m_link') required final bool hasSMLink,
           @JsonKey(name: 'created_at') required final DateTime createdAt,
           @JsonKey(name: 'updated_at') required final DateTime updatedAt}) =
       _$_WebsiteResponseModel;
@@ -406,22 +406,22 @@ abstract class _WebsiteResponseModel implements WebsiteResponseModel {
   String get languageName;
   @override
   @JsonKey(name: 'has_certificate')
-  int get hasCertificate;
+  bool get hasCertificate;
   @override
   @JsonKey(name: 'has_education')
-  int get hasEducation;
+  bool get hasEducation;
   @override
   @JsonKey(name: 'has_project')
-  int get hasProject;
+  bool get hasProject;
   @override
   @JsonKey(name: 'has_experience')
-  int get hasExperience;
+  bool get hasExperience;
   @override
   @JsonKey(name: 'has_skill')
-  int get hasSkill;
+  bool get hasSkill;
   @override
   @JsonKey(name: 'has_s_m_link')
-  int get hasSMLink;
+  bool get hasSMLink;
   @override
   @JsonKey(name: 'created_at')
   DateTime get createdAt;

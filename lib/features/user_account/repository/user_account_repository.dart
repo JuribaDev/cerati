@@ -1,6 +1,7 @@
 import 'package:cerati/common/constants/typedevs.dart';
 import 'package:cerati/common/error_handling/failure.dart';
 import 'package:cerati/common/error_handling/parse_http_errors.dart';
+import 'package:cerati/common/model/api_response_wrapper.dart';
 import 'package:cerati/common/services/datasource/api_client/api_client.dart';
 import 'package:cerati/common/utils/either.dart';
 import 'package:cerati/features/user_account/model/update_user_account_request_model.dart';
@@ -16,7 +17,7 @@ class UserAccountRepository implements UserAccountRepositoryInterface {
   final ApiClient _apiClient;
 
   @override
-  EitherFailureOrSuccess<UserAccountResponseModel> getUserAccount() async {
+  EitherFailureOrSuccess<ApiResponseWrapper<UserAccountResponseModel>> getUserAccount() async {
     try {
       return Right(await _apiClient.getUserAccount());
     } on AllHttpException catch (error) {
@@ -29,7 +30,7 @@ class UserAccountRepository implements UserAccountRepositoryInterface {
   }
 
   @override
-  EitherFailureOrSuccess<UserAccountResponseModel> updateUserAccount(
+  EitherFailureOrSuccess<ApiResponseWrapper<UserAccountResponseModel>> updateUserAccount(
       {required UpdateUserAccountRequestModel updateUserAccountRequestModel}) async {
     try {
       return Right(await _apiClient.updateUserAccount(updateUserAccountRequestModel));

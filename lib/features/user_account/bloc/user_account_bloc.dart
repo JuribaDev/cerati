@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:cerati/common/blocs/generic_state/generic_state.dart';
+import 'package:cerati/common/model/api_response_wrapper.dart';
 import 'package:cerati/features/user_account/model/update_user_account_request_model.dart';
 import 'package:cerati/features/user_account/model/update_user_password_request_model.dart';
 import 'package:cerati/features/user_account/model/update_user_password_response_model.dart';

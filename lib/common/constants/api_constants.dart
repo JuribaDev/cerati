@@ -9,6 +9,7 @@ class ApiConstants {
   static final _Profile profile = _Profile();
   static final _Experience experience = _Experience();
   static final _Certificate certificate = _Certificate();
+  static final _Website website = _Website();
 }
 
 class _Auth {
@@ -97,4 +98,11 @@ class _Certificate {
   String updateCertificate({required int certificateId}) => 'user/certificate/$certificateId';
 
   String deleteCertificate({required int certificateId}) => 'user/certificate/$certificateId';
+}
+
+class _Website {
+  String createWebsite = 'user/website';
+  String getAllWebsites = 'user/website';
+
+  String getWebsiteById({required int websiteId}) => 'user/website/$websiteId';
 }
