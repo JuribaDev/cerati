@@ -29,14 +29,12 @@ mixin _$WebsiteRequestModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WebsiteRequestModelCopyWith<WebsiteRequestModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $WebsiteRequestModelCopyWith<WebsiteRequestModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $WebsiteRequestModelCopyWith<$Res> {
-  factory $WebsiteRequestModelCopyWith(
-          WebsiteRequestModel value, $Res Function(WebsiteRequestModel) then) =
+  factory $WebsiteRequestModelCopyWith(WebsiteRequestModel value, $Res Function(WebsiteRequestModel) then) =
       _$WebsiteRequestModelCopyWithImpl<$Res, WebsiteRequestModel>;
   @useResult
   $Res call(
@@ -80,10 +78,8 @@ class _$WebsiteRequestModelCopyWithImpl<$Res, $Val extends WebsiteRequestModel>
 }
 
 /// @nodoc
-abstract class _$$_WebsiteRequestModelCopyWith<$Res>
-    implements $WebsiteRequestModelCopyWith<$Res> {
-  factory _$$_WebsiteRequestModelCopyWith(_$_WebsiteRequestModel value,
-          $Res Function(_$_WebsiteRequestModel) then) =
+abstract class _$$_WebsiteRequestModelCopyWith<$Res> implements $WebsiteRequestModelCopyWith<$Res> {
+  factory _$$_WebsiteRequestModelCopyWith(_$_WebsiteRequestModel value, $Res Function(_$_WebsiteRequestModel) then) =
       __$$_WebsiteRequestModelCopyWithImpl<$Res>;
   @override
   @useResult
@@ -94,11 +90,9 @@ abstract class _$$_WebsiteRequestModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_WebsiteRequestModelCopyWithImpl<$Res>
-    extends _$WebsiteRequestModelCopyWithImpl<$Res, _$_WebsiteRequestModel>
+class __$$_WebsiteRequestModelCopyWithImpl<$Res> extends _$WebsiteRequestModelCopyWithImpl<$Res, _$_WebsiteRequestModel>
     implements _$$_WebsiteRequestModelCopyWith<$Res> {
-  __$$_WebsiteRequestModelCopyWithImpl(_$_WebsiteRequestModel _value,
-      $Res Function(_$_WebsiteRequestModel) _then)
+  __$$_WebsiteRequestModelCopyWithImpl(_$_WebsiteRequestModel _value, $Res Function(_$_WebsiteRequestModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -133,8 +127,7 @@ class _$_WebsiteRequestModel implements _WebsiteRequestModel {
       @JsonKey(name: 'language_code') required this.languageCode,
       @JsonKey(name: 'language_name') required this.languageName});
 
-  factory _$_WebsiteRequestModel.fromJson(Map<String, dynamic> json) =>
-      _$$_WebsiteRequestModelFromJson(json);
+  factory _$_WebsiteRequestModel.fromJson(Map<String, dynamic> json) => _$$_WebsiteRequestModelFromJson(json);
 
   @override
   @JsonKey(name: 'language_id')
@@ -156,25 +149,20 @@ class _$_WebsiteRequestModel implements _WebsiteRequestModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_WebsiteRequestModel &&
-            (identical(other.languageId, languageId) ||
-                other.languageId == languageId) &&
-            (identical(other.languageCode, languageCode) ||
-                other.languageCode == languageCode) &&
-            (identical(other.languageName, languageName) ||
-                other.languageName == languageName));
+            (identical(other.languageId, languageId) || other.languageId == languageId) &&
+            (identical(other.languageCode, languageCode) || other.languageCode == languageCode) &&
+            (identical(other.languageName, languageName) || other.languageName == languageName));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, languageId, languageCode, languageName);
+  int get hashCode => Object.hash(runtimeType, languageId, languageCode, languageName);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_WebsiteRequestModelCopyWith<_$_WebsiteRequestModel> get copyWith =>
-      __$$_WebsiteRequestModelCopyWithImpl<_$_WebsiteRequestModel>(
-          this, _$identity);
+      __$$_WebsiteRequestModelCopyWithImpl<_$_WebsiteRequestModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -186,13 +174,11 @@ class _$_WebsiteRequestModel implements _WebsiteRequestModel {
 
 abstract class _WebsiteRequestModel implements WebsiteRequestModel {
   const factory _WebsiteRequestModel(
-          {@JsonKey(name: 'language_id') required final int languageId,
-          @JsonKey(name: 'language_code') required final String languageCode,
-          @JsonKey(name: 'language_name') required final String languageName}) =
-      _$_WebsiteRequestModel;
+      {@JsonKey(name: 'language_id') required final int languageId,
+      @JsonKey(name: 'language_code') required final String languageCode,
+      @JsonKey(name: 'language_name') required final String languageName}) = _$_WebsiteRequestModel;
 
-  factory _WebsiteRequestModel.fromJson(Map<String, dynamic> json) =
-      _$_WebsiteRequestModel.fromJson;
+  factory _WebsiteRequestModel.fromJson(Map<String, dynamic> json) = _$_WebsiteRequestModel.fromJson;
 
   @override
   @JsonKey(name: 'language_id')
@@ -205,6 +191,5 @@ abstract class _WebsiteRequestModel implements WebsiteRequestModel {
   String get languageName;
   @override
   @JsonKey(ignore: true)
-  _$$_WebsiteRequestModelCopyWith<_$_WebsiteRequestModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_WebsiteRequestModelCopyWith<_$_WebsiteRequestModel> get copyWith => throw _privateConstructorUsedError;
 }
