@@ -1,98 +1,152 @@
+import 'package:cerati/common/constants/storage_constants.dart';
 import 'package:cerati/common/services/datasource/local_storage/secure_local_storage.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockSecureStorage extends Mock implements SecureLocalStorage {}
+import '../../../helpers/helpers.dart';
 
 void main() {
   late SecureLocalStorage secureStorage;
+  late MockFlutterSecureStorage mockFlutterSecureStorage;
 
   setUp(() {
-    secureStorage = MockSecureStorage();
+    mockFlutterSecureStorage = MockFlutterSecureStorage();
+    secureStorage = SecureLocalStorage(mockFlutterSecureStorage);
   });
 
   group('All unit tests that belong to SecureStorage', () {
-    test('stores a value', () async {
-      // Arrange
-      when(() => secureStorage.addToStorage('testKey', 'testValue')).thenAnswer((_) async => {});
+    group('AddToStorage method tests', () {
+      test('addToStorage method when store a value succeed', () async {
+        // Arrange
+        when(() => mockFlutterSecureStorage.write(key: any(named: 'key'), value: any(named: 'value')))
+            .thenAnswer((_) async {});
 
-      // Act
-      await secureStorage.addToStorage('testKey', 'testValue');
+        // Act
+        await secureStorage.addToStorage('key1', 'value1');
 
-      // Assert
-      verify(() => secureStorage.addToStorage('testKey', 'testValue')).called(1);
+        // Assert
+        verify(() => mockFlutterSecureStorage.write(key: 'key1', value: 'value1')).called(1);
+      });
+
+      test('addToStorage throws when write fails', () async {
+        when(() => mockFlutterSecureStorage.write(key: any(named: 'key'), value: any(named: 'value')))
+            .thenThrow(Exception('Failed to write'));
+
+        expect(() => secureStorage.addToStorage('key1', 'value1'), throwsException);
+      });
     });
 
-    test('retrieves a value', () async {
-      // Arrange
-      when(() => secureStorage.getFromStorage('testKey')).thenAnswer((_) async => 'testValue');
+    group('GetFromStorage method tests', () {
+      test('getFromStorage method should returns a value when succeed', () async {
+        // Arrange
+        when(() => mockFlutterSecureStorage.read(key: any(named: 'key'))).thenAnswer((_) async => 'value1');
 
-      // Act
-      final result = await secureStorage.getFromStorage('testKey');
+        // Act
+        final value = await secureStorage.getFromStorage('key1');
 
-      // Assert
-      expect(result, 'testValue');
-      verify(() => secureStorage.getFromStorage('testKey')).called(1);
+        // Assert
+        expect(value, 'value1');
+      });
+      test('throws exception when getFromStorage fails', () {
+        // Arrange & Act
+        when(() => mockFlutterSecureStorage.read(key: any(named: 'key'))).thenThrow(Exception('Failed to read'));
+
+        expect(() => secureStorage.getFromStorage('key1'), throwsException);
+        // Assert
+        expect(() => secureStorage.getFromStorage('testKey'), throwsA(isA<Exception>()));
+      });
     });
 
-    test('retrieves all values', () async {
-      // Arrange
-      final testData = {'testKey1': 'testValue1', 'testKey2': 'testValue2'};
-      when(() => secureStorage.getAllFromStorage()).thenAnswer((_) async => testData);
+    group('GetAllFromStorage method tests', () {
+      test('getAllFromStorage should return all values when succeed', () async {
+        // Arrange
+        final testData = {'testKey1': 'testValue1', 'testKey2': 'testValue2'};
+        when(() => mockFlutterSecureStorage.readAll()).thenAnswer((_) async => testData);
+        // Act
+        final result = await secureStorage.getAllFromStorage();
+        // Assert
+        expect(result, testData);
+      });
 
-      // Act
-      final result = await secureStorage.getAllFromStorage();
-
-      // Assert
-      expect(result, testData);
-      verify(() => secureStorage.getAllFromStorage()).called(1);
+      test('throws exception when getAllFromStorage fails', () {
+        // Arrange & Act
+        when(() => mockFlutterSecureStorage.readAll()).thenThrow(Exception('Failed to get all from secure storage'));
+        // Assert
+        expect(() => secureStorage.getAllFromStorage(), throwsA(isA<Exception>()));
+      });
     });
 
-    test('deletes a value', () async {
-      // Arrange
-      when(() => secureStorage.deleteFromStorage('testKey')).thenAnswer((_) async {});
+    group('DeleteFromStorage method tests', () {
+      test('deleteFromStorage should delete a value when succeed', () async {
+        when(() => mockFlutterSecureStorage.delete(key: 'testKey')).thenAnswer((_) async {});
+        await secureStorage.deleteFromStorage('testKey');
+      });
 
-      // Act
-      await secureStorage.deleteFromStorage('testKey');
-
-      // Assert
-      verify(() => secureStorage.deleteFromStorage('testKey')).called(1);
+      test('throws exception when deleteFromStorage fails', () {
+        // Arrange & Act
+        when(() => mockFlutterSecureStorage.delete(key: 'testKey'))
+            .thenThrow(Exception('Failed to delete from secure storage'));
+        // Assert
+        expect(() => secureStorage.deleteFromStorage('testKey'), throwsA(isA<Exception>()));
+      });
     });
 
-    test('clears storage', () async {
-      // Arrange
-      when(() => secureStorage.clearSecureStorage()).thenAnswer((_) async => true);
+    group('ClearSecureStorage method', () {
+      test('clearSecureStorage should delete all keys with associated values', () async {
+        // Arrange
+        when(() => mockFlutterSecureStorage.deleteAll()).thenAnswer((_) async {});
+        // Act
+        final result = await secureStorage.clearSecureStorage();
+        // Assert
+        expect(result, true);
+      });
 
-      // Act
-      final result = await secureStorage.clearSecureStorage();
-
-      // Assert
-      expect(result, true);
-      verify(() => secureStorage.clearSecureStorage()).called(1);
+      test('throws exception when clearSecureStorage fails', () {
+        // Arrange & Act
+        when(() => mockFlutterSecureStorage.deleteAll()).thenThrow(Exception('Failed to clear secure storage'));
+        // Assert
+        expect(() => secureStorage.clearSecureStorage(), throwsA(isA<Exception>()));
+      });
     });
 
-    test('persists tokens', () async {
-      // Arrange
-      when(() => secureStorage.persistTokens('accessToken', 'refreshToken')).thenAnswer((_) async => true);
+    group('PersistTokens method tests', () {
+      test('persistTokens should store the accessToken and refreshToken when succeed', () async {
+        // Arrange
+        when(() => mockFlutterSecureStorage.write(key: any(named: 'key'), value: any(named: 'value')))
+            .thenAnswer((_) async {});
+        // Act
+        final result = await secureStorage.persistTokens('accessToken', 'refreshToken');
+        // Assert
+        expect(result, true);
+      });
 
-      // Act
-      final result = await secureStorage.persistTokens('accessToken', 'refreshToken');
-
-      // Assert
-      expect(result, true);
-      verify(() => secureStorage.persistTokens('accessToken', 'refreshToken')).called(1);
+      test('throws exception when persistTokens fails', () {
+        // Assert & Act
+        when(() => mockFlutterSecureStorage.write(key: any(named: 'key'), value: any(named: 'value')))
+            .thenThrow(Exception('Failed to persist tokens'));
+        // Assert
+        expect(() => secureStorage.persistTokens('accessToken', 'refreshToken'), throwsA(isA<Exception>()));
+      });
     });
 
-    test('persists access token', () async {
-      // Arrange
-      when(() => secureStorage.persistAccessToken('accessToken')).thenAnswer((_) async => true);
+    group('PersistAccessToken method tests', () {
+      test('persistAccessToken should store access token when succeed', () async {
+        // Arrange
+        when(() => mockFlutterSecureStorage.write(key: StorageConstants.accessTokenKey, value: 'accessToken'))
+            .thenAnswer((_) async {});
+        // Act
+        final result = await secureStorage.persistAccessToken('accessToken');
+        // Assert
+        expect(result, true);
+      });
 
-      // Act
-      final result = await secureStorage.persistAccessToken('accessToken');
-
-      // Assert
-      expect(result, true);
-      verify(() => secureStorage.persistAccessToken('accessToken')).called(1);
+      test('throws exception when persistAccessToken fails', () {
+        // Arrange & Act
+        when(() => mockFlutterSecureStorage.write(key: StorageConstants.accessTokenKey, value: 'accessToken'))
+            .thenThrow(Exception('Failed to persist access token'));
+        // Assert
+        expect(() => secureStorage.persistAccessToken('accessToken'), throwsA(isA<Exception>()));
+      });
     });
   });
 }

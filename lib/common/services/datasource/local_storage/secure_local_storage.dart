@@ -18,58 +18,87 @@ abstract class SecureLocalStorageInterface {
   Future<bool> persistAccessToken(String accessToken);
 }
 
-class SecureLocalStorage extends FlutterSecureStorage implements SecureLocalStorageInterface {
-  /// Add value
+class SecureLocalStorage implements SecureLocalStorageInterface {
+  SecureLocalStorage(this._secureStorage);
+
+  final FlutterSecureStorage _secureStorage;
+
   @override
   Future<void> addToStorage(String key, String value) async {
-    await write(key: key, value: value).then((void data) {
-      logger.i('$key: $value added to secure storage');
-    });
+    try {
+      await _secureStorage.write(key: key, value: value);
+      logger.i('$key added to secure storage');
+    } catch (e) {
+      logger.e('Failed to add $key: $value to secure storage. Error: $e');
+      throw Exception('Failed to add to secure storage');
+    }
   }
 
-  /// Get value by key
   @override
   Future<String?> getFromStorage(String key) async {
-    return read(key: key);
+    try {
+      return await _secureStorage.read(key: key);
+    } catch (e) {
+      logger.e('Failed to get $key from secure storage. Error: $e');
+      throw Exception('Failed to get from secure storage');
+    }
   }
 
-  /// Get all values
   @override
   Future<Map<String, String>> getAllFromStorage() async {
-    return readAll();
+    try {
+      return await _secureStorage.readAll();
+    } catch (e) {
+      logger.e('Failed to get all from secure storage. Error: $e');
+      throw Exception('Failed to get all from secure storage');
+    }
   }
 
-  /// Delete value by key
   @override
   Future<void> deleteFromStorage(String key) async {
-    await delete(key: key).then((void data) {
+    try {
+      await _secureStorage.delete(key: key);
       logger.i('$key deleted from secure storage');
-    });
+    } catch (e) {
+      logger.e('Failed to delete $key from secure storage. Error: $e');
+      throw Exception('Failed to delete from secure storage');
+    }
   }
 
-  /// Delete all values from storage
   @override
   Future<bool> clearSecureStorage() async {
-    return deleteAll().then((void data) {
+    try {
+      await _secureStorage.deleteAll();
       logger.i('Secure storage has been cleared');
       return true;
-    });
+    } catch (e) {
+      logger.e('Failed to clear secure storage. Error: $e');
+      throw Exception('Failed to clear secure storage');
+    }
   }
 
-  /// Persist Tokens
   @override
   Future<bool> persistTokens(String accessToken, String refreshToken) async {
-    return Future.wait([
-      addToStorage(StorageConstants.accessTokenKey, accessToken),
-      addToStorage(StorageConstants.refreshTokenKey, refreshToken),
-    ]).then((value) => true);
+    try {
+      await Future.wait([
+        addToStorage(StorageConstants.accessTokenKey, accessToken),
+        addToStorage(StorageConstants.refreshTokenKey, refreshToken),
+      ]);
+      return true;
+    } catch (e) {
+      logger.e('Failed to persist tokens. Error: $e');
+      throw Exception('Failed to persist tokens');
+    }
   }
 
-  /// Persist one token
   @override
   Future<bool> persistAccessToken(String accessToken) async {
-    return Future.wait([
-      addToStorage(StorageConstants.accessTokenKey, accessToken),
-    ]).then((value) => true);
+    try {
+      await addToStorage(StorageConstants.accessTokenKey, accessToken);
+      return true;
+    } catch (e) {
+      logger.e('Failed to persist access token. Error: $e');
+      throw Exception('Failed to persist access token');
+    }
   }
 }
