@@ -1,3 +1,21 @@
+final apiResponseWrapperUserAccountResponseJsonTest = {
+  'status': 'success',
+  'data': userAccountResponseJsonTest,
+};
+
+final apiResponseWrapperWebsiteResponseJsonTest = {
+  'status': 'success',
+  'data': websiteResponseJsonTest,
+};
+
+final apiListResponseWrapperWebsiteResponseJsonTest = {
+  'status': 'success',
+  'data': [
+    websiteResponseJsonTest,
+    websiteResponseJsonTest,
+  ],
+};
+
 final loginResponseJsonTest = {'status': 'success', 'token': 'userToken', 'user': userAccountResponseJsonTest};
 
 final loginRequestJsonTest = {'email': 'juriba1@gmail.comd', 'password': 'Admin1211'};
@@ -27,4 +45,25 @@ final updateUserAccountRequestJsonTest = {
 
 final updateUserPasswordRequestJsonTest = {'current_password': 'Admin@123', 'new_password': 'Admin@12345'};
 
-final updateUserPasswordResponseJsonTest = {'message': 'Password updated successfully'};
+final updateUserPasswordResponseJsonTest = {'status': 'success', 'message': 'Password updated successfully'};
+
+final websiteRequestJsonTest = {
+  'language_id': 1,
+  'language_code': 'en',
+  'language_name': 'English',
+};
+
+final websiteResponseJsonTest = {
+  'id': 1,
+  'language_id': 1,
+  'language_code': 'ar',
+  'language_name': 'Arabic',
+  'has_certificate': false,
+  'has_education': false,
+  'has_project': false,
+  'has_experience': false,
+  'has_skill': false,
+  'has_s_m_link': false,
+  'created_at': '2023-09-26T15:30:42.000Z',
+  'updated_at': '2023-09-26T15:30:42.000Z',
+};

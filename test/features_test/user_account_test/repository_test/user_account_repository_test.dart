@@ -17,13 +17,14 @@ void main() {
     group('GetUserAccount method tests', () {
       test('returns UserAccountResponseModel when getUserAccount is successful', () async {
         // Arrange
-        when(() => mockApiClient.getUserAccount()).thenAnswer((_) async => userAccountResponseModelTest);
+        when(() => mockApiClient.getUserAccount())
+            .thenAnswer((_) async => apiResponseWrapperUserAccountResponseModelTest);
         // Act
         final response = await userAccountRepository.getUserAccount();
         // Assert
         response.fold(
           (_) => fail('Should return Right with UserAccountResponseModel'),
-          (userAccountResponse) => expect(userAccountResponse, equals(userAccountResponseModelTest)),
+          (userAccountResponse) => expect(userAccountResponse, equals(apiResponseWrapperUserAccountResponseModelTest)),
         );
         verify(() => mockApiClient.getUserAccount()).called(1);
       });
@@ -61,14 +62,14 @@ void main() {
       test('returns UserAccountResponseModel when updateUserAccount is successful', () async {
         // Arrange
         when(() => mockApiClient.updateUserAccount(updateUserAccountRequestModelTest))
-            .thenAnswer((_) async => userAccountResponseModelTest);
+            .thenAnswer((_) async => apiResponseWrapperUserAccountResponseModelTest);
         // Act
         final response = await userAccountRepository.updateUserAccount(
             updateUserAccountRequestModel: updateUserAccountRequestModelTest);
         // Assert
         response.fold(
           (_) => fail('Should return Right with UserAccountResponseModel'),
-          (userAccountResponse) => expect(userAccountResponse, equals(userAccountResponseModelTest)),
+          (userAccountResponse) => expect(userAccountResponse, equals(apiResponseWrapperUserAccountResponseModelTest)),
         );
         verify(() => mockApiClient.updateUserAccount(updateUserAccountRequestModelTest)).called(1);
       });

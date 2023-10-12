@@ -1,39 +1,57 @@
 import 'dart:io';
 
+import 'package:cerati/main.dart';
 import 'package:dio/dio.dart';
 
 Exception parseHttpErrors(DioException error) {
+  logger.i('Parsing DioException to determine the proper HttpError.');
+
   if (error.response == null) {
+    logger.w('DioException contains a null response, inspecting the inner error.');
+
     if (error.error is SocketException) {
+      logger.e('SocketException detected. Returning NoInternetException.');
       return NoInternetException();
     }
 
     if (error.error is FormatException) {
+      logger.e('FormatException detected. Returning FormatException.');
       return FormatException();
     }
 
+    logger.e('Unknown error occurred. Re-throwing original DioException.');
     throw error;
   }
 
   final response = error.response!;
   final body = response.data as Map<String, dynamic>;
 
+  logger.i('Response status code: ${response.statusCode}. Processing...');
+
   switch (response.statusCode) {
     case 400:
+      logger.e('400 Bad Request. Returning BadRequest with message: ${body['message']}.');
       return BadRequest(error: body['message'].toString());
     case 401:
+      logger.e('401 Unauthorized. Returning UnauthorizedException.');
       return UnauthorizedException();
     case 403:
+      logger.e('403 Forbidden. Returning ForbiddenException.');
       return ForbiddenException();
     case 404:
+      logger.e('404 Not Found. Returning NotFoundError.');
       return NotFoundError();
     case 422:
+      logger.e('422 Unprocessable Entity. Returning LaravelValidationErrors.');
       return LaravelValidationErrors.fromJson(body);
     case 500:
+      logger.e('500 Internal Server Error. Returning InternalServerError with message: ${body['message']}.');
       return InternalServerError(body['message'].toString());
     case 504:
+      logger.e('504 Gateway Timeout. Returning GatewayTimeoutException.');
       return GatewayTimeoutException();
     default:
+      logger.e('Unknown status code. Returning a generic Exception.');
       return Exception('Unknown error occurred');
   }
 }

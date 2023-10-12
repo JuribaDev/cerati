@@ -8,6 +8,7 @@ import 'package:cerati/features/user_account/repository/user_account_repository.
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_storage/get_storage.dart';
 
 MultiRepositoryProvider multiRepositoryProvider({required Widget child}) {
@@ -25,7 +26,7 @@ MultiRepositoryProvider multiRepositoryProvider({required Widget child}) {
         ),
       ),
       RepositoryProvider<SecureLocalStorage>(
-        create: (secureLocalStorageContext) => SecureLocalStorage(),
+        create: (secureLocalStorageContext) => SecureLocalStorage(const FlutterSecureStorage()),
       ),
       RepositoryProvider<LoginRepository>(
         create: (loginRepositoryContext) => LoginRepository(

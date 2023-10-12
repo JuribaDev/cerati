@@ -481,21 +481,21 @@ mixin _$UserAccountState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(UserAccountResponseModel userAccountResponseModel) userAccountLoaded,
+    required TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel) userAccountLoaded,
     required TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel) userPasswordUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CommonState commonState)? commonState,
-    TResult? Function(UserAccountResponseModel userAccountResponseModel)? userAccountLoaded,
+    TResult? Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
     TResult? Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CommonState commonState)? commonState,
-    TResult Function(UserAccountResponseModel userAccountResponseModel)? userAccountLoaded,
+    TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
     TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
     required TResult orElse(),
   }) =>
@@ -611,7 +611,7 @@ class _$_CommonState implements _CommonState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(UserAccountResponseModel userAccountResponseModel) userAccountLoaded,
+    required TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel) userAccountLoaded,
     required TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel) userPasswordUpdated,
   }) {
     return commonState(this.commonState);
@@ -621,7 +621,7 @@ class _$_CommonState implements _CommonState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CommonState commonState)? commonState,
-    TResult? Function(UserAccountResponseModel userAccountResponseModel)? userAccountLoaded,
+    TResult? Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
     TResult? Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
   }) {
     return commonState?.call(this.commonState);
@@ -631,7 +631,7 @@ class _$_CommonState implements _CommonState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CommonState commonState)? commonState,
-    TResult Function(UserAccountResponseModel userAccountResponseModel)? userAccountLoaded,
+    TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
     TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
     required TResult orElse(),
   }) {
@@ -689,9 +689,7 @@ abstract class _$$_UserAccountLoadedCopyWith<$Res> {
   factory _$$_UserAccountLoadedCopyWith(_$_UserAccountLoaded value, $Res Function(_$_UserAccountLoaded) then) =
       __$$_UserAccountLoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({UserAccountResponseModel userAccountResponseModel});
-
-  $UserAccountResponseModelCopyWith<$Res> get userAccountResponseModel;
+  $Res call({ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel});
 }
 
 /// @nodoc
@@ -709,16 +707,8 @@ class __$$_UserAccountLoadedCopyWithImpl<$Res> extends _$UserAccountStateCopyWit
       userAccountResponseModel: null == userAccountResponseModel
           ? _value.userAccountResponseModel
           : userAccountResponseModel // ignore: cast_nullable_to_non_nullable
-              as UserAccountResponseModel,
+              as ApiResponseWrapper<UserAccountResponseModel>,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserAccountResponseModelCopyWith<$Res> get userAccountResponseModel {
-    return $UserAccountResponseModelCopyWith<$Res>(_value.userAccountResponseModel, (value) {
-      return _then(_value.copyWith(userAccountResponseModel: value));
-    });
   }
 }
 
@@ -728,7 +718,7 @@ class _$_UserAccountLoaded implements _UserAccountLoaded {
   const _$_UserAccountLoaded({required this.userAccountResponseModel});
 
   @override
-  final UserAccountResponseModel userAccountResponseModel;
+  final ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel;
 
   @override
   String toString() {
@@ -757,7 +747,7 @@ class _$_UserAccountLoaded implements _UserAccountLoaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(UserAccountResponseModel userAccountResponseModel) userAccountLoaded,
+    required TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel) userAccountLoaded,
     required TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel) userPasswordUpdated,
   }) {
     return userAccountLoaded(userAccountResponseModel);
@@ -767,7 +757,7 @@ class _$_UserAccountLoaded implements _UserAccountLoaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CommonState commonState)? commonState,
-    TResult? Function(UserAccountResponseModel userAccountResponseModel)? userAccountLoaded,
+    TResult? Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
     TResult? Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
   }) {
     return userAccountLoaded?.call(userAccountResponseModel);
@@ -777,7 +767,7 @@ class _$_UserAccountLoaded implements _UserAccountLoaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CommonState commonState)? commonState,
-    TResult Function(UserAccountResponseModel userAccountResponseModel)? userAccountLoaded,
+    TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
     TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
     required TResult orElse(),
   }) {
@@ -823,10 +813,10 @@ class _$_UserAccountLoaded implements _UserAccountLoaded {
 }
 
 abstract class _UserAccountLoaded implements UserAccountState {
-  const factory _UserAccountLoaded({required final UserAccountResponseModel userAccountResponseModel}) =
-      _$_UserAccountLoaded;
+  const factory _UserAccountLoaded(
+      {required final ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel}) = _$_UserAccountLoaded;
 
-  UserAccountResponseModel get userAccountResponseModel;
+  ApiResponseWrapper<UserAccountResponseModel> get userAccountResponseModel;
   @JsonKey(ignore: true)
   _$$_UserAccountLoadedCopyWith<_$_UserAccountLoaded> get copyWith => throw _privateConstructorUsedError;
 }
@@ -904,7 +894,7 @@ class _$_UserPasswordUpdated implements _UserPasswordUpdated {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(UserAccountResponseModel userAccountResponseModel) userAccountLoaded,
+    required TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel) userAccountLoaded,
     required TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel) userPasswordUpdated,
   }) {
     return userPasswordUpdated(updateUserPasswordResponseModel);
@@ -914,7 +904,7 @@ class _$_UserPasswordUpdated implements _UserPasswordUpdated {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CommonState commonState)? commonState,
-    TResult? Function(UserAccountResponseModel userAccountResponseModel)? userAccountLoaded,
+    TResult? Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
     TResult? Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
   }) {
     return userPasswordUpdated?.call(updateUserPasswordResponseModel);
@@ -924,7 +914,7 @@ class _$_UserPasswordUpdated implements _UserPasswordUpdated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CommonState commonState)? commonState,
-    TResult Function(UserAccountResponseModel userAccountResponseModel)? userAccountLoaded,
+    TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
     TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
     required TResult orElse(),
   }) {
