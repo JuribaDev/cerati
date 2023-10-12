@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('ApiConstants Test', () {
-    test('Verify _Auth URLs', () {
+    test('Verify Auth Endpoints', () {
       final auth = ApiConstants.auth;
 
       expect(auth.login, 'login');
@@ -14,7 +14,15 @@ void main() {
       expect(auth.updateUserPassword, 'user/update-user-password');
     });
 
-    test('Verify _SocialMediaLink URLs', () {
+    test('Verify Website Endpoints', () {
+      final website = ApiConstants.website;
+
+      expect(website.createWebsite, 'user/website');
+      expect(website.getAllWebsites, 'user/website');
+      expect(website.getWebsiteById(websiteId: 1), 'user/website/1');
+    });
+
+    test('Verify SocialMediaLink Endpoints', () {
       final socialMediaLink = ApiConstants.socialMediaLink;
 
       expect(socialMediaLink.getSocialMediaLink, 'user/s-m-link');
@@ -23,7 +31,7 @@ void main() {
       expect(socialMediaLink.deleteSocialMediaLink(sMLinkId: 1), 'user/s-m-link/1');
     });
 
-    test('Verify _Skill URLs', () {
+    test('Verify Skill Endpoints', () {
       final skill = ApiConstants.skill;
 
       expect(skill.getSkills, 'user/skill');
@@ -32,7 +40,7 @@ void main() {
       expect(skill.deleteSkill(skillId: 1), 'user/skill/1');
     });
 
-    test('Verify _Profile URLs', () {
+    test('Verify Profile Endpoints', () {
       final profile = ApiConstants.profile;
 
       expect(profile.createProfile, 'user/profile');
@@ -41,7 +49,7 @@ void main() {
       expect(profile.deleteProfile(profileId: 1), 'user/profile/1');
     });
 
-    test('Verify _Education URLs', () {
+    test('Verify Education Endpoints', () {
       final education = ApiConstants.education;
 
       expect(education.createEducation, 'user/education');
@@ -50,7 +58,7 @@ void main() {
       expect(education.deleteEducation(educationId: 1), 'user/education/1');
     });
 
-    test('Verify _Project URLs', () {
+    test('Verify Project Endpoints', () {
       final project = ApiConstants.project;
 
       expect(project.createProject, 'user/project');
@@ -64,7 +72,7 @@ void main() {
       expect(project.deleteFileFromProject(projectId: 1, fileId: 1), 'user/project/1/destroy-file/1');
     });
 
-    test('Verify _Experience URLs', () {
+    test('Verify Experience Endpoints', () {
       final experience = ApiConstants.experience;
 
       expect(experience.createExperience, 'user/experience');
@@ -74,7 +82,7 @@ void main() {
       expect(experience.deleteExperience(experienceId: 1), 'user/experience/1');
     });
 
-    test('Verify _Certificate URLs', () {
+    test('Verify Certificate Endpoints', () {
       final certificate = ApiConstants.certificate;
 
       expect(certificate.createCertificate, 'user/certificate');

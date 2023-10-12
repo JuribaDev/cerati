@@ -21,6 +21,7 @@ UpdateUserPasswordResponseModel _$UpdateUserPasswordResponseModelFromJson(Map<St
 /// @nodoc
 mixin _$UpdateUserPasswordResponseModel {
   String get message => throw _privateConstructorUsedError;
+  String get status => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +35,7 @@ abstract class $UpdateUserPasswordResponseModelCopyWith<$Res> {
           UpdateUserPasswordResponseModel value, $Res Function(UpdateUserPasswordResponseModel) then) =
       _$UpdateUserPasswordResponseModelCopyWithImpl<$Res, UpdateUserPasswordResponseModel>;
   @useResult
-  $Res call({String message});
+  $Res call({String message, String status});
 }
 
 /// @nodoc
@@ -51,11 +52,16 @@ class _$UpdateUserPasswordResponseModelCopyWithImpl<$Res, $Val extends UpdateUse
   @override
   $Res call({
     Object? message = null,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -69,7 +75,7 @@ abstract class _$$_UpdateUserPasswordResponseModelCopyWith<$Res>
       __$$_UpdateUserPasswordResponseModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String message});
+  $Res call({String message, String status});
 }
 
 /// @nodoc
@@ -84,11 +90,16 @@ class __$$_UpdateUserPasswordResponseModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? message = null,
+    Object? status = null,
   }) {
     return _then(_$_UpdateUserPasswordResponseModel(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -97,17 +108,19 @@ class __$$_UpdateUserPasswordResponseModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_UpdateUserPasswordResponseModel implements _UpdateUserPasswordResponseModel {
-  const _$_UpdateUserPasswordResponseModel({required this.message});
+  const _$_UpdateUserPasswordResponseModel({required this.message, required this.status});
 
   factory _$_UpdateUserPasswordResponseModel.fromJson(Map<String, dynamic> json) =>
       _$$_UpdateUserPasswordResponseModelFromJson(json);
 
   @override
   final String message;
+  @override
+  final String status;
 
   @override
   String toString() {
-    return 'UpdateUserPasswordResponseModel(message: $message)';
+    return 'UpdateUserPasswordResponseModel(message: $message, status: $status)';
   }
 
   @override
@@ -115,12 +128,13 @@ class _$_UpdateUserPasswordResponseModel implements _UpdateUserPasswordResponseM
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_UpdateUserPasswordResponseModel &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, message, status);
 
   @JsonKey(ignore: true)
   @override
@@ -137,13 +151,16 @@ class _$_UpdateUserPasswordResponseModel implements _UpdateUserPasswordResponseM
 }
 
 abstract class _UpdateUserPasswordResponseModel implements UpdateUserPasswordResponseModel {
-  const factory _UpdateUserPasswordResponseModel({required final String message}) = _$_UpdateUserPasswordResponseModel;
+  const factory _UpdateUserPasswordResponseModel({required final String message, required final String status}) =
+      _$_UpdateUserPasswordResponseModel;
 
   factory _UpdateUserPasswordResponseModel.fromJson(Map<String, dynamic> json) =
       _$_UpdateUserPasswordResponseModel.fromJson;
 
   @override
   String get message;
+  @override
+  String get status;
   @override
   @JsonKey(ignore: true)
   _$$_UpdateUserPasswordResponseModelCopyWith<_$_UpdateUserPasswordResponseModel> get copyWith =>

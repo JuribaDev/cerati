@@ -12,20 +12,25 @@ void main() {
   late MockGetStorage mockGetStorage;
 
   setUp(() {
-    // Arrange: Set up the object to be tested.
     mockGetStorage = MockGetStorage();
     localStorage = LocalStorage(mockGetStorage);
   });
+  group('Read method tests', () {
+    test('read returns the data from storage', () async {
+      // Arrange
+      when(() => mockGetStorage.read('key')).thenReturn({'data': 'value'});
 
-  test('read returns the data from storage', () async {
-    // Arrange: Define the behavior of the mock object.
-    when(() => mockGetStorage.read('key')).thenReturn({'data': 'value'});
+      // Act
+      final result = await localStorage.read(key: 'key');
 
-    // Act: Invoke the method to be tested.
-    final result = await localStorage.read(key: 'key');
+      // Assert
+      expect(result, {'data': 'value'});
+    });
 
-    // Assert: Verify the result.
-    expect(result, {'data': 'value'});
+    test('read methods should throws an Exception', () async {
+      // Arrange
+      when(() => localStorage.read(key: 'key')).thenThrow(Exception('Exception'));
+    });
   });
 
   test('write saves the data to storage', () async {
