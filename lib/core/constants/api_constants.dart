@@ -19,7 +19,7 @@ class ApiConstants {
     Duration(seconds: 7),
     Duration(seconds: 9),
   ];
-  static const baseUrl = 'https://api.nytimes.com/';
+  static const baseUrl = 'http://localhost/api/';
 }
 
 class _Auth {
