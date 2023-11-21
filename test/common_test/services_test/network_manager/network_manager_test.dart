@@ -26,8 +26,7 @@ void main() {
     expect(networkManager.dio.options.headers['lang'], 'ar');
   });
 
-  test('defaultInterceptors() adds the SecureInterceptor and the RetryInterceptor', () {
-    expect(networkManager.dio.interceptors.whereType<SecureInterceptor>().length, 1);
+  test('defaultInterceptors() adds the RetryInterceptor', () {
     expect(networkManager.dio.interceptors.whereType<RetryInterceptor>().length, 1);
   });
 

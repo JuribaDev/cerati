@@ -25,12 +25,14 @@ mixin _$LoginRequestModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LoginRequestModelCopyWith<LoginRequestModel> get copyWith => throw _privateConstructorUsedError;
+  $LoginRequestModelCopyWith<LoginRequestModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoginRequestModelCopyWith<$Res> {
-  factory $LoginRequestModelCopyWith(LoginRequestModel value, $Res Function(LoginRequestModel) then) =
+  factory $LoginRequestModelCopyWith(
+          LoginRequestModel value, $Res Function(LoginRequestModel) then) =
       _$LoginRequestModelCopyWithImpl<$Res, LoginRequestModel>;
   @useResult
   $Res call({String email, String password});
@@ -66,18 +68,23 @@ class _$LoginRequestModelCopyWithImpl<$Res, $Val extends LoginRequestModel>
 }
 
 /// @nodoc
-abstract class _$$_LoginModelCopyWith<$Res> implements $LoginRequestModelCopyWith<$Res> {
-  factory _$$_LoginModelCopyWith(_$_LoginModel value, $Res Function(_$_LoginModel) then) =
-      __$$_LoginModelCopyWithImpl<$Res>;
+abstract class _$$LoginModelImplCopyWith<$Res>
+    implements $LoginRequestModelCopyWith<$Res> {
+  factory _$$LoginModelImplCopyWith(
+          _$LoginModelImpl value, $Res Function(_$LoginModelImpl) then) =
+      __$$LoginModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email, String password});
 }
 
 /// @nodoc
-class __$$_LoginModelCopyWithImpl<$Res> extends _$LoginRequestModelCopyWithImpl<$Res, _$_LoginModel>
-    implements _$$_LoginModelCopyWith<$Res> {
-  __$$_LoginModelCopyWithImpl(_$_LoginModel _value, $Res Function(_$_LoginModel) _then) : super(_value, _then);
+class __$$LoginModelImplCopyWithImpl<$Res>
+    extends _$LoginRequestModelCopyWithImpl<$Res, _$LoginModelImpl>
+    implements _$$LoginModelImplCopyWith<$Res> {
+  __$$LoginModelImplCopyWithImpl(
+      _$LoginModelImpl _value, $Res Function(_$LoginModelImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -85,7 +92,7 @@ class __$$_LoginModelCopyWithImpl<$Res> extends _$LoginRequestModelCopyWithImpl<
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_$_LoginModel(
+    return _then(_$LoginModelImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -100,10 +107,11 @@ class __$$_LoginModelCopyWithImpl<$Res> extends _$LoginRequestModelCopyWithImpl<
 
 /// @nodoc
 @JsonSerializable()
-class _$_LoginModel implements _LoginModel {
-  const _$_LoginModel({required this.email, required this.password});
+class _$LoginModelImpl implements _LoginModel {
+  const _$LoginModelImpl({required this.email, required this.password});
 
-  factory _$_LoginModel.fromJson(Map<String, dynamic> json) => _$$_LoginModelFromJson(json);
+  factory _$LoginModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LoginModelImplFromJson(json);
 
   @override
   final String email;
@@ -119,9 +127,10 @@ class _$_LoginModel implements _LoginModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoginModel &&
+            other is _$LoginModelImpl &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) || other.password == password));
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @JsonKey(ignore: true)
@@ -131,20 +140,24 @@ class _$_LoginModel implements _LoginModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoginModelCopyWith<_$_LoginModel> get copyWith => __$$_LoginModelCopyWithImpl<_$_LoginModel>(this, _$identity);
+  _$$LoginModelImplCopyWith<_$LoginModelImpl> get copyWith =>
+      __$$LoginModelImplCopyWithImpl<_$LoginModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LoginModelToJson(
+    return _$$LoginModelImplToJson(
       this,
     );
   }
 }
 
 abstract class _LoginModel implements LoginRequestModel {
-  const factory _LoginModel({required final String email, required final String password}) = _$_LoginModel;
+  const factory _LoginModel(
+      {required final String email,
+      required final String password}) = _$LoginModelImpl;
 
-  factory _LoginModel.fromJson(Map<String, dynamic> json) = _$_LoginModel.fromJson;
+  factory _LoginModel.fromJson(Map<String, dynamic> json) =
+      _$LoginModelImpl.fromJson;
 
   @override
   String get email;
@@ -152,5 +165,6 @@ abstract class _LoginModel implements LoginRequestModel {
   String get password;
   @override
   @JsonKey(ignore: true)
-  _$$_LoginModelCopyWith<_$_LoginModel> get copyWith => throw _privateConstructorUsedError;
+  _$$LoginModelImplCopyWith<_$LoginModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

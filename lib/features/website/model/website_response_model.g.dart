@@ -6,7 +6,9 @@ part of 'website_response_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_WebsiteResponseModel _$$_WebsiteResponseModelFromJson(Map<String, dynamic> json) => _$_WebsiteResponseModel(
+_$WebsiteResponseModelImpl _$$WebsiteResponseModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$WebsiteResponseModelImpl(
       id: json['id'] as int,
       languageId: json['language_id'] as int,
       languageCode: json['language_code'] as String,
@@ -21,7 +23,9 @@ _$_WebsiteResponseModel _$$_WebsiteResponseModelFromJson(Map<String, dynamic> js
       updatedAt: DateTime.parse(json['updated_at'] as String),
     );
 
-Map<String, dynamic> _$$_WebsiteResponseModelToJson(_$_WebsiteResponseModel instance) => <String, dynamic>{
+Map<String, dynamic> _$$WebsiteResponseModelImplToJson(
+        _$WebsiteResponseModelImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'language_id': instance.languageId,
       'language_code': instance.languageCode,

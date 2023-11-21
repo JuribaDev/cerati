@@ -16,10 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$RegisterEvent {
-  RegisterRequestModel get registerRequestModel => throw _privateConstructorUsedError;
+  RegisterRequestModel get registerRequestModel =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RegisterRequestModel registerRequestModel) register,
+    required TResult Function(RegisterRequestModel registerRequestModel)
+        register,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,12 +53,14 @@ mixin _$RegisterEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $RegisterEventCopyWith<RegisterEvent> get copyWith => throw _privateConstructorUsedError;
+  $RegisterEventCopyWith<RegisterEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegisterEventCopyWith<$Res> {
-  factory $RegisterEventCopyWith(RegisterEvent value, $Res Function(RegisterEvent) then) =
+  factory $RegisterEventCopyWith(
+          RegisterEvent value, $Res Function(RegisterEvent) then) =
       _$RegisterEventCopyWithImpl<$Res, RegisterEvent>;
   @useResult
   $Res call({RegisterRequestModel registerRequestModel});
@@ -65,7 +69,8 @@ abstract class $RegisterEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RegisterEventCopyWithImpl<$Res, $Val extends RegisterEvent> implements $RegisterEventCopyWith<$Res> {
+class _$RegisterEventCopyWithImpl<$Res, $Val extends RegisterEvent>
+    implements $RegisterEventCopyWith<$Res> {
   _$RegisterEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -89,15 +94,19 @@ class _$RegisterEventCopyWithImpl<$Res, $Val extends RegisterEvent> implements $
   @override
   @pragma('vm:prefer-inline')
   $RegisterRequestModelCopyWith<$Res> get registerRequestModel {
-    return $RegisterRequestModelCopyWith<$Res>(_value.registerRequestModel, (value) {
+    return $RegisterRequestModelCopyWith<$Res>(_value.registerRequestModel,
+        (value) {
       return _then(_value.copyWith(registerRequestModel: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_RegisterCopyWith<$Res> implements $RegisterEventCopyWith<$Res> {
-  factory _$$_RegisterCopyWith(_$_Register value, $Res Function(_$_Register) then) = __$$_RegisterCopyWithImpl<$Res>;
+abstract class _$$RegisterImplCopyWith<$Res>
+    implements $RegisterEventCopyWith<$Res> {
+  factory _$$RegisterImplCopyWith(
+          _$RegisterImpl value, $Res Function(_$RegisterImpl) then) =
+      __$$RegisterImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({RegisterRequestModel registerRequestModel});
@@ -107,16 +116,19 @@ abstract class _$$_RegisterCopyWith<$Res> implements $RegisterEventCopyWith<$Res
 }
 
 /// @nodoc
-class __$$_RegisterCopyWithImpl<$Res> extends _$RegisterEventCopyWithImpl<$Res, _$_Register>
-    implements _$$_RegisterCopyWith<$Res> {
-  __$$_RegisterCopyWithImpl(_$_Register _value, $Res Function(_$_Register) _then) : super(_value, _then);
+class __$$RegisterImplCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res, _$RegisterImpl>
+    implements _$$RegisterImplCopyWith<$Res> {
+  __$$RegisterImplCopyWithImpl(
+      _$RegisterImpl _value, $Res Function(_$RegisterImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? registerRequestModel = null,
   }) {
-    return _then(_$_Register(
+    return _then(_$RegisterImpl(
       registerRequestModel: null == registerRequestModel
           ? _value.registerRequestModel
           : registerRequestModel // ignore: cast_nullable_to_non_nullable
@@ -127,8 +139,8 @@ class __$$_RegisterCopyWithImpl<$Res> extends _$RegisterEventCopyWithImpl<$Res, 
 
 /// @nodoc
 
-class _$_Register implements _Register {
-  const _$_Register({required this.registerRequestModel});
+class _$RegisterImpl implements _Register {
+  const _$RegisterImpl({required this.registerRequestModel});
 
   @override
   final RegisterRequestModel registerRequestModel;
@@ -142,7 +154,7 @@ class _$_Register implements _Register {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Register &&
+            other is _$RegisterImpl &&
             (identical(other.registerRequestModel, registerRequestModel) ||
                 other.registerRequestModel == registerRequestModel));
   }
@@ -153,12 +165,14 @@ class _$_Register implements _Register {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RegisterCopyWith<_$_Register> get copyWith => __$$_RegisterCopyWithImpl<_$_Register>(this, _$identity);
+  _$$RegisterImplCopyWith<_$RegisterImpl> get copyWith =>
+      __$$RegisterImplCopyWithImpl<_$RegisterImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(RegisterRequestModel registerRequestModel) register,
+    required TResult Function(RegisterRequestModel registerRequestModel)
+        register,
   }) {
     return register(registerRequestModel);
   }
@@ -213,13 +227,16 @@ class _$_Register implements _Register {
 }
 
 abstract class _Register implements RegisterEvent {
-  const factory _Register({required final RegisterRequestModel registerRequestModel}) = _$_Register;
+  const factory _Register(
+          {required final RegisterRequestModel registerRequestModel}) =
+      _$RegisterImpl;
 
   @override
   RegisterRequestModel get registerRequestModel;
   @override
   @JsonKey(ignore: true)
-  _$$_RegisterCopyWith<_$_Register> get copyWith => throw _privateConstructorUsedError;
+  _$$RegisterImplCopyWith<_$RegisterImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -227,13 +244,15 @@ mixin _$RegisterState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(LoginResponseModel registerResponseModel) registerSuccess,
+    required TResult Function(LoginResponseModel registerResponseModel)
+        registerSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CommonState commonState)? commonState,
-    TResult? Function(LoginResponseModel registerResponseModel)? registerSuccess,
+    TResult? Function(LoginResponseModel registerResponseModel)?
+        registerSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -266,12 +285,14 @@ mixin _$RegisterState {
 
 /// @nodoc
 abstract class $RegisterStateCopyWith<$Res> {
-  factory $RegisterStateCopyWith(RegisterState value, $Res Function(RegisterState) then) =
+  factory $RegisterStateCopyWith(
+          RegisterState value, $Res Function(RegisterState) then) =
       _$RegisterStateCopyWithImpl<$Res, RegisterState>;
 }
 
 /// @nodoc
-class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState> implements $RegisterStateCopyWith<$Res> {
+class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
+    implements $RegisterStateCopyWith<$Res> {
   _$RegisterStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -281,8 +302,10 @@ class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState> implements $
 }
 
 /// @nodoc
-abstract class _$$_SuccessCopyWith<$Res> {
-  factory _$$_SuccessCopyWith(_$_Success value, $Res Function(_$_Success) then) = __$$_SuccessCopyWithImpl<$Res>;
+abstract class _$$SuccessImplCopyWith<$Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+      __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({CommonState commonState});
 
@@ -290,16 +313,19 @@ abstract class _$$_SuccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<$Res> extends _$RegisterStateCopyWithImpl<$Res, _$_Success>
-    implements _$$_SuccessCopyWith<$Res> {
-  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then) : super(_value, _then);
+class __$$SuccessImplCopyWithImpl<$Res>
+    extends _$RegisterStateCopyWithImpl<$Res, _$SuccessImpl>
+    implements _$$SuccessImplCopyWith<$Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? commonState = null,
   }) {
-    return _then(_$_Success(
+    return _then(_$SuccessImpl(
       commonState: null == commonState
           ? _value.commonState
           : commonState // ignore: cast_nullable_to_non_nullable
@@ -318,8 +344,8 @@ class __$$_SuccessCopyWithImpl<$Res> extends _$RegisterStateCopyWithImpl<$Res, _
 
 /// @nodoc
 
-class _$_Success implements _Success {
-  const _$_Success({required this.commonState});
+class _$SuccessImpl implements _Success {
+  const _$SuccessImpl({required this.commonState});
 
   @override
   final CommonState commonState;
@@ -333,8 +359,9 @@ class _$_Success implements _Success {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Success &&
-            (identical(other.commonState, commonState) || other.commonState == commonState));
+            other is _$SuccessImpl &&
+            (identical(other.commonState, commonState) ||
+                other.commonState == commonState));
   }
 
   @override
@@ -343,13 +370,15 @@ class _$_Success implements _Success {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuccessCopyWith<_$_Success> get copyWith => __$$_SuccessCopyWithImpl<_$_Success>(this, _$identity);
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(LoginResponseModel registerResponseModel) registerSuccess,
+    required TResult Function(LoginResponseModel registerResponseModel)
+        registerSuccess,
   }) {
     return commonState(this.commonState);
   }
@@ -358,7 +387,8 @@ class _$_Success implements _Success {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CommonState commonState)? commonState,
-    TResult? Function(LoginResponseModel registerResponseModel)? registerSuccess,
+    TResult? Function(LoginResponseModel registerResponseModel)?
+        registerSuccess,
   }) {
     return commonState?.call(this.commonState);
   }
@@ -409,17 +439,20 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements RegisterState {
-  const factory _Success({required final CommonState commonState}) = _$_Success;
+  const factory _Success({required final CommonState commonState}) =
+      _$SuccessImpl;
 
   CommonState get commonState;
   @JsonKey(ignore: true)
-  _$$_SuccessCopyWith<_$_Success> get copyWith => throw _privateConstructorUsedError;
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_RegisterSuccessCopyWith<$Res> {
-  factory _$$_RegisterSuccessCopyWith(_$_RegisterSuccess value, $Res Function(_$_RegisterSuccess) then) =
-      __$$_RegisterSuccessCopyWithImpl<$Res>;
+abstract class _$$RegisterSuccessImplCopyWith<$Res> {
+  factory _$$RegisterSuccessImplCopyWith(_$RegisterSuccessImpl value,
+          $Res Function(_$RegisterSuccessImpl) then) =
+      __$$RegisterSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LoginResponseModel registerResponseModel});
 
@@ -427,9 +460,11 @@ abstract class _$$_RegisterSuccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_RegisterSuccessCopyWithImpl<$Res> extends _$RegisterStateCopyWithImpl<$Res, _$_RegisterSuccess>
-    implements _$$_RegisterSuccessCopyWith<$Res> {
-  __$$_RegisterSuccessCopyWithImpl(_$_RegisterSuccess _value, $Res Function(_$_RegisterSuccess) _then)
+class __$$RegisterSuccessImplCopyWithImpl<$Res>
+    extends _$RegisterStateCopyWithImpl<$Res, _$RegisterSuccessImpl>
+    implements _$$RegisterSuccessImplCopyWith<$Res> {
+  __$$RegisterSuccessImplCopyWithImpl(
+      _$RegisterSuccessImpl _value, $Res Function(_$RegisterSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -437,7 +472,7 @@ class __$$_RegisterSuccessCopyWithImpl<$Res> extends _$RegisterStateCopyWithImpl
   $Res call({
     Object? registerResponseModel = null,
   }) {
-    return _then(_$_RegisterSuccess(
+    return _then(_$RegisterSuccessImpl(
       registerResponseModel: null == registerResponseModel
           ? _value.registerResponseModel
           : registerResponseModel // ignore: cast_nullable_to_non_nullable
@@ -448,7 +483,8 @@ class __$$_RegisterSuccessCopyWithImpl<$Res> extends _$RegisterStateCopyWithImpl
   @override
   @pragma('vm:prefer-inline')
   $LoginResponseModelCopyWith<$Res> get registerResponseModel {
-    return $LoginResponseModelCopyWith<$Res>(_value.registerResponseModel, (value) {
+    return $LoginResponseModelCopyWith<$Res>(_value.registerResponseModel,
+        (value) {
       return _then(_value.copyWith(registerResponseModel: value));
     });
   }
@@ -456,8 +492,8 @@ class __$$_RegisterSuccessCopyWithImpl<$Res> extends _$RegisterStateCopyWithImpl
 
 /// @nodoc
 
-class _$_RegisterSuccess implements _RegisterSuccess {
-  const _$_RegisterSuccess({required this.registerResponseModel});
+class _$RegisterSuccessImpl implements _RegisterSuccess {
+  const _$RegisterSuccessImpl({required this.registerResponseModel});
 
   @override
   final LoginResponseModel registerResponseModel;
@@ -471,7 +507,7 @@ class _$_RegisterSuccess implements _RegisterSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RegisterSuccess &&
+            other is _$RegisterSuccessImpl &&
             (identical(other.registerResponseModel, registerResponseModel) ||
                 other.registerResponseModel == registerResponseModel));
   }
@@ -482,14 +518,16 @@ class _$_RegisterSuccess implements _RegisterSuccess {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RegisterSuccessCopyWith<_$_RegisterSuccess> get copyWith =>
-      __$$_RegisterSuccessCopyWithImpl<_$_RegisterSuccess>(this, _$identity);
+  _$$RegisterSuccessImplCopyWith<_$RegisterSuccessImpl> get copyWith =>
+      __$$RegisterSuccessImplCopyWithImpl<_$RegisterSuccessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(LoginResponseModel registerResponseModel) registerSuccess,
+    required TResult Function(LoginResponseModel registerResponseModel)
+        registerSuccess,
   }) {
     return registerSuccess(registerResponseModel);
   }
@@ -498,7 +536,8 @@ class _$_RegisterSuccess implements _RegisterSuccess {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CommonState commonState)? commonState,
-    TResult? Function(LoginResponseModel registerResponseModel)? registerSuccess,
+    TResult? Function(LoginResponseModel registerResponseModel)?
+        registerSuccess,
   }) {
     return registerSuccess?.call(registerResponseModel);
   }
@@ -549,9 +588,12 @@ class _$_RegisterSuccess implements _RegisterSuccess {
 }
 
 abstract class _RegisterSuccess implements RegisterState {
-  const factory _RegisterSuccess({required final LoginResponseModel registerResponseModel}) = _$_RegisterSuccess;
+  const factory _RegisterSuccess(
+          {required final LoginResponseModel registerResponseModel}) =
+      _$RegisterSuccessImpl;
 
   LoginResponseModel get registerResponseModel;
   @JsonKey(ignore: true)
-  _$$_RegisterSuccessCopyWith<_$_RegisterSuccess> get copyWith => throw _privateConstructorUsedError;
+  _$$RegisterSuccessImplCopyWith<_$RegisterSuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

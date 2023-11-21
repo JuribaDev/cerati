@@ -46,12 +46,14 @@ mixin _$WebsiteResponseModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WebsiteResponseModelCopyWith<WebsiteResponseModel> get copyWith => throw _privateConstructorUsedError;
+  $WebsiteResponseModelCopyWith<WebsiteResponseModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $WebsiteResponseModelCopyWith<$Res> {
-  factory $WebsiteResponseModelCopyWith(WebsiteResponseModel value, $Res Function(WebsiteResponseModel) then) =
+  factory $WebsiteResponseModelCopyWith(WebsiteResponseModel value,
+          $Res Function(WebsiteResponseModel) then) =
       _$WebsiteResponseModelCopyWithImpl<$Res, WebsiteResponseModel>;
   @useResult
   $Res call(
@@ -70,7 +72,8 @@ abstract class $WebsiteResponseModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$WebsiteResponseModelCopyWithImpl<$Res, $Val extends WebsiteResponseModel>
+class _$WebsiteResponseModelCopyWithImpl<$Res,
+        $Val extends WebsiteResponseModel>
     implements $WebsiteResponseModelCopyWith<$Res> {
   _$WebsiteResponseModelCopyWithImpl(this._value, this._then);
 
@@ -149,9 +152,11 @@ class _$WebsiteResponseModelCopyWithImpl<$Res, $Val extends WebsiteResponseModel
 }
 
 /// @nodoc
-abstract class _$$_WebsiteResponseModelCopyWith<$Res> implements $WebsiteResponseModelCopyWith<$Res> {
-  factory _$$_WebsiteResponseModelCopyWith(_$_WebsiteResponseModel value, $Res Function(_$_WebsiteResponseModel) then) =
-      __$$_WebsiteResponseModelCopyWithImpl<$Res>;
+abstract class _$$WebsiteResponseModelImplCopyWith<$Res>
+    implements $WebsiteResponseModelCopyWith<$Res> {
+  factory _$$WebsiteResponseModelImplCopyWith(_$WebsiteResponseModelImpl value,
+          $Res Function(_$WebsiteResponseModelImpl) then) =
+      __$$WebsiteResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -170,10 +175,11 @@ abstract class _$$_WebsiteResponseModelCopyWith<$Res> implements $WebsiteRespons
 }
 
 /// @nodoc
-class __$$_WebsiteResponseModelCopyWithImpl<$Res>
-    extends _$WebsiteResponseModelCopyWithImpl<$Res, _$_WebsiteResponseModel>
-    implements _$$_WebsiteResponseModelCopyWith<$Res> {
-  __$$_WebsiteResponseModelCopyWithImpl(_$_WebsiteResponseModel _value, $Res Function(_$_WebsiteResponseModel) _then)
+class __$$WebsiteResponseModelImplCopyWithImpl<$Res>
+    extends _$WebsiteResponseModelCopyWithImpl<$Res, _$WebsiteResponseModelImpl>
+    implements _$$WebsiteResponseModelImplCopyWith<$Res> {
+  __$$WebsiteResponseModelImplCopyWithImpl(_$WebsiteResponseModelImpl _value,
+      $Res Function(_$WebsiteResponseModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -192,7 +198,7 @@ class __$$_WebsiteResponseModelCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? updatedAt = null,
   }) {
-    return _then(_$_WebsiteResponseModel(
+    return _then(_$WebsiteResponseModelImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -247,8 +253,8 @@ class __$$_WebsiteResponseModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_WebsiteResponseModel implements _WebsiteResponseModel {
-  const _$_WebsiteResponseModel(
+class _$WebsiteResponseModelImpl implements _WebsiteResponseModel {
+  const _$WebsiteResponseModelImpl(
       {required this.id,
       @JsonKey(name: 'language_id') required this.languageId,
       @JsonKey(name: 'language_code') required this.languageCode,
@@ -262,7 +268,8 @@ class _$_WebsiteResponseModel implements _WebsiteResponseModel {
       @JsonKey(name: 'created_at') required this.createdAt,
       @JsonKey(name: 'updated_at') required this.updatedAt});
 
-  factory _$_WebsiteResponseModel.fromJson(Map<String, dynamic> json) => _$$_WebsiteResponseModelFromJson(json);
+  factory _$WebsiteResponseModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WebsiteResponseModelImplFromJson(json);
 
   @override
   final int id;
@@ -309,35 +316,60 @@ class _$_WebsiteResponseModel implements _WebsiteResponseModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WebsiteResponseModel &&
+            other is _$WebsiteResponseModelImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.languageId, languageId) || other.languageId == languageId) &&
-            (identical(other.languageCode, languageCode) || other.languageCode == languageCode) &&
-            (identical(other.languageName, languageName) || other.languageName == languageName) &&
-            (identical(other.hasCertificate, hasCertificate) || other.hasCertificate == hasCertificate) &&
-            (identical(other.hasEducation, hasEducation) || other.hasEducation == hasEducation) &&
-            (identical(other.hasProject, hasProject) || other.hasProject == hasProject) &&
-            (identical(other.hasExperience, hasExperience) || other.hasExperience == hasExperience) &&
-            (identical(other.hasSkill, hasSkill) || other.hasSkill == hasSkill) &&
-            (identical(other.hasSMLink, hasSMLink) || other.hasSMLink == hasSMLink) &&
-            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+            (identical(other.languageId, languageId) ||
+                other.languageId == languageId) &&
+            (identical(other.languageCode, languageCode) ||
+                other.languageCode == languageCode) &&
+            (identical(other.languageName, languageName) ||
+                other.languageName == languageName) &&
+            (identical(other.hasCertificate, hasCertificate) ||
+                other.hasCertificate == hasCertificate) &&
+            (identical(other.hasEducation, hasEducation) ||
+                other.hasEducation == hasEducation) &&
+            (identical(other.hasProject, hasProject) ||
+                other.hasProject == hasProject) &&
+            (identical(other.hasExperience, hasExperience) ||
+                other.hasExperience == hasExperience) &&
+            (identical(other.hasSkill, hasSkill) ||
+                other.hasSkill == hasSkill) &&
+            (identical(other.hasSMLink, hasSMLink) ||
+                other.hasSMLink == hasSMLink) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, languageId, languageCode, languageName, hasCertificate, hasEducation,
-      hasProject, hasExperience, hasSkill, hasSMLink, createdAt, updatedAt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      languageId,
+      languageCode,
+      languageName,
+      hasCertificate,
+      hasEducation,
+      hasProject,
+      hasExperience,
+      hasSkill,
+      hasSMLink,
+      createdAt,
+      updatedAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WebsiteResponseModelCopyWith<_$_WebsiteResponseModel> get copyWith =>
-      __$$_WebsiteResponseModelCopyWithImpl<_$_WebsiteResponseModel>(this, _$identity);
+  _$$WebsiteResponseModelImplCopyWith<_$WebsiteResponseModelImpl>
+      get copyWith =>
+          __$$WebsiteResponseModelImplCopyWithImpl<_$WebsiteResponseModelImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WebsiteResponseModelToJson(
+    return _$$WebsiteResponseModelImplToJson(
       this,
     );
   }
@@ -345,20 +377,22 @@ class _$_WebsiteResponseModel implements _WebsiteResponseModel {
 
 abstract class _WebsiteResponseModel implements WebsiteResponseModel {
   const factory _WebsiteResponseModel(
-      {required final int id,
-      @JsonKey(name: 'language_id') required final int languageId,
-      @JsonKey(name: 'language_code') required final String languageCode,
-      @JsonKey(name: 'language_name') required final String languageName,
-      @JsonKey(name: 'has_certificate') required final bool hasCertificate,
-      @JsonKey(name: 'has_education') required final bool hasEducation,
-      @JsonKey(name: 'has_project') required final bool hasProject,
-      @JsonKey(name: 'has_experience') required final bool hasExperience,
-      @JsonKey(name: 'has_skill') required final bool hasSkill,
-      @JsonKey(name: 'has_s_m_link') required final bool hasSMLink,
-      @JsonKey(name: 'created_at') required final DateTime createdAt,
-      @JsonKey(name: 'updated_at') required final DateTime updatedAt}) = _$_WebsiteResponseModel;
+          {required final int id,
+          @JsonKey(name: 'language_id') required final int languageId,
+          @JsonKey(name: 'language_code') required final String languageCode,
+          @JsonKey(name: 'language_name') required final String languageName,
+          @JsonKey(name: 'has_certificate') required final bool hasCertificate,
+          @JsonKey(name: 'has_education') required final bool hasEducation,
+          @JsonKey(name: 'has_project') required final bool hasProject,
+          @JsonKey(name: 'has_experience') required final bool hasExperience,
+          @JsonKey(name: 'has_skill') required final bool hasSkill,
+          @JsonKey(name: 'has_s_m_link') required final bool hasSMLink,
+          @JsonKey(name: 'created_at') required final DateTime createdAt,
+          @JsonKey(name: 'updated_at') required final DateTime updatedAt}) =
+      _$WebsiteResponseModelImpl;
 
-  factory _WebsiteResponseModel.fromJson(Map<String, dynamic> json) = _$_WebsiteResponseModel.fromJson;
+  factory _WebsiteResponseModel.fromJson(Map<String, dynamic> json) =
+      _$WebsiteResponseModelImpl.fromJson;
 
   @override
   int get id;
@@ -397,5 +431,6 @@ abstract class _WebsiteResponseModel implements WebsiteResponseModel {
   DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
-  _$$_WebsiteResponseModelCopyWith<_$_WebsiteResponseModel> get copyWith => throw _privateConstructorUsedError;
+  _$$WebsiteResponseModelImplCopyWith<_$WebsiteResponseModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

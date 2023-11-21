@@ -10,6 +10,16 @@ class ApiConstants {
   static final _Experience experience = _Experience();
   static final _Certificate certificate = _Certificate();
   static final _Website website = _Website();
+  static const timeout = Duration(seconds: 30);
+  static const int retries = 5;
+  static const retryDelays = <Duration>[
+    Duration(seconds: 1),
+    Duration(seconds: 3),
+    Duration(seconds: 5),
+    Duration(seconds: 7),
+    Duration(seconds: 9),
+  ];
+  static const baseUrl = 'https://api.nytimes.com/';
 }
 
 class _Auth {

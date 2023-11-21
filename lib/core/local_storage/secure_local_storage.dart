@@ -1,29 +1,14 @@
 import 'package:cerati/common/constants/storage_constants.dart';
-import 'package:cerati/main.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:logger/logger.dart';
 
-abstract class SecureLocalStorageInterface {
-  Future<void> addToStorage(String key, String value);
-
-  Future<String?> getFromStorage(String key);
-
-  Future<Map<String, String>> getAllFromStorage();
-
-  Future<void> deleteFromStorage(String key);
-
-  Future<bool> clearSecureStorage();
-
-  Future<bool> persistTokens(String accessToken, String refreshToken);
-
-  Future<bool> persistAccessToken(String accessToken);
-}
-
-class SecureLocalStorage implements SecureLocalStorageInterface {
-  SecureLocalStorage(this._secureStorage);
+class SecureLocalStorage {
+  SecureLocalStorage(this._secureStorage, this.logger);
 
   final FlutterSecureStorage _secureStorage;
+  final Logger logger;
 
-  @override
+
   Future<void> addToStorage(String key, String value) async {
     try {
       await _secureStorage.write(key: key, value: value);
@@ -34,7 +19,7 @@ class SecureLocalStorage implements SecureLocalStorageInterface {
     }
   }
 
-  @override
+
   Future<String?> getFromStorage(String key) async {
     try {
       return await _secureStorage.read(key: key);
@@ -44,7 +29,7 @@ class SecureLocalStorage implements SecureLocalStorageInterface {
     }
   }
 
-  @override
+
   Future<Map<String, String>> getAllFromStorage() async {
     try {
       return await _secureStorage.readAll();
@@ -54,7 +39,7 @@ class SecureLocalStorage implements SecureLocalStorageInterface {
     }
   }
 
-  @override
+
   Future<void> deleteFromStorage(String key) async {
     try {
       await _secureStorage.delete(key: key);
@@ -65,7 +50,7 @@ class SecureLocalStorage implements SecureLocalStorageInterface {
     }
   }
 
-  @override
+
   Future<bool> clearSecureStorage() async {
     try {
       await _secureStorage.deleteAll();
@@ -77,7 +62,7 @@ class SecureLocalStorage implements SecureLocalStorageInterface {
     }
   }
 
-  @override
+
   Future<bool> persistTokens(String accessToken, String refreshToken) async {
     try {
       await Future.wait([
@@ -91,7 +76,7 @@ class SecureLocalStorage implements SecureLocalStorageInterface {
     }
   }
 
-  @override
+
   Future<bool> persistAccessToken(String accessToken) async {
     try {
       await addToStorage(StorageConstants.accessTokenKey, accessToken);

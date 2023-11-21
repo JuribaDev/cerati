@@ -1,32 +1,19 @@
 // ignore_for_file: inference_failure_on_instance_creation
 
-import 'package:cerati/main.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:cerati/injection_container.dart';
+import 'package:logger/logger.dart';
 
 class AppInitializer {
-  static Future<void> initAll() async {
-    await _initGetStorage();
+  static Future<void> initAll(Logger logger) async {
+    await _initializeDependencies(logger);
   }
 
-  static Future<void> _initGetStorage() async {
-    var retryCount = 0;
-    const baseDelay = 2;
+  static Future<void> _initializeDependencies(Logger logger) async {
     try {
-      while (retryCount < 3) {
-        try {
-          await GetStorage.init();
-          break;
-        } catch (e) {
-          logger.e('Specific error occurred in GetStorage: $e');
-        }
-
-        final delay = baseDelay * (1 << retryCount);
-        await Future.delayed(Duration(seconds: delay));
-        retryCount++;
-      }
+      await initializeDependencies(logger);
     } catch (e) {
-      logger.e('Failed to initialize GetStorage even after maximum retries: $e');
-      //ToDo Consider using backup locale storage library
+      logger.e('Specific error occurred in initializeDependencies: $e');
+      // ToDo: Display an Error screen, including a way to let the development team know that the app has crashed.
     }
   }
 }

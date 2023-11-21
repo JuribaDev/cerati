@@ -18,7 +18,7 @@ class ResponsiveLayoutWrapper extends StatelessWidget {
 
   static const int mobilePortraitBreakpoint = 600;
   static const int mobileLandscapeBreakpoint = 960;
-  static const int tabletPortraitBreakpoint = 840;
+  static const int tabletPortraitBreakpoint = 810;
   static const int tabletLandscapeBreakpoint = 1440;
   static const int desktopBreakpoint = 1920;
 

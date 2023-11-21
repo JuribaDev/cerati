@@ -17,8 +17,8 @@ class App extends StatelessWidget {
           theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
           darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
-          locale: state.locale,
-          themeMode: ThemeMode.dark,
+          locale: const Locale('en'),
+          themeMode: ThemeMode.light,
           supportedLocales: const [Locale('ar'), Locale('en')],
         );
       },

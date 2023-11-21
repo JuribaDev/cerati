@@ -29,12 +29,14 @@ mixin _$RegisterRequestModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RegisterRequestModelCopyWith<RegisterRequestModel> get copyWith => throw _privateConstructorUsedError;
+  $RegisterRequestModelCopyWith<RegisterRequestModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegisterRequestModelCopyWith<$Res> {
-  factory $RegisterRequestModelCopyWith(RegisterRequestModel value, $Res Function(RegisterRequestModel) then) =
+  factory $RegisterRequestModelCopyWith(RegisterRequestModel value,
+          $Res Function(RegisterRequestModel) then) =
       _$RegisterRequestModelCopyWithImpl<$Res, RegisterRequestModel>;
   @useResult
   $Res call(
@@ -45,7 +47,8 @@ abstract class $RegisterRequestModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RegisterRequestModelCopyWithImpl<$Res, $Val extends RegisterRequestModel>
+class _$RegisterRequestModelCopyWithImpl<$Res,
+        $Val extends RegisterRequestModel>
     implements $RegisterRequestModelCopyWith<$Res> {
   _$RegisterRequestModelCopyWithImpl(this._value, this._then);
 
@@ -84,9 +87,11 @@ class _$RegisterRequestModelCopyWithImpl<$Res, $Val extends RegisterRequestModel
 }
 
 /// @nodoc
-abstract class _$$_RegisterModelCopyWith<$Res> implements $RegisterRequestModelCopyWith<$Res> {
-  factory _$$_RegisterModelCopyWith(_$_RegisterModel value, $Res Function(_$_RegisterModel) then) =
-      __$$_RegisterModelCopyWithImpl<$Res>;
+abstract class _$$RegisterModelImplCopyWith<$Res>
+    implements $RegisterRequestModelCopyWith<$Res> {
+  factory _$$RegisterModelImplCopyWith(
+          _$RegisterModelImpl value, $Res Function(_$RegisterModelImpl) then) =
+      __$$RegisterModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -97,9 +102,12 @@ abstract class _$$_RegisterModelCopyWith<$Res> implements $RegisterRequestModelC
 }
 
 /// @nodoc
-class __$$_RegisterModelCopyWithImpl<$Res> extends _$RegisterRequestModelCopyWithImpl<$Res, _$_RegisterModel>
-    implements _$$_RegisterModelCopyWith<$Res> {
-  __$$_RegisterModelCopyWithImpl(_$_RegisterModel _value, $Res Function(_$_RegisterModel) _then) : super(_value, _then);
+class __$$RegisterModelImplCopyWithImpl<$Res>
+    extends _$RegisterRequestModelCopyWithImpl<$Res, _$RegisterModelImpl>
+    implements _$$RegisterModelImplCopyWith<$Res> {
+  __$$RegisterModelImplCopyWithImpl(
+      _$RegisterModelImpl _value, $Res Function(_$RegisterModelImpl) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -109,7 +117,7 @@ class __$$_RegisterModelCopyWithImpl<$Res> extends _$RegisterRequestModelCopyWit
     Object? firstName = null,
     Object? lastName = null,
   }) {
-    return _then(_$_RegisterModel(
+    return _then(_$RegisterModelImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -132,14 +140,15 @@ class __$$_RegisterModelCopyWithImpl<$Res> extends _$RegisterRequestModelCopyWit
 
 /// @nodoc
 @JsonSerializable()
-class _$_RegisterModel implements _RegisterModel {
-  const _$_RegisterModel(
+class _$RegisterModelImpl implements _RegisterModel {
+  const _$RegisterModelImpl(
       {required this.email,
       required this.password,
       @JsonKey(name: 'first_name') required this.firstName,
       @JsonKey(name: 'last_name') required this.lastName});
 
-  factory _$_RegisterModel.fromJson(Map<String, dynamic> json) => _$$_RegisterModelFromJson(json);
+  factory _$RegisterModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RegisterModelImplFromJson(json);
 
   @override
   final String email;
@@ -161,26 +170,30 @@ class _$_RegisterModel implements _RegisterModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RegisterModel &&
+            other is _$RegisterModelImpl &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) || other.password == password) &&
-            (identical(other.firstName, firstName) || other.firstName == firstName) &&
-            (identical(other.lastName, lastName) || other.lastName == lastName));
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, email, password, firstName, lastName);
+  int get hashCode =>
+      Object.hash(runtimeType, email, password, firstName, lastName);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RegisterModelCopyWith<_$_RegisterModel> get copyWith =>
-      __$$_RegisterModelCopyWithImpl<_$_RegisterModel>(this, _$identity);
+  _$$RegisterModelImplCopyWith<_$RegisterModelImpl> get copyWith =>
+      __$$RegisterModelImplCopyWithImpl<_$RegisterModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RegisterModelToJson(
+    return _$$RegisterModelImplToJson(
       this,
     );
   }
@@ -188,12 +201,14 @@ class _$_RegisterModel implements _RegisterModel {
 
 abstract class _RegisterModel implements RegisterRequestModel {
   const factory _RegisterModel(
-      {required final String email,
-      required final String password,
-      @JsonKey(name: 'first_name') required final String firstName,
-      @JsonKey(name: 'last_name') required final String lastName}) = _$_RegisterModel;
+          {required final String email,
+          required final String password,
+          @JsonKey(name: 'first_name') required final String firstName,
+          @JsonKey(name: 'last_name') required final String lastName}) =
+      _$RegisterModelImpl;
 
-  factory _RegisterModel.fromJson(Map<String, dynamic> json) = _$_RegisterModel.fromJson;
+  factory _RegisterModel.fromJson(Map<String, dynamic> json) =
+      _$RegisterModelImpl.fromJson;
 
   @override
   String get email;
@@ -207,5 +222,6 @@ abstract class _RegisterModel implements RegisterRequestModel {
   String get lastName;
   @override
   @JsonKey(ignore: true)
-  _$$_RegisterModelCopyWith<_$_RegisterModel> get copyWith => throw _privateConstructorUsedError;
+  _$$RegisterModelImplCopyWith<_$RegisterModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

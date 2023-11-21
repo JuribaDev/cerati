@@ -14,7 +14,8 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-UpdateUserPasswordResponseModel _$UpdateUserPasswordResponseModelFromJson(Map<String, dynamic> json) {
+UpdateUserPasswordResponseModel _$UpdateUserPasswordResponseModelFromJson(
+    Map<String, dynamic> json) {
   return _UpdateUserPasswordResponseModel.fromJson(json);
 }
 
@@ -25,21 +26,24 @@ mixin _$UpdateUserPasswordResponseModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UpdateUserPasswordResponseModelCopyWith<UpdateUserPasswordResponseModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UpdateUserPasswordResponseModelCopyWith<UpdateUserPasswordResponseModel>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UpdateUserPasswordResponseModelCopyWith<$Res> {
   factory $UpdateUserPasswordResponseModelCopyWith(
-          UpdateUserPasswordResponseModel value, $Res Function(UpdateUserPasswordResponseModel) then) =
-      _$UpdateUserPasswordResponseModelCopyWithImpl<$Res, UpdateUserPasswordResponseModel>;
+          UpdateUserPasswordResponseModel value,
+          $Res Function(UpdateUserPasswordResponseModel) then) =
+      _$UpdateUserPasswordResponseModelCopyWithImpl<$Res,
+          UpdateUserPasswordResponseModel>;
   @useResult
   $Res call({String message, String status});
 }
 
 /// @nodoc
-class _$UpdateUserPasswordResponseModelCopyWithImpl<$Res, $Val extends UpdateUserPasswordResponseModel>
+class _$UpdateUserPasswordResponseModelCopyWithImpl<$Res,
+        $Val extends UpdateUserPasswordResponseModel>
     implements $UpdateUserPasswordResponseModelCopyWith<$Res> {
   _$UpdateUserPasswordResponseModelCopyWithImpl(this._value, this._then);
 
@@ -68,22 +72,25 @@ class _$UpdateUserPasswordResponseModelCopyWithImpl<$Res, $Val extends UpdateUse
 }
 
 /// @nodoc
-abstract class _$$_UpdateUserPasswordResponseModelCopyWith<$Res>
+abstract class _$$UpdateUserPasswordResponseModelImplCopyWith<$Res>
     implements $UpdateUserPasswordResponseModelCopyWith<$Res> {
-  factory _$$_UpdateUserPasswordResponseModelCopyWith(
-          _$_UpdateUserPasswordResponseModel value, $Res Function(_$_UpdateUserPasswordResponseModel) then) =
-      __$$_UpdateUserPasswordResponseModelCopyWithImpl<$Res>;
+  factory _$$UpdateUserPasswordResponseModelImplCopyWith(
+          _$UpdateUserPasswordResponseModelImpl value,
+          $Res Function(_$UpdateUserPasswordResponseModelImpl) then) =
+      __$$UpdateUserPasswordResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String message, String status});
 }
 
 /// @nodoc
-class __$$_UpdateUserPasswordResponseModelCopyWithImpl<$Res>
-    extends _$UpdateUserPasswordResponseModelCopyWithImpl<$Res, _$_UpdateUserPasswordResponseModel>
-    implements _$$_UpdateUserPasswordResponseModelCopyWith<$Res> {
-  __$$_UpdateUserPasswordResponseModelCopyWithImpl(
-      _$_UpdateUserPasswordResponseModel _value, $Res Function(_$_UpdateUserPasswordResponseModel) _then)
+class __$$UpdateUserPasswordResponseModelImplCopyWithImpl<$Res>
+    extends _$UpdateUserPasswordResponseModelCopyWithImpl<$Res,
+        _$UpdateUserPasswordResponseModelImpl>
+    implements _$$UpdateUserPasswordResponseModelImplCopyWith<$Res> {
+  __$$UpdateUserPasswordResponseModelImplCopyWithImpl(
+      _$UpdateUserPasswordResponseModelImpl _value,
+      $Res Function(_$UpdateUserPasswordResponseModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +99,7 @@ class __$$_UpdateUserPasswordResponseModelCopyWithImpl<$Res>
     Object? message = null,
     Object? status = null,
   }) {
-    return _then(_$_UpdateUserPasswordResponseModel(
+    return _then(_$UpdateUserPasswordResponseModelImpl(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -107,11 +114,14 @@ class __$$_UpdateUserPasswordResponseModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UpdateUserPasswordResponseModel implements _UpdateUserPasswordResponseModel {
-  const _$_UpdateUserPasswordResponseModel({required this.message, required this.status});
+class _$UpdateUserPasswordResponseModelImpl
+    implements _UpdateUserPasswordResponseModel {
+  const _$UpdateUserPasswordResponseModelImpl(
+      {required this.message, required this.status});
 
-  factory _$_UpdateUserPasswordResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$$_UpdateUserPasswordResponseModelFromJson(json);
+  factory _$UpdateUserPasswordResponseModelImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$UpdateUserPasswordResponseModelImplFromJson(json);
 
   @override
   final String message;
@@ -127,7 +137,7 @@ class _$_UpdateUserPasswordResponseModel implements _UpdateUserPasswordResponseM
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UpdateUserPasswordResponseModel &&
+            other is _$UpdateUserPasswordResponseModelImpl &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.status, status) || other.status == status));
   }
@@ -139,23 +149,27 @@ class _$_UpdateUserPasswordResponseModel implements _UpdateUserPasswordResponseM
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UpdateUserPasswordResponseModelCopyWith<_$_UpdateUserPasswordResponseModel> get copyWith =>
-      __$$_UpdateUserPasswordResponseModelCopyWithImpl<_$_UpdateUserPasswordResponseModel>(this, _$identity);
+  _$$UpdateUserPasswordResponseModelImplCopyWith<
+          _$UpdateUserPasswordResponseModelImpl>
+      get copyWith => __$$UpdateUserPasswordResponseModelImplCopyWithImpl<
+          _$UpdateUserPasswordResponseModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UpdateUserPasswordResponseModelToJson(
+    return _$$UpdateUserPasswordResponseModelImplToJson(
       this,
     );
   }
 }
 
-abstract class _UpdateUserPasswordResponseModel implements UpdateUserPasswordResponseModel {
-  const factory _UpdateUserPasswordResponseModel({required final String message, required final String status}) =
-      _$_UpdateUserPasswordResponseModel;
+abstract class _UpdateUserPasswordResponseModel
+    implements UpdateUserPasswordResponseModel {
+  const factory _UpdateUserPasswordResponseModel(
+      {required final String message,
+      required final String status}) = _$UpdateUserPasswordResponseModelImpl;
 
   factory _UpdateUserPasswordResponseModel.fromJson(Map<String, dynamic> json) =
-      _$_UpdateUserPasswordResponseModel.fromJson;
+      _$UpdateUserPasswordResponseModelImpl.fromJson;
 
   @override
   String get message;
@@ -163,6 +177,7 @@ abstract class _UpdateUserPasswordResponseModel implements UpdateUserPasswordRes
   String get status;
   @override
   @JsonKey(ignore: true)
-  _$$_UpdateUserPasswordResponseModelCopyWith<_$_UpdateUserPasswordResponseModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateUserPasswordResponseModelImplCopyWith<
+          _$UpdateUserPasswordResponseModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
