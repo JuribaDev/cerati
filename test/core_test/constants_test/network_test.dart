@@ -1,5 +1,5 @@
+import 'package:cerati/core/constants/network.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ny_articles_clean_architecture/core/constants/network.dart';
 
 void main() {
   group('Configuration constants', () {

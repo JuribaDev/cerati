@@ -1,15 +1,11 @@
-// ...
-
-// ignore_for_file: avoid_dynamic_calls
-
 import 'dart:io';
 
+import 'package:cerati/core/error_handling/parse_exceptions.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:ny_articles_clean_architecture/core/error_handling/parse_exceptions.dart';
 
-import '../../helpers/mocks.dart';
+import '../../helpers/helpers.dart';
 
 void main() {
   late MockLogger mockLogger;

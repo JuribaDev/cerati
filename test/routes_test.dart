@@ -1,4 +1,4 @@
-import 'package:cerati/common/constants/routes_constants.dart';
+import 'package:cerati/core/constants/routes_constants.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

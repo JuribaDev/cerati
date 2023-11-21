@@ -1,4 +1,4 @@
-import 'package:cerati/common/constants/storage_constants.dart';
+import 'package:cerati/core/constants/storage_constants.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
 
@@ -7,7 +7,6 @@ class SecureLocalStorage {
 
   final FlutterSecureStorage _secureStorage;
   final Logger logger;
-
 
   Future<void> addToStorage(String key, String value) async {
     try {
@@ -19,7 +18,6 @@ class SecureLocalStorage {
     }
   }
 
-
   Future<String?> getFromStorage(String key) async {
     try {
       return await _secureStorage.read(key: key);
@@ -29,7 +27,6 @@ class SecureLocalStorage {
     }
   }
 
-
   Future<Map<String, String>> getAllFromStorage() async {
     try {
       return await _secureStorage.readAll();
@@ -38,7 +35,6 @@ class SecureLocalStorage {
       throw Exception('Failed to get all from secure storage');
     }
   }
-
 
   Future<void> deleteFromStorage(String key) async {
     try {
@@ -50,7 +46,6 @@ class SecureLocalStorage {
     }
   }
 
-
   Future<bool> clearSecureStorage() async {
     try {
       await _secureStorage.deleteAll();
@@ -61,7 +56,6 @@ class SecureLocalStorage {
       throw Exception('Failed to clear secure storage');
     }
   }
-
 
   Future<bool> persistTokens(String accessToken, String refreshToken) async {
     try {
@@ -75,7 +69,6 @@ class SecureLocalStorage {
       throw Exception('Failed to persist tokens');
     }
   }
-
 
   Future<bool> persistAccessToken(String accessToken) async {
     try {

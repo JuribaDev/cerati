@@ -14,8 +14,7 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-UserAccountResponseModel _$UserAccountResponseModelFromJson(
-    Map<String, dynamic> json) {
+UserAccountResponseModel _$UserAccountResponseModelFromJson(Map<String, dynamic> json) {
   return _UserAccountResponseModel.fromJson(json);
 }
 
@@ -36,14 +35,13 @@ mixin _$UserAccountResponseModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserAccountResponseModelCopyWith<UserAccountResponseModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UserAccountResponseModelCopyWith<UserAccountResponseModel> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserAccountResponseModelCopyWith<$Res> {
-  factory $UserAccountResponseModelCopyWith(UserAccountResponseModel value,
-          $Res Function(UserAccountResponseModel) then) =
+  factory $UserAccountResponseModelCopyWith(
+          UserAccountResponseModel value, $Res Function(UserAccountResponseModel) then) =
       _$UserAccountResponseModelCopyWithImpl<$Res, UserAccountResponseModel>;
   @useResult
   $Res call(
@@ -57,8 +55,7 @@ abstract class $UserAccountResponseModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserAccountResponseModelCopyWithImpl<$Res,
-        $Val extends UserAccountResponseModel>
+class _$UserAccountResponseModelCopyWithImpl<$Res, $Val extends UserAccountResponseModel>
     implements $UserAccountResponseModelCopyWith<$Res> {
   _$UserAccountResponseModelCopyWithImpl(this._value, this._then);
 
@@ -112,11 +109,9 @@ class _$UserAccountResponseModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$UserAccountResponseModelImplCopyWith<$Res>
-    implements $UserAccountResponseModelCopyWith<$Res> {
+abstract class _$$UserAccountResponseModelImplCopyWith<$Res> implements $UserAccountResponseModelCopyWith<$Res> {
   factory _$$UserAccountResponseModelImplCopyWith(
-          _$UserAccountResponseModelImpl value,
-          $Res Function(_$UserAccountResponseModelImpl) then) =
+          _$UserAccountResponseModelImpl value, $Res Function(_$UserAccountResponseModelImpl) then) =
       __$$UserAccountResponseModelImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -132,12 +127,10 @@ abstract class _$$UserAccountResponseModelImplCopyWith<$Res>
 
 /// @nodoc
 class __$$UserAccountResponseModelImplCopyWithImpl<$Res>
-    extends _$UserAccountResponseModelCopyWithImpl<$Res,
-        _$UserAccountResponseModelImpl>
+    extends _$UserAccountResponseModelCopyWithImpl<$Res, _$UserAccountResponseModelImpl>
     implements _$$UserAccountResponseModelImplCopyWith<$Res> {
   __$$UserAccountResponseModelImplCopyWithImpl(
-      _$UserAccountResponseModelImpl _value,
-      $Res Function(_$UserAccountResponseModelImpl) _then)
+      _$UserAccountResponseModelImpl _value, $Res Function(_$UserAccountResponseModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -230,30 +223,23 @@ class _$UserAccountResponseModelImpl implements _UserAccountResponseModel {
         (other.runtimeType == runtimeType &&
             other is _$UserAccountResponseModelImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.fullName, fullName) ||
-                other.fullName == fullName) &&
+            (identical(other.firstName, firstName) || other.firstName == firstName) &&
+            (identical(other.lastName, lastName) || other.lastName == lastName) &&
+            (identical(other.fullName, fullName) || other.fullName == fullName) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+            (identical(other.createdAt, createdAt) || other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, firstName, lastName,
-      fullName, email, createdAt, updatedAt);
+  int get hashCode => Object.hash(runtimeType, id, firstName, lastName, fullName, email, createdAt, updatedAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserAccountResponseModelImplCopyWith<_$UserAccountResponseModelImpl>
-      get copyWith => __$$UserAccountResponseModelImplCopyWithImpl<
-          _$UserAccountResponseModelImpl>(this, _$identity);
+  _$$UserAccountResponseModelImplCopyWith<_$UserAccountResponseModelImpl> get copyWith =>
+      __$$UserAccountResponseModelImplCopyWithImpl<_$UserAccountResponseModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -265,17 +251,15 @@ class _$UserAccountResponseModelImpl implements _UserAccountResponseModel {
 
 abstract class _UserAccountResponseModel implements UserAccountResponseModel {
   const factory _UserAccountResponseModel(
-          {required final int id,
-          @JsonKey(name: 'first_name') required final String firstName,
-          @JsonKey(name: 'last_name') required final String lastName,
-          @JsonKey(name: 'full_name') required final String fullName,
-          required final String email,
-          @JsonKey(name: 'created_at') required final DateTime createdAt,
-          @JsonKey(name: 'updated_at') required final DateTime updatedAt}) =
-      _$UserAccountResponseModelImpl;
+      {required final int id,
+      @JsonKey(name: 'first_name') required final String firstName,
+      @JsonKey(name: 'last_name') required final String lastName,
+      @JsonKey(name: 'full_name') required final String fullName,
+      required final String email,
+      @JsonKey(name: 'created_at') required final DateTime createdAt,
+      @JsonKey(name: 'updated_at') required final DateTime updatedAt}) = _$UserAccountResponseModelImpl;
 
-  factory _UserAccountResponseModel.fromJson(Map<String, dynamic> json) =
-      _$UserAccountResponseModelImpl.fromJson;
+  factory _UserAccountResponseModel.fromJson(Map<String, dynamic> json) = _$UserAccountResponseModelImpl.fromJson;
 
   @override
   int get id;
@@ -298,6 +282,6 @@ abstract class _UserAccountResponseModel implements UserAccountResponseModel {
   DateTime get updatedAt;
   @override
   @JsonKey(ignore: true)
-  _$$UserAccountResponseModelImplCopyWith<_$UserAccountResponseModelImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UserAccountResponseModelImplCopyWith<_$UserAccountResponseModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

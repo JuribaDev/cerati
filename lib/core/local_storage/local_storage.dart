@@ -3,13 +3,11 @@
 import 'package:get_storage/get_storage.dart';
 import 'package:logger/logger.dart';
 
-
 class LocalStorage {
   LocalStorage(this._storage, this.logger);
 
   final GetStorage _storage;
   final Logger logger;
-
 
   Future<bool> clearAll() async {
     try {
@@ -22,7 +20,6 @@ class LocalStorage {
     }
   }
 
-
   Future<bool> clearByKey({required String key}) async {
     try {
       await _storage.remove(key);
@@ -34,7 +31,6 @@ class LocalStorage {
     }
   }
 
-
   bool hasData({required String key}) {
     try {
       logger.i('$key has data in the storage');
@@ -45,7 +41,6 @@ class LocalStorage {
     }
   }
 
-
   Future<T> read<T>({required String key}) async {
     try {
       logger.i('$key data fetched from storage');
@@ -55,7 +50,6 @@ class LocalStorage {
       throw Exception('Error occurred when read methode called: $e');
     }
   }
-
 
   Future<bool> write<T>({required String key, required T data}) async {
     try {
@@ -68,7 +62,6 @@ class LocalStorage {
     }
   }
 
-
   Future<bool> writeIfNull<T>({required String key, required T data}) async {
     try {
       await _storage.write(key, data);
@@ -80,7 +73,6 @@ class LocalStorage {
     }
   }
 
-
   Future<List<String>> getKeys() async {
     try {
       logger.i('get all keys from the storage');
@@ -90,7 +82,6 @@ class LocalStorage {
       throw Exception('Error occurred when getKeys methode called: $e');
     }
   }
-
 
   Future<List<Map<String, dynamic>>> getValues() async {
     try {

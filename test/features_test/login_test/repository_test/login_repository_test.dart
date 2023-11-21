@@ -32,7 +32,7 @@ void main() {
 
       test('returns Failure when login throws a AllHttpException', () async {
         // Arrange
-        final exception = FormatException();
+        const exception = FormatException();
         when(() => mockApiClient.login(loginRequestModelTest)).thenThrow(exception);
 
         // Act

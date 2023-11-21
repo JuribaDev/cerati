@@ -51,14 +51,12 @@ mixin _$LoginEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $LoginEventCopyWith<LoginEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LoginEventCopyWith<LoginEvent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoginEventCopyWith<$Res> {
-  factory $LoginEventCopyWith(
-          LoginEvent value, $Res Function(LoginEvent) then) =
+  factory $LoginEventCopyWith(LoginEvent value, $Res Function(LoginEvent) then) =
       _$LoginEventCopyWithImpl<$Res, LoginEvent>;
   @useResult
   $Res call({LoginRequestModel loginRequestModel});
@@ -67,8 +65,7 @@ abstract class $LoginEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
-    implements $LoginEventCopyWith<$Res> {
+class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent> implements $LoginEventCopyWith<$Res> {
   _$LoginEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -100,9 +97,7 @@ class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
 
 /// @nodoc
 abstract class _$$LoginImplCopyWith<$Res> implements $LoginEventCopyWith<$Res> {
-  factory _$$LoginImplCopyWith(
-          _$LoginImpl value, $Res Function(_$LoginImpl) then) =
-      __$$LoginImplCopyWithImpl<$Res>;
+  factory _$$LoginImplCopyWith(_$LoginImpl value, $Res Function(_$LoginImpl) then) = __$$LoginImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({LoginRequestModel loginRequestModel});
@@ -112,12 +107,9 @@ abstract class _$$LoginImplCopyWith<$Res> implements $LoginEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LoginImplCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$LoginImpl>
+class __$$LoginImplCopyWithImpl<$Res> extends _$LoginEventCopyWithImpl<$Res, _$LoginImpl>
     implements _$$LoginImplCopyWith<$Res> {
-  __$$LoginImplCopyWithImpl(
-      _$LoginImpl _value, $Res Function(_$LoginImpl) _then)
-      : super(_value, _then);
+  __$$LoginImplCopyWithImpl(_$LoginImpl _value, $Res Function(_$LoginImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -151,8 +143,7 @@ class _$LoginImpl implements _Login {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginImpl &&
-            (identical(other.loginRequestModel, loginRequestModel) ||
-                other.loginRequestModel == loginRequestModel));
+            (identical(other.loginRequestModel, loginRequestModel) || other.loginRequestModel == loginRequestModel));
   }
 
   @override
@@ -161,8 +152,7 @@ class _$LoginImpl implements _Login {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginImplCopyWith<_$LoginImpl> get copyWith =>
-      __$$LoginImplCopyWithImpl<_$LoginImpl>(this, _$identity);
+  _$$LoginImplCopyWith<_$LoginImpl> get copyWith => __$$LoginImplCopyWithImpl<_$LoginImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -222,15 +212,13 @@ class _$LoginImpl implements _Login {
 }
 
 abstract class _Login implements LoginEvent {
-  const factory _Login({required final LoginRequestModel loginRequestModel}) =
-      _$LoginImpl;
+  const factory _Login({required final LoginRequestModel loginRequestModel}) = _$LoginImpl;
 
   @override
   LoginRequestModel get loginRequestModel;
   @override
   @JsonKey(ignore: true)
-  _$$LoginImplCopyWith<_$LoginImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LoginImplCopyWith<_$LoginImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -238,8 +226,7 @@ mixin _$LoginState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(LoginResponseModel loginResponseModel)
-        loginSuccess,
+    required TResult Function(LoginResponseModel loginResponseModel) loginSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -278,14 +265,12 @@ mixin _$LoginState {
 
 /// @nodoc
 abstract class $LoginStateCopyWith<$Res> {
-  factory $LoginStateCopyWith(
-          LoginState value, $Res Function(LoginState) then) =
+  factory $LoginStateCopyWith(LoginState value, $Res Function(LoginState) then) =
       _$LoginStateCopyWithImpl<$Res, LoginState>;
 }
 
 /// @nodoc
-class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
-    implements $LoginStateCopyWith<$Res> {
+class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState> implements $LoginStateCopyWith<$Res> {
   _$LoginStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -296,8 +281,7 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
 
 /// @nodoc
 abstract class _$$GenericStatueImplCopyWith<$Res> {
-  factory _$$GenericStatueImplCopyWith(
-          _$GenericStatueImpl value, $Res Function(_$GenericStatueImpl) then) =
+  factory _$$GenericStatueImplCopyWith(_$GenericStatueImpl value, $Res Function(_$GenericStatueImpl) then) =
       __$$GenericStatueImplCopyWithImpl<$Res>;
   @useResult
   $Res call({CommonState commonState});
@@ -306,11 +290,9 @@ abstract class _$$GenericStatueImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$GenericStatueImplCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$GenericStatueImpl>
+class __$$GenericStatueImplCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res, _$GenericStatueImpl>
     implements _$$GenericStatueImplCopyWith<$Res> {
-  __$$GenericStatueImplCopyWithImpl(
-      _$GenericStatueImpl _value, $Res Function(_$GenericStatueImpl) _then)
+  __$$GenericStatueImplCopyWithImpl(_$GenericStatueImpl _value, $Res Function(_$GenericStatueImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -353,8 +335,7 @@ class _$GenericStatueImpl implements _GenericStatue {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GenericStatueImpl &&
-            (identical(other.commonState, commonState) ||
-                other.commonState == commonState));
+            (identical(other.commonState, commonState) || other.commonState == commonState));
   }
 
   @override
@@ -370,8 +351,7 @@ class _$GenericStatueImpl implements _GenericStatue {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(LoginResponseModel loginResponseModel)
-        loginSuccess,
+    required TResult Function(LoginResponseModel loginResponseModel) loginSuccess,
   }) {
     return commonState(this.commonState);
   }
@@ -431,19 +411,16 @@ class _$GenericStatueImpl implements _GenericStatue {
 }
 
 abstract class _GenericStatue implements LoginState {
-  const factory _GenericStatue({required final CommonState commonState}) =
-      _$GenericStatueImpl;
+  const factory _GenericStatue({required final CommonState commonState}) = _$GenericStatueImpl;
 
   CommonState get commonState;
   @JsonKey(ignore: true)
-  _$$GenericStatueImplCopyWith<_$GenericStatueImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GenericStatueImplCopyWith<_$GenericStatueImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SuccessImplCopyWith<$Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+  factory _$$SuccessImplCopyWith(_$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({LoginResponseModel loginResponseModel});
@@ -452,12 +429,9 @@ abstract class _$$SuccessImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$SuccessImpl>
+class __$$SuccessImplCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
-      : super(_value, _then);
+  __$$SuccessImplCopyWithImpl(_$SuccessImpl _value, $Res Function(_$SuccessImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -475,8 +449,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $LoginResponseModelCopyWith<$Res> get loginResponseModel {
-    return $LoginResponseModelCopyWith<$Res>(_value.loginResponseModel,
-        (value) {
+    return $LoginResponseModelCopyWith<$Res>(_value.loginResponseModel, (value) {
       return _then(_value.copyWith(loginResponseModel: value));
     });
   }
@@ -510,15 +483,13 @@ class _$SuccessImpl implements _Success {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith => __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(LoginResponseModel loginResponseModel)
-        loginSuccess,
+    required TResult Function(LoginResponseModel loginResponseModel) loginSuccess,
   }) {
     return loginSuccess(loginResponseModel);
   }
@@ -578,11 +549,9 @@ class _$SuccessImpl implements _Success {
 }
 
 abstract class _Success implements LoginState {
-  const factory _Success(
-      {required final LoginResponseModel loginResponseModel}) = _$SuccessImpl;
+  const factory _Success({required final LoginResponseModel loginResponseModel}) = _$SuccessImpl;
 
   LoginResponseModel get loginResponseModel;
   @JsonKey(ignore: true)
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith => throw _privateConstructorUsedError;
 }

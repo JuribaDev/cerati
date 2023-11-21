@@ -1,8 +1,8 @@
+import 'package:cerati/core/error_handling/non_user_viewable_exception.dart';
+import 'package:cerati/core/validators/response_validators.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:ny_articles_clean_architecture/core/error_handling/non_user_viewable_exception.dart';
-import 'package:ny_articles_clean_architecture/core/utils/response_validators.dart';
 
 import '../../helpers/mocks.dart';
 

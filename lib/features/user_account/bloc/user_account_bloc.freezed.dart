@@ -19,34 +19,22 @@ mixin _$UserAccountEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getUserAccount,
-    required TResult Function(
-            UpdateUserAccountRequestModel updateUserAccountRequestModel)
-        updateUserAccount,
-    required TResult Function(
-            UpdateUserPasswordRequestModel updateUserPasswordRequestModel)
-        updateUserPassword,
+    required TResult Function(UpdateUserAccountRequestModel updateUserAccountRequestModel) updateUserAccount,
+    required TResult Function(UpdateUserPasswordRequestModel updateUserPasswordRequestModel) updateUserPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getUserAccount,
-    TResult? Function(
-            UpdateUserAccountRequestModel updateUserAccountRequestModel)?
-        updateUserAccount,
-    TResult? Function(
-            UpdateUserPasswordRequestModel updateUserPasswordRequestModel)?
-        updateUserPassword,
+    TResult? Function(UpdateUserAccountRequestModel updateUserAccountRequestModel)? updateUserAccount,
+    TResult? Function(UpdateUserPasswordRequestModel updateUserPasswordRequestModel)? updateUserPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getUserAccount,
-    TResult Function(
-            UpdateUserAccountRequestModel updateUserAccountRequestModel)?
-        updateUserAccount,
-    TResult Function(
-            UpdateUserPasswordRequestModel updateUserPasswordRequestModel)?
-        updateUserPassword,
+    TResult Function(UpdateUserAccountRequestModel updateUserAccountRequestModel)? updateUserAccount,
+    TResult Function(UpdateUserPasswordRequestModel updateUserPasswordRequestModel)? updateUserPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -76,14 +64,12 @@ mixin _$UserAccountEvent {
 
 /// @nodoc
 abstract class $UserAccountEventCopyWith<$Res> {
-  factory $UserAccountEventCopyWith(
-          UserAccountEvent value, $Res Function(UserAccountEvent) then) =
+  factory $UserAccountEventCopyWith(UserAccountEvent value, $Res Function(UserAccountEvent) then) =
       _$UserAccountEventCopyWithImpl<$Res, UserAccountEvent>;
 }
 
 /// @nodoc
-class _$UserAccountEventCopyWithImpl<$Res, $Val extends UserAccountEvent>
-    implements $UserAccountEventCopyWith<$Res> {
+class _$UserAccountEventCopyWithImpl<$Res, $Val extends UserAccountEvent> implements $UserAccountEventCopyWith<$Res> {
   _$UserAccountEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -94,17 +80,14 @@ class _$UserAccountEventCopyWithImpl<$Res, $Val extends UserAccountEvent>
 
 /// @nodoc
 abstract class _$$GetUserAccountImplCopyWith<$Res> {
-  factory _$$GetUserAccountImplCopyWith(_$GetUserAccountImpl value,
-          $Res Function(_$GetUserAccountImpl) then) =
+  factory _$$GetUserAccountImplCopyWith(_$GetUserAccountImpl value, $Res Function(_$GetUserAccountImpl) then) =
       __$$GetUserAccountImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetUserAccountImplCopyWithImpl<$Res>
-    extends _$UserAccountEventCopyWithImpl<$Res, _$GetUserAccountImpl>
+class __$$GetUserAccountImplCopyWithImpl<$Res> extends _$UserAccountEventCopyWithImpl<$Res, _$GetUserAccountImpl>
     implements _$$GetUserAccountImplCopyWith<$Res> {
-  __$$GetUserAccountImplCopyWithImpl(
-      _$GetUserAccountImpl _value, $Res Function(_$GetUserAccountImpl) _then)
+  __$$GetUserAccountImplCopyWithImpl(_$GetUserAccountImpl _value, $Res Function(_$GetUserAccountImpl) _then)
       : super(_value, _then);
 }
 
@@ -120,8 +103,7 @@ class _$GetUserAccountImpl implements _GetUserAccount {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetUserAccountImpl);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$GetUserAccountImpl);
   }
 
   @override
@@ -131,12 +113,8 @@ class _$GetUserAccountImpl implements _GetUserAccount {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getUserAccount,
-    required TResult Function(
-            UpdateUserAccountRequestModel updateUserAccountRequestModel)
-        updateUserAccount,
-    required TResult Function(
-            UpdateUserPasswordRequestModel updateUserPasswordRequestModel)
-        updateUserPassword,
+    required TResult Function(UpdateUserAccountRequestModel updateUserAccountRequestModel) updateUserAccount,
+    required TResult Function(UpdateUserPasswordRequestModel updateUserPasswordRequestModel) updateUserPassword,
   }) {
     return getUserAccount();
   }
@@ -145,12 +123,8 @@ class _$GetUserAccountImpl implements _GetUserAccount {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getUserAccount,
-    TResult? Function(
-            UpdateUserAccountRequestModel updateUserAccountRequestModel)?
-        updateUserAccount,
-    TResult? Function(
-            UpdateUserPasswordRequestModel updateUserPasswordRequestModel)?
-        updateUserPassword,
+    TResult? Function(UpdateUserAccountRequestModel updateUserAccountRequestModel)? updateUserAccount,
+    TResult? Function(UpdateUserPasswordRequestModel updateUserPasswordRequestModel)? updateUserPassword,
   }) {
     return getUserAccount?.call();
   }
@@ -159,12 +133,8 @@ class _$GetUserAccountImpl implements _GetUserAccount {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getUserAccount,
-    TResult Function(
-            UpdateUserAccountRequestModel updateUserAccountRequestModel)?
-        updateUserAccount,
-    TResult Function(
-            UpdateUserPasswordRequestModel updateUserPasswordRequestModel)?
-        updateUserPassword,
+    TResult Function(UpdateUserAccountRequestModel updateUserAccountRequestModel)? updateUserAccount,
+    TResult Function(UpdateUserPasswordRequestModel updateUserPasswordRequestModel)? updateUserPassword,
     required TResult orElse(),
   }) {
     if (getUserAccount != null) {
@@ -214,22 +184,18 @@ abstract class _GetUserAccount implements UserAccountEvent {
 
 /// @nodoc
 abstract class _$$UpdateUserAccountImplCopyWith<$Res> {
-  factory _$$UpdateUserAccountImplCopyWith(_$UpdateUserAccountImpl value,
-          $Res Function(_$UpdateUserAccountImpl) then) =
+  factory _$$UpdateUserAccountImplCopyWith(_$UpdateUserAccountImpl value, $Res Function(_$UpdateUserAccountImpl) then) =
       __$$UpdateUserAccountImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UpdateUserAccountRequestModel updateUserAccountRequestModel});
 
-  $UpdateUserAccountRequestModelCopyWith<$Res>
-      get updateUserAccountRequestModel;
+  $UpdateUserAccountRequestModelCopyWith<$Res> get updateUserAccountRequestModel;
 }
 
 /// @nodoc
-class __$$UpdateUserAccountImplCopyWithImpl<$Res>
-    extends _$UserAccountEventCopyWithImpl<$Res, _$UpdateUserAccountImpl>
+class __$$UpdateUserAccountImplCopyWithImpl<$Res> extends _$UserAccountEventCopyWithImpl<$Res, _$UpdateUserAccountImpl>
     implements _$$UpdateUserAccountImplCopyWith<$Res> {
-  __$$UpdateUserAccountImplCopyWithImpl(_$UpdateUserAccountImpl _value,
-      $Res Function(_$UpdateUserAccountImpl) _then)
+  __$$UpdateUserAccountImplCopyWithImpl(_$UpdateUserAccountImpl _value, $Res Function(_$UpdateUserAccountImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -247,10 +213,8 @@ class __$$UpdateUserAccountImplCopyWithImpl<$Res>
 
   @override
   @pragma('vm:prefer-inline')
-  $UpdateUserAccountRequestModelCopyWith<$Res>
-      get updateUserAccountRequestModel {
-    return $UpdateUserAccountRequestModelCopyWith<$Res>(
-        _value.updateUserAccountRequestModel, (value) {
+  $UpdateUserAccountRequestModelCopyWith<$Res> get updateUserAccountRequestModel {
+    return $UpdateUserAccountRequestModelCopyWith<$Res>(_value.updateUserAccountRequestModel, (value) {
       return _then(_value.copyWith(updateUserAccountRequestModel: value));
     });
   }
@@ -274,10 +238,8 @@ class _$UpdateUserAccountImpl implements _UpdateUserAccount {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateUserAccountImpl &&
-            (identical(other.updateUserAccountRequestModel,
-                    updateUserAccountRequestModel) ||
-                other.updateUserAccountRequestModel ==
-                    updateUserAccountRequestModel));
+            (identical(other.updateUserAccountRequestModel, updateUserAccountRequestModel) ||
+                other.updateUserAccountRequestModel == updateUserAccountRequestModel));
   }
 
   @override
@@ -287,19 +249,14 @@ class _$UpdateUserAccountImpl implements _UpdateUserAccount {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateUserAccountImplCopyWith<_$UpdateUserAccountImpl> get copyWith =>
-      __$$UpdateUserAccountImplCopyWithImpl<_$UpdateUserAccountImpl>(
-          this, _$identity);
+      __$$UpdateUserAccountImplCopyWithImpl<_$UpdateUserAccountImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getUserAccount,
-    required TResult Function(
-            UpdateUserAccountRequestModel updateUserAccountRequestModel)
-        updateUserAccount,
-    required TResult Function(
-            UpdateUserPasswordRequestModel updateUserPasswordRequestModel)
-        updateUserPassword,
+    required TResult Function(UpdateUserAccountRequestModel updateUserAccountRequestModel) updateUserAccount,
+    required TResult Function(UpdateUserPasswordRequestModel updateUserPasswordRequestModel) updateUserPassword,
   }) {
     return updateUserAccount(updateUserAccountRequestModel);
   }
@@ -308,12 +265,8 @@ class _$UpdateUserAccountImpl implements _UpdateUserAccount {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getUserAccount,
-    TResult? Function(
-            UpdateUserAccountRequestModel updateUserAccountRequestModel)?
-        updateUserAccount,
-    TResult? Function(
-            UpdateUserPasswordRequestModel updateUserPasswordRequestModel)?
-        updateUserPassword,
+    TResult? Function(UpdateUserAccountRequestModel updateUserAccountRequestModel)? updateUserAccount,
+    TResult? Function(UpdateUserPasswordRequestModel updateUserPasswordRequestModel)? updateUserPassword,
   }) {
     return updateUserAccount?.call(updateUserAccountRequestModel);
   }
@@ -322,12 +275,8 @@ class _$UpdateUserAccountImpl implements _UpdateUserAccount {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getUserAccount,
-    TResult Function(
-            UpdateUserAccountRequestModel updateUserAccountRequestModel)?
-        updateUserAccount,
-    TResult Function(
-            UpdateUserPasswordRequestModel updateUserPasswordRequestModel)?
-        updateUserPassword,
+    TResult Function(UpdateUserAccountRequestModel updateUserAccountRequestModel)? updateUserAccount,
+    TResult Function(UpdateUserPasswordRequestModel updateUserPasswordRequestModel)? updateUserPassword,
     required TResult orElse(),
   }) {
     if (updateUserAccount != null) {
@@ -372,34 +321,30 @@ class _$UpdateUserAccountImpl implements _UpdateUserAccount {
 }
 
 abstract class _UpdateUserAccount implements UserAccountEvent {
-  const factory _UpdateUserAccount(
-      {required final UpdateUserAccountRequestModel
-          updateUserAccountRequestModel}) = _$UpdateUserAccountImpl;
+  const factory _UpdateUserAccount({required final UpdateUserAccountRequestModel updateUserAccountRequestModel}) =
+      _$UpdateUserAccountImpl;
 
   UpdateUserAccountRequestModel get updateUserAccountRequestModel;
   @JsonKey(ignore: true)
-  _$$UpdateUserAccountImplCopyWith<_$UpdateUserAccountImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateUserAccountImplCopyWith<_$UpdateUserAccountImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UpdateUserPasswordImplCopyWith<$Res> {
-  factory _$$UpdateUserPasswordImplCopyWith(_$UpdateUserPasswordImpl value,
-          $Res Function(_$UpdateUserPasswordImpl) then) =
+  factory _$$UpdateUserPasswordImplCopyWith(
+          _$UpdateUserPasswordImpl value, $Res Function(_$UpdateUserPasswordImpl) then) =
       __$$UpdateUserPasswordImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UpdateUserPasswordRequestModel updateUserPasswordRequestModel});
 
-  $UpdateUserPasswordRequestModelCopyWith<$Res>
-      get updateUserPasswordRequestModel;
+  $UpdateUserPasswordRequestModelCopyWith<$Res> get updateUserPasswordRequestModel;
 }
 
 /// @nodoc
 class __$$UpdateUserPasswordImplCopyWithImpl<$Res>
     extends _$UserAccountEventCopyWithImpl<$Res, _$UpdateUserPasswordImpl>
     implements _$$UpdateUserPasswordImplCopyWith<$Res> {
-  __$$UpdateUserPasswordImplCopyWithImpl(_$UpdateUserPasswordImpl _value,
-      $Res Function(_$UpdateUserPasswordImpl) _then)
+  __$$UpdateUserPasswordImplCopyWithImpl(_$UpdateUserPasswordImpl _value, $Res Function(_$UpdateUserPasswordImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -417,10 +362,8 @@ class __$$UpdateUserPasswordImplCopyWithImpl<$Res>
 
   @override
   @pragma('vm:prefer-inline')
-  $UpdateUserPasswordRequestModelCopyWith<$Res>
-      get updateUserPasswordRequestModel {
-    return $UpdateUserPasswordRequestModelCopyWith<$Res>(
-        _value.updateUserPasswordRequestModel, (value) {
+  $UpdateUserPasswordRequestModelCopyWith<$Res> get updateUserPasswordRequestModel {
+    return $UpdateUserPasswordRequestModelCopyWith<$Res>(_value.updateUserPasswordRequestModel, (value) {
       return _then(_value.copyWith(updateUserPasswordRequestModel: value));
     });
   }
@@ -429,8 +372,7 @@ class __$$UpdateUserPasswordImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateUserPasswordImpl implements _UpdateUserPassword {
-  const _$UpdateUserPasswordImpl(
-      {required this.updateUserPasswordRequestModel});
+  const _$UpdateUserPasswordImpl({required this.updateUserPasswordRequestModel});
 
   @override
   final UpdateUserPasswordRequestModel updateUserPasswordRequestModel;
@@ -445,10 +387,8 @@ class _$UpdateUserPasswordImpl implements _UpdateUserPassword {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateUserPasswordImpl &&
-            (identical(other.updateUserPasswordRequestModel,
-                    updateUserPasswordRequestModel) ||
-                other.updateUserPasswordRequestModel ==
-                    updateUserPasswordRequestModel));
+            (identical(other.updateUserPasswordRequestModel, updateUserPasswordRequestModel) ||
+                other.updateUserPasswordRequestModel == updateUserPasswordRequestModel));
   }
 
   @override
@@ -458,19 +398,14 @@ class _$UpdateUserPasswordImpl implements _UpdateUserPassword {
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateUserPasswordImplCopyWith<_$UpdateUserPasswordImpl> get copyWith =>
-      __$$UpdateUserPasswordImplCopyWithImpl<_$UpdateUserPasswordImpl>(
-          this, _$identity);
+      __$$UpdateUserPasswordImplCopyWithImpl<_$UpdateUserPasswordImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getUserAccount,
-    required TResult Function(
-            UpdateUserAccountRequestModel updateUserAccountRequestModel)
-        updateUserAccount,
-    required TResult Function(
-            UpdateUserPasswordRequestModel updateUserPasswordRequestModel)
-        updateUserPassword,
+    required TResult Function(UpdateUserAccountRequestModel updateUserAccountRequestModel) updateUserAccount,
+    required TResult Function(UpdateUserPasswordRequestModel updateUserPasswordRequestModel) updateUserPassword,
   }) {
     return updateUserPassword(updateUserPasswordRequestModel);
   }
@@ -479,12 +414,8 @@ class _$UpdateUserPasswordImpl implements _UpdateUserPassword {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getUserAccount,
-    TResult? Function(
-            UpdateUserAccountRequestModel updateUserAccountRequestModel)?
-        updateUserAccount,
-    TResult? Function(
-            UpdateUserPasswordRequestModel updateUserPasswordRequestModel)?
-        updateUserPassword,
+    TResult? Function(UpdateUserAccountRequestModel updateUserAccountRequestModel)? updateUserAccount,
+    TResult? Function(UpdateUserPasswordRequestModel updateUserPasswordRequestModel)? updateUserPassword,
   }) {
     return updateUserPassword?.call(updateUserPasswordRequestModel);
   }
@@ -493,12 +424,8 @@ class _$UpdateUserPasswordImpl implements _UpdateUserPassword {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getUserAccount,
-    TResult Function(
-            UpdateUserAccountRequestModel updateUserAccountRequestModel)?
-        updateUserAccount,
-    TResult Function(
-            UpdateUserPasswordRequestModel updateUserPasswordRequestModel)?
-        updateUserPassword,
+    TResult Function(UpdateUserAccountRequestModel updateUserAccountRequestModel)? updateUserAccount,
+    TResult Function(UpdateUserPasswordRequestModel updateUserPasswordRequestModel)? updateUserPassword,
     required TResult orElse(),
   }) {
     if (updateUserPassword != null) {
@@ -543,14 +470,12 @@ class _$UpdateUserPasswordImpl implements _UpdateUserPassword {
 }
 
 abstract class _UpdateUserPassword implements UserAccountEvent {
-  const factory _UpdateUserPassword(
-      {required final UpdateUserPasswordRequestModel
-          updateUserPasswordRequestModel}) = _$UpdateUserPasswordImpl;
+  const factory _UpdateUserPassword({required final UpdateUserPasswordRequestModel updateUserPasswordRequestModel}) =
+      _$UpdateUserPasswordImpl;
 
   UpdateUserPasswordRequestModel get updateUserPasswordRequestModel;
   @JsonKey(ignore: true)
-  _$$UpdateUserPasswordImplCopyWith<_$UpdateUserPasswordImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateUserPasswordImplCopyWith<_$UpdateUserPasswordImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -558,37 +483,22 @@ mixin _$UserAccountState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(
-            ApiResponseWrapper<UserAccountResponseModel>
-                userAccountResponseModel)
-        userAccountLoaded,
-    required TResult Function(
-            UpdateUserPasswordResponseModel updateUserPasswordResponseModel)
-        userPasswordUpdated,
+    required TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel) userAccountLoaded,
+    required TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel) userPasswordUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CommonState commonState)? commonState,
-    TResult? Function(
-            ApiResponseWrapper<UserAccountResponseModel>
-                userAccountResponseModel)?
-        userAccountLoaded,
-    TResult? Function(
-            UpdateUserPasswordResponseModel updateUserPasswordResponseModel)?
-        userPasswordUpdated,
+    TResult? Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
+    TResult? Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CommonState commonState)? commonState,
-    TResult Function(
-            ApiResponseWrapper<UserAccountResponseModel>
-                userAccountResponseModel)?
-        userAccountLoaded,
-    TResult Function(
-            UpdateUserPasswordResponseModel updateUserPasswordResponseModel)?
-        userPasswordUpdated,
+    TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
+    TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -618,14 +528,12 @@ mixin _$UserAccountState {
 
 /// @nodoc
 abstract class $UserAccountStateCopyWith<$Res> {
-  factory $UserAccountStateCopyWith(
-          UserAccountState value, $Res Function(UserAccountState) then) =
+  factory $UserAccountStateCopyWith(UserAccountState value, $Res Function(UserAccountState) then) =
       _$UserAccountStateCopyWithImpl<$Res, UserAccountState>;
 }
 
 /// @nodoc
-class _$UserAccountStateCopyWithImpl<$Res, $Val extends UserAccountState>
-    implements $UserAccountStateCopyWith<$Res> {
+class _$UserAccountStateCopyWithImpl<$Res, $Val extends UserAccountState> implements $UserAccountStateCopyWith<$Res> {
   _$UserAccountStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -636,8 +544,7 @@ class _$UserAccountStateCopyWithImpl<$Res, $Val extends UserAccountState>
 
 /// @nodoc
 abstract class _$$CommonStateImplCopyWith<$Res> {
-  factory _$$CommonStateImplCopyWith(
-          _$CommonStateImpl value, $Res Function(_$CommonStateImpl) then) =
+  factory _$$CommonStateImplCopyWith(_$CommonStateImpl value, $Res Function(_$CommonStateImpl) then) =
       __$$CommonStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({CommonState commonState});
@@ -646,11 +553,9 @@ abstract class _$$CommonStateImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$CommonStateImplCopyWithImpl<$Res>
-    extends _$UserAccountStateCopyWithImpl<$Res, _$CommonStateImpl>
+class __$$CommonStateImplCopyWithImpl<$Res> extends _$UserAccountStateCopyWithImpl<$Res, _$CommonStateImpl>
     implements _$$CommonStateImplCopyWith<$Res> {
-  __$$CommonStateImplCopyWithImpl(
-      _$CommonStateImpl _value, $Res Function(_$CommonStateImpl) _then)
+  __$$CommonStateImplCopyWithImpl(_$CommonStateImpl _value, $Res Function(_$CommonStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -693,8 +598,7 @@ class _$CommonStateImpl implements _CommonState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CommonStateImpl &&
-            (identical(other.commonState, commonState) ||
-                other.commonState == commonState));
+            (identical(other.commonState, commonState) || other.commonState == commonState));
   }
 
   @override
@@ -710,13 +614,8 @@ class _$CommonStateImpl implements _CommonState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(
-            ApiResponseWrapper<UserAccountResponseModel>
-                userAccountResponseModel)
-        userAccountLoaded,
-    required TResult Function(
-            UpdateUserPasswordResponseModel updateUserPasswordResponseModel)
-        userPasswordUpdated,
+    required TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel) userAccountLoaded,
+    required TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel) userPasswordUpdated,
   }) {
     return commonState(this.commonState);
   }
@@ -725,13 +624,8 @@ class _$CommonStateImpl implements _CommonState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CommonState commonState)? commonState,
-    TResult? Function(
-            ApiResponseWrapper<UserAccountResponseModel>
-                userAccountResponseModel)?
-        userAccountLoaded,
-    TResult? Function(
-            UpdateUserPasswordResponseModel updateUserPasswordResponseModel)?
-        userPasswordUpdated,
+    TResult? Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
+    TResult? Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
   }) {
     return commonState?.call(this.commonState);
   }
@@ -740,13 +634,8 @@ class _$CommonStateImpl implements _CommonState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CommonState commonState)? commonState,
-    TResult Function(
-            ApiResponseWrapper<UserAccountResponseModel>
-                userAccountResponseModel)?
-        userAccountLoaded,
-    TResult Function(
-            UpdateUserPasswordResponseModel updateUserPasswordResponseModel)?
-        userPasswordUpdated,
+    TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
+    TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
     required TResult orElse(),
   }) {
     if (commonState != null) {
@@ -791,31 +680,25 @@ class _$CommonStateImpl implements _CommonState {
 }
 
 abstract class _CommonState implements UserAccountState {
-  const factory _CommonState({required final CommonState commonState}) =
-      _$CommonStateImpl;
+  const factory _CommonState({required final CommonState commonState}) = _$CommonStateImpl;
 
   CommonState get commonState;
   @JsonKey(ignore: true)
-  _$$CommonStateImplCopyWith<_$CommonStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CommonStateImplCopyWith<_$CommonStateImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UserAccountLoadedImplCopyWith<$Res> {
-  factory _$$UserAccountLoadedImplCopyWith(_$UserAccountLoadedImpl value,
-          $Res Function(_$UserAccountLoadedImpl) then) =
+  factory _$$UserAccountLoadedImplCopyWith(_$UserAccountLoadedImpl value, $Res Function(_$UserAccountLoadedImpl) then) =
       __$$UserAccountLoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call(
-      {ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel});
+  $Res call({ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel});
 }
 
 /// @nodoc
-class __$$UserAccountLoadedImplCopyWithImpl<$Res>
-    extends _$UserAccountStateCopyWithImpl<$Res, _$UserAccountLoadedImpl>
+class __$$UserAccountLoadedImplCopyWithImpl<$Res> extends _$UserAccountStateCopyWithImpl<$Res, _$UserAccountLoadedImpl>
     implements _$$UserAccountLoadedImplCopyWith<$Res> {
-  __$$UserAccountLoadedImplCopyWithImpl(_$UserAccountLoadedImpl _value,
-      $Res Function(_$UserAccountLoadedImpl) _then)
+  __$$UserAccountLoadedImplCopyWithImpl(_$UserAccountLoadedImpl _value, $Res Function(_$UserAccountLoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -850,8 +733,7 @@ class _$UserAccountLoadedImpl implements _UserAccountLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserAccountLoadedImpl &&
-            (identical(
-                    other.userAccountResponseModel, userAccountResponseModel) ||
+            (identical(other.userAccountResponseModel, userAccountResponseModel) ||
                 other.userAccountResponseModel == userAccountResponseModel));
   }
 
@@ -862,20 +744,14 @@ class _$UserAccountLoadedImpl implements _UserAccountLoaded {
   @override
   @pragma('vm:prefer-inline')
   _$$UserAccountLoadedImplCopyWith<_$UserAccountLoadedImpl> get copyWith =>
-      __$$UserAccountLoadedImplCopyWithImpl<_$UserAccountLoadedImpl>(
-          this, _$identity);
+      __$$UserAccountLoadedImplCopyWithImpl<_$UserAccountLoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(
-            ApiResponseWrapper<UserAccountResponseModel>
-                userAccountResponseModel)
-        userAccountLoaded,
-    required TResult Function(
-            UpdateUserPasswordResponseModel updateUserPasswordResponseModel)
-        userPasswordUpdated,
+    required TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel) userAccountLoaded,
+    required TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel) userPasswordUpdated,
   }) {
     return userAccountLoaded(userAccountResponseModel);
   }
@@ -884,13 +760,8 @@ class _$UserAccountLoadedImpl implements _UserAccountLoaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CommonState commonState)? commonState,
-    TResult? Function(
-            ApiResponseWrapper<UserAccountResponseModel>
-                userAccountResponseModel)?
-        userAccountLoaded,
-    TResult? Function(
-            UpdateUserPasswordResponseModel updateUserPasswordResponseModel)?
-        userPasswordUpdated,
+    TResult? Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
+    TResult? Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
   }) {
     return userAccountLoaded?.call(userAccountResponseModel);
   }
@@ -899,13 +770,8 @@ class _$UserAccountLoadedImpl implements _UserAccountLoaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CommonState commonState)? commonState,
-    TResult Function(
-            ApiResponseWrapper<UserAccountResponseModel>
-                userAccountResponseModel)?
-        userAccountLoaded,
-    TResult Function(
-            UpdateUserPasswordResponseModel updateUserPasswordResponseModel)?
-        userPasswordUpdated,
+    TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
+    TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
     required TResult orElse(),
   }) {
     if (userAccountLoaded != null) {
@@ -951,33 +817,30 @@ class _$UserAccountLoadedImpl implements _UserAccountLoaded {
 
 abstract class _UserAccountLoaded implements UserAccountState {
   const factory _UserAccountLoaded(
-      {required final ApiResponseWrapper<UserAccountResponseModel>
-          userAccountResponseModel}) = _$UserAccountLoadedImpl;
+      {required final ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel}) = _$UserAccountLoadedImpl;
 
   ApiResponseWrapper<UserAccountResponseModel> get userAccountResponseModel;
   @JsonKey(ignore: true)
-  _$$UserAccountLoadedImplCopyWith<_$UserAccountLoadedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UserAccountLoadedImplCopyWith<_$UserAccountLoadedImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$UserPasswordUpdatedImplCopyWith<$Res> {
-  factory _$$UserPasswordUpdatedImplCopyWith(_$UserPasswordUpdatedImpl value,
-          $Res Function(_$UserPasswordUpdatedImpl) then) =
+  factory _$$UserPasswordUpdatedImplCopyWith(
+          _$UserPasswordUpdatedImpl value, $Res Function(_$UserPasswordUpdatedImpl) then) =
       __$$UserPasswordUpdatedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UpdateUserPasswordResponseModel updateUserPasswordResponseModel});
 
-  $UpdateUserPasswordResponseModelCopyWith<$Res>
-      get updateUserPasswordResponseModel;
+  $UpdateUserPasswordResponseModelCopyWith<$Res> get updateUserPasswordResponseModel;
 }
 
 /// @nodoc
 class __$$UserPasswordUpdatedImplCopyWithImpl<$Res>
     extends _$UserAccountStateCopyWithImpl<$Res, _$UserPasswordUpdatedImpl>
     implements _$$UserPasswordUpdatedImplCopyWith<$Res> {
-  __$$UserPasswordUpdatedImplCopyWithImpl(_$UserPasswordUpdatedImpl _value,
-      $Res Function(_$UserPasswordUpdatedImpl) _then)
+  __$$UserPasswordUpdatedImplCopyWithImpl(
+      _$UserPasswordUpdatedImpl _value, $Res Function(_$UserPasswordUpdatedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -995,10 +858,8 @@ class __$$UserPasswordUpdatedImplCopyWithImpl<$Res>
 
   @override
   @pragma('vm:prefer-inline')
-  $UpdateUserPasswordResponseModelCopyWith<$Res>
-      get updateUserPasswordResponseModel {
-    return $UpdateUserPasswordResponseModelCopyWith<$Res>(
-        _value.updateUserPasswordResponseModel, (value) {
+  $UpdateUserPasswordResponseModelCopyWith<$Res> get updateUserPasswordResponseModel {
+    return $UpdateUserPasswordResponseModelCopyWith<$Res>(_value.updateUserPasswordResponseModel, (value) {
       return _then(_value.copyWith(updateUserPasswordResponseModel: value));
     });
   }
@@ -1007,8 +868,7 @@ class __$$UserPasswordUpdatedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UserPasswordUpdatedImpl implements _UserPasswordUpdated {
-  const _$UserPasswordUpdatedImpl(
-      {required this.updateUserPasswordResponseModel});
+  const _$UserPasswordUpdatedImpl({required this.updateUserPasswordResponseModel});
 
   @override
   final UpdateUserPasswordResponseModel updateUserPasswordResponseModel;
@@ -1023,10 +883,8 @@ class _$UserPasswordUpdatedImpl implements _UserPasswordUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserPasswordUpdatedImpl &&
-            (identical(other.updateUserPasswordResponseModel,
-                    updateUserPasswordResponseModel) ||
-                other.updateUserPasswordResponseModel ==
-                    updateUserPasswordResponseModel));
+            (identical(other.updateUserPasswordResponseModel, updateUserPasswordResponseModel) ||
+                other.updateUserPasswordResponseModel == updateUserPasswordResponseModel));
   }
 
   @override
@@ -1036,20 +894,14 @@ class _$UserPasswordUpdatedImpl implements _UserPasswordUpdated {
   @override
   @pragma('vm:prefer-inline')
   _$$UserPasswordUpdatedImplCopyWith<_$UserPasswordUpdatedImpl> get copyWith =>
-      __$$UserPasswordUpdatedImplCopyWithImpl<_$UserPasswordUpdatedImpl>(
-          this, _$identity);
+      __$$UserPasswordUpdatedImplCopyWithImpl<_$UserPasswordUpdatedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(CommonState commonState) commonState,
-    required TResult Function(
-            ApiResponseWrapper<UserAccountResponseModel>
-                userAccountResponseModel)
-        userAccountLoaded,
-    required TResult Function(
-            UpdateUserPasswordResponseModel updateUserPasswordResponseModel)
-        userPasswordUpdated,
+    required TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel) userAccountLoaded,
+    required TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel) userPasswordUpdated,
   }) {
     return userPasswordUpdated(updateUserPasswordResponseModel);
   }
@@ -1058,13 +910,8 @@ class _$UserPasswordUpdatedImpl implements _UserPasswordUpdated {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(CommonState commonState)? commonState,
-    TResult? Function(
-            ApiResponseWrapper<UserAccountResponseModel>
-                userAccountResponseModel)?
-        userAccountLoaded,
-    TResult? Function(
-            UpdateUserPasswordResponseModel updateUserPasswordResponseModel)?
-        userPasswordUpdated,
+    TResult? Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
+    TResult? Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
   }) {
     return userPasswordUpdated?.call(updateUserPasswordResponseModel);
   }
@@ -1073,13 +920,8 @@ class _$UserPasswordUpdatedImpl implements _UserPasswordUpdated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CommonState commonState)? commonState,
-    TResult Function(
-            ApiResponseWrapper<UserAccountResponseModel>
-                userAccountResponseModel)?
-        userAccountLoaded,
-    TResult Function(
-            UpdateUserPasswordResponseModel updateUserPasswordResponseModel)?
-        userPasswordUpdated,
+    TResult Function(ApiResponseWrapper<UserAccountResponseModel> userAccountResponseModel)? userAccountLoaded,
+    TResult Function(UpdateUserPasswordResponseModel updateUserPasswordResponseModel)? userPasswordUpdated,
     required TResult orElse(),
   }) {
     if (userPasswordUpdated != null) {
@@ -1124,12 +966,10 @@ class _$UserPasswordUpdatedImpl implements _UserPasswordUpdated {
 }
 
 abstract class _UserPasswordUpdated implements UserAccountState {
-  const factory _UserPasswordUpdated(
-      {required final UpdateUserPasswordResponseModel
-          updateUserPasswordResponseModel}) = _$UserPasswordUpdatedImpl;
+  const factory _UserPasswordUpdated({required final UpdateUserPasswordResponseModel updateUserPasswordResponseModel}) =
+      _$UserPasswordUpdatedImpl;
 
   UpdateUserPasswordResponseModel get updateUserPasswordResponseModel;
   @JsonKey(ignore: true)
-  _$$UserPasswordUpdatedImplCopyWith<_$UserPasswordUpdatedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UserPasswordUpdatedImplCopyWith<_$UserPasswordUpdatedImpl> get copyWith => throw _privateConstructorUsedError;
 }

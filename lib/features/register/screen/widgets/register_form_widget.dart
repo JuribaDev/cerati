@@ -1,6 +1,6 @@
 import 'package:cerati/common/validators/custom_validator.dart';
 import 'package:cerati/common/validators/email_validator.dart';
-import 'package:cerati/common/widgets/custom_form_field.dart';
+import 'package:cerati/core/widgets/custom_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 

@@ -1,5 +1,5 @@
 import 'package:cerati/common/services/network_manager/Interceptors/secure_interceptor.dart';
-import 'package:cerati/core/constants/network.dart';
+import 'package:cerati/core/constants/api_constants.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:flutter/foundation.dart';
@@ -41,9 +41,9 @@ class NetworkManager {
   }
 
   void defaultTimeouts() {
-    dio.options.connectTimeout = timeout;
-    dio.options.sendTimeout = timeout;
-    dio.options.receiveTimeout = timeout;
+    dio.options.connectTimeout = ApiConstants.timeout;
+    dio.options.sendTimeout = ApiConstants.timeout;
+    dio.options.receiveTimeout = ApiConstants.timeout;
   }
 
   void addHeader({required String headerKey, required String headerValue}) {

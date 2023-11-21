@@ -1,4 +1,4 @@
-import 'package:cerati/common/constants/routes_constants.dart';
+import 'package:cerati/core/constants/routes_constants.dart';
 import 'package:cerati/features/login/screen/login_screen.dart';
 import 'package:cerati/features/register/screen/register_screen.dart';
 import 'package:cerati/features/user_account/screen/user_account_screen.dart';

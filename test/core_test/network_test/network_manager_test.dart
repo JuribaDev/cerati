@@ -1,19 +1,30 @@
 // ignore_for_file: inference_failure_on_collection_literal
 
+import 'package:cerati/core/constants/network.dart';
+import 'package:cerati/core/network/network_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ny_articles_clean_architecture/core/constants/network.dart';
-import 'package:ny_articles_clean_architecture/core/network/network_manager.dart';
+
+import '../../helpers/helpers.dart';
 
 void main() {
   late NetworkManager networkManager;
+  late MockDio mockDio;
+  late MockRetryInterceptor mockRetryInterceptor;
+  late MockSecureInterceptor mockSecureInterceptor;
 
   setUp(() {
+    mockRetryInterceptor = MockRetryInterceptor();
+    mockSecureInterceptor = MockSecureInterceptor();
+    mockDio = MockDio();
+
     networkManager = NetworkManager(
-        dio: Dio(),
-        baseUrl: 'https://www.example.com',
-        retryInterceptor: RetryInterceptor(dio: Dio(), retries: retries, retryDelays: retryDelays));
+      dio: mockDio,
+      baseUrl: 'https://www.example.com',
+      retryInterceptor: mockRetryInterceptor,
+      secureInterceptor: mockSecureInterceptor,
+    );
   });
 
   test('setupDioClient() sets the base url', () {

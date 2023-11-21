@@ -1,5 +1,5 @@
+import 'package:cerati/core/utils/either.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ny_articles_clean_architecture/core/utils/either.dart';
 
 void main() {
   const leftValue = 'Left Value';

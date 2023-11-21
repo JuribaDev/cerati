@@ -1,9 +1,9 @@
 // ignore_for_file: cascade_invocations
 
-import 'package:cerati/common/services/network_manager/Interceptors/secure_interceptor.dart';
-import 'package:cerati/core/constants/network.dart';
+import 'package:cerati/core/constants/api_constants.dart';
 import 'package:cerati/core/local_storage/local_storage.dart';
 import 'package:cerati/core/local_storage/secure_local_storage.dart';
+import 'package:cerati/core/network/interceptors/secure_interceptor.dart';
 import 'package:cerati/core/network/network_manager.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_smart_retry/dio_smart_retry.dart';
@@ -15,35 +15,31 @@ import 'package:logger/logger.dart';
 final sl = GetIt.instance;
 
 Future<void> initializeDependencies(Logger logger) async {
-  // Logger
-  sl.registerSingleton<Logger>(logger);
-  // Dio
-  sl.registerSingleton<Dio>(Dio());
-  // RetryInterceptor
-  sl.registerSingleton<SecureInterceptor>(SecureInterceptor()); // RetryInterceptor
-  sl.registerSingleton<RetryInterceptor>(RetryInterceptor(dio: sl(), retries: retries, retryDelays: retryDelays));
-  // NetworkManager
-  sl.registerSingleton(NetworkManager(dio: sl(), baseUrl: baseUrl, retryInterceptor: sl(), secureInterceptor: sl()));
+  ///initializations
   // GetStorage
-  sl.registerSingleton<GetStorage>(GetStorage());
+  await GetStorage.init();
+
+  /// Core
+
+  // Logger
+  sl.registerLazySingleton<Logger>(() => logger);
+  // GetStorage
+  sl.registerLazySingleton<GetStorage>(GetStorage.new);
   // LocalStorage
-  sl.registerSingleton<LocalStorage>(LocalStorage(sl(), sl()));
+  sl.registerLazySingleton<LocalStorage>(() => LocalStorage(sl(), sl()));
+  // Dio
+  sl.registerLazySingleton<Dio>(Dio.new);
+  // RetryInterceptor
+  sl.registerLazySingleton<SecureInterceptor>(() => SecureInterceptor(sl())); // RetryInterceptor
+  sl.registerLazySingleton<RetryInterceptor>(
+      () => RetryInterceptor(dio: sl(), retries: ApiConstants.retries, retryDelays: ApiConstants.retryDelays));
+  // NetworkManager
+  sl.registerLazySingleton(
+      () => NetworkManager(dio: sl(), baseUrl: ApiConstants.baseUrl, retryInterceptor: sl(), secureInterceptor: sl()));
   // FlutterSecureStorage
-  sl.registerSingleton<FlutterSecureStorage>(const FlutterSecureStorage());
+  sl.registerLazySingleton<FlutterSecureStorage>(FlutterSecureStorage.new);
   // SecureLocalStorage
-  sl.registerSingleton<SecureLocalStorage>(SecureLocalStorage(sl(), sl()));
+  sl.registerLazySingleton<SecureLocalStorage>(() => SecureLocalStorage(sl(), sl()));
 
-  /// Most Viewed Articles Feature
-  // ArticleRemoteDataSource
-  // ArticleRepository
-  sl.registerSingleton<ArticleRepositoryInterface>(ArticleRepositoryImp(
-    sl(),
-  ));
-  // GetMostViewedArticles Use Case
-  sl.registerSingleton<GetMostViewedArticlesUseCase>(GetMostViewedArticlesUseCase(
-    sl(),
-  ));
-
-  // GetMostViewedArticles Bloc
-  sl.registerFactory<MostViewedArticleBloc>(() => MostViewedArticleBloc(sl()));
+  /// Home Feature
 }

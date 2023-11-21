@@ -1,5 +1,5 @@
-import 'package:cerati/common/constants/storage_constants.dart';
 import 'package:cerati/common/services/datasource/local_storage/local_storage.dart';
+import 'package:cerati/core/constants/storage_constants.dart';
 import 'package:flutter/material.dart';
 
 abstract class UserSettingManagerInterface {

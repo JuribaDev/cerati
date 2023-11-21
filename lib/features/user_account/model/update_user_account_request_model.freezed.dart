@@ -14,8 +14,7 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-UpdateUserAccountRequestModel _$UpdateUserAccountRequestModelFromJson(
-    Map<String, dynamic> json) {
+UpdateUserAccountRequestModel _$UpdateUserAccountRequestModelFromJson(Map<String, dynamic> json) {
   return _UpdateUserAccountRequestModel.fromJson(json);
 }
 
@@ -30,17 +29,15 @@ mixin _$UpdateUserAccountRequestModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UpdateUserAccountRequestModelCopyWith<UpdateUserAccountRequestModel>
-      get copyWith => throw _privateConstructorUsedError;
+  $UpdateUserAccountRequestModelCopyWith<UpdateUserAccountRequestModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UpdateUserAccountRequestModelCopyWith<$Res> {
   factory $UpdateUserAccountRequestModelCopyWith(
-          UpdateUserAccountRequestModel value,
-          $Res Function(UpdateUserAccountRequestModel) then) =
-      _$UpdateUserAccountRequestModelCopyWithImpl<$Res,
-          UpdateUserAccountRequestModel>;
+          UpdateUserAccountRequestModel value, $Res Function(UpdateUserAccountRequestModel) then) =
+      _$UpdateUserAccountRequestModelCopyWithImpl<$Res, UpdateUserAccountRequestModel>;
   @useResult
   $Res call(
       {int id,
@@ -50,8 +47,7 @@ abstract class $UpdateUserAccountRequestModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UpdateUserAccountRequestModelCopyWithImpl<$Res,
-        $Val extends UpdateUserAccountRequestModel>
+class _$UpdateUserAccountRequestModelCopyWithImpl<$Res, $Val extends UpdateUserAccountRequestModel>
     implements $UpdateUserAccountRequestModelCopyWith<$Res> {
   _$UpdateUserAccountRequestModelCopyWithImpl(this._value, this._then);
 
@@ -93,8 +89,7 @@ class _$UpdateUserAccountRequestModelCopyWithImpl<$Res,
 abstract class _$$UpdateUserAccountRequestModelImplCopyWith<$Res>
     implements $UpdateUserAccountRequestModelCopyWith<$Res> {
   factory _$$UpdateUserAccountRequestModelImplCopyWith(
-          _$UpdateUserAccountRequestModelImpl value,
-          $Res Function(_$UpdateUserAccountRequestModelImpl) then) =
+          _$UpdateUserAccountRequestModelImpl value, $Res Function(_$UpdateUserAccountRequestModelImpl) then) =
       __$$UpdateUserAccountRequestModelImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -107,12 +102,10 @@ abstract class _$$UpdateUserAccountRequestModelImplCopyWith<$Res>
 
 /// @nodoc
 class __$$UpdateUserAccountRequestModelImplCopyWithImpl<$Res>
-    extends _$UpdateUserAccountRequestModelCopyWithImpl<$Res,
-        _$UpdateUserAccountRequestModelImpl>
+    extends _$UpdateUserAccountRequestModelCopyWithImpl<$Res, _$UpdateUserAccountRequestModelImpl>
     implements _$$UpdateUserAccountRequestModelImplCopyWith<$Res> {
   __$$UpdateUserAccountRequestModelImplCopyWithImpl(
-      _$UpdateUserAccountRequestModelImpl _value,
-      $Res Function(_$UpdateUserAccountRequestModelImpl) _then)
+      _$UpdateUserAccountRequestModelImpl _value, $Res Function(_$UpdateUserAccountRequestModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -146,16 +139,14 @@ class __$$UpdateUserAccountRequestModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UpdateUserAccountRequestModelImpl
-    implements _UpdateUserAccountRequestModel {
+class _$UpdateUserAccountRequestModelImpl implements _UpdateUserAccountRequestModel {
   const _$UpdateUserAccountRequestModelImpl(
       {required this.id,
       @JsonKey(name: 'first_name') required this.firstName,
       @JsonKey(name: 'last_name') required this.lastName,
       required this.email});
 
-  factory _$UpdateUserAccountRequestModelImpl.fromJson(
-          Map<String, dynamic> json) =>
+  factory _$UpdateUserAccountRequestModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UpdateUserAccountRequestModelImplFromJson(json);
 
   @override
@@ -180,10 +171,8 @@ class _$UpdateUserAccountRequestModelImpl
         (other.runtimeType == runtimeType &&
             other is _$UpdateUserAccountRequestModelImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
+            (identical(other.firstName, firstName) || other.firstName == firstName) &&
+            (identical(other.lastName, lastName) || other.lastName == lastName) &&
             (identical(other.email, email) || other.email == email));
   }
 
@@ -194,10 +183,8 @@ class _$UpdateUserAccountRequestModelImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateUserAccountRequestModelImplCopyWith<
-          _$UpdateUserAccountRequestModelImpl>
-      get copyWith => __$$UpdateUserAccountRequestModelImplCopyWithImpl<
-          _$UpdateUserAccountRequestModelImpl>(this, _$identity);
+  _$$UpdateUserAccountRequestModelImplCopyWith<_$UpdateUserAccountRequestModelImpl> get copyWith =>
+      __$$UpdateUserAccountRequestModelImplCopyWithImpl<_$UpdateUserAccountRequestModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -207,8 +194,7 @@ class _$UpdateUserAccountRequestModelImpl
   }
 }
 
-abstract class _UpdateUserAccountRequestModel
-    implements UpdateUserAccountRequestModel {
+abstract class _UpdateUserAccountRequestModel implements UpdateUserAccountRequestModel {
   const factory _UpdateUserAccountRequestModel(
       {required final int id,
       @JsonKey(name: 'first_name') required final String firstName,
@@ -230,7 +216,6 @@ abstract class _UpdateUserAccountRequestModel
   String get email;
   @override
   @JsonKey(ignore: true)
-  _$$UpdateUserAccountRequestModelImplCopyWith<
-          _$UpdateUserAccountRequestModelImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateUserAccountRequestModelImplCopyWith<_$UpdateUserAccountRequestModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

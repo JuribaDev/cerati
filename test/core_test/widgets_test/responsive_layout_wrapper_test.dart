@@ -1,6 +1,6 @@
+import 'package:cerati/core/widgets/responsive_layout_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ny_articles_clean_architecture/core/widgets/responsive_layout_wrapper.dart';
 
 void main() {
   group('Responsive Layout', () {

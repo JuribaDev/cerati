@@ -31,7 +31,7 @@ void main() {
 
       test('returns Failure when getUserAccount throws a AllHttpException', () async {
         // Arrange
-        final exception = FormatException();
+        const exception = FormatException();
         when(() => mockApiClient.getUserAccount()).thenThrow(exception);
         // Act
         final response = await userAccountRepository.getUserAccount();

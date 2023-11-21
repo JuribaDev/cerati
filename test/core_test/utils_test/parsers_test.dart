@@ -1,9 +1,9 @@
 // ignore_for_file: inference_failure_on_collection_literal
 
+import 'package:cerati/core/parsers/parse_generic_list.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:ny_articles_clean_architecture/core/utils/parsers.dart';
 
 class MockResponse extends Mock implements Response<dynamic> {}
 

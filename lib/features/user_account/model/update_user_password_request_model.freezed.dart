@@ -14,8 +14,7 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-UpdateUserPasswordRequestModel _$UpdateUserPasswordRequestModelFromJson(
-    Map<String, dynamic> json) {
+UpdateUserPasswordRequestModel _$UpdateUserPasswordRequestModelFromJson(Map<String, dynamic> json) {
   return _UpdateUserPasswordRequestModel.fromJson(json);
 }
 
@@ -28,26 +27,22 @@ mixin _$UpdateUserPasswordRequestModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UpdateUserPasswordRequestModelCopyWith<UpdateUserPasswordRequestModel>
-      get copyWith => throw _privateConstructorUsedError;
+  $UpdateUserPasswordRequestModelCopyWith<UpdateUserPasswordRequestModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UpdateUserPasswordRequestModelCopyWith<$Res> {
   factory $UpdateUserPasswordRequestModelCopyWith(
-          UpdateUserPasswordRequestModel value,
-          $Res Function(UpdateUserPasswordRequestModel) then) =
-      _$UpdateUserPasswordRequestModelCopyWithImpl<$Res,
-          UpdateUserPasswordRequestModel>;
+          UpdateUserPasswordRequestModel value, $Res Function(UpdateUserPasswordRequestModel) then) =
+      _$UpdateUserPasswordRequestModelCopyWithImpl<$Res, UpdateUserPasswordRequestModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'current_password') String currentPassword,
-      @JsonKey(name: 'new_password') String newPassword});
+      {@JsonKey(name: 'current_password') String currentPassword, @JsonKey(name: 'new_password') String newPassword});
 }
 
 /// @nodoc
-class _$UpdateUserPasswordRequestModelCopyWithImpl<$Res,
-        $Val extends UpdateUserPasswordRequestModel>
+class _$UpdateUserPasswordRequestModelCopyWithImpl<$Res, $Val extends UpdateUserPasswordRequestModel>
     implements $UpdateUserPasswordRequestModelCopyWith<$Res> {
   _$UpdateUserPasswordRequestModelCopyWithImpl(this._value, this._then);
 
@@ -79,24 +74,20 @@ class _$UpdateUserPasswordRequestModelCopyWithImpl<$Res,
 abstract class _$$UpdateUserPasswordRequestModelImplCopyWith<$Res>
     implements $UpdateUserPasswordRequestModelCopyWith<$Res> {
   factory _$$UpdateUserPasswordRequestModelImplCopyWith(
-          _$UpdateUserPasswordRequestModelImpl value,
-          $Res Function(_$UpdateUserPasswordRequestModelImpl) then) =
+          _$UpdateUserPasswordRequestModelImpl value, $Res Function(_$UpdateUserPasswordRequestModelImpl) then) =
       __$$UpdateUserPasswordRequestModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'current_password') String currentPassword,
-      @JsonKey(name: 'new_password') String newPassword});
+      {@JsonKey(name: 'current_password') String currentPassword, @JsonKey(name: 'new_password') String newPassword});
 }
 
 /// @nodoc
 class __$$UpdateUserPasswordRequestModelImplCopyWithImpl<$Res>
-    extends _$UpdateUserPasswordRequestModelCopyWithImpl<$Res,
-        _$UpdateUserPasswordRequestModelImpl>
+    extends _$UpdateUserPasswordRequestModelCopyWithImpl<$Res, _$UpdateUserPasswordRequestModelImpl>
     implements _$$UpdateUserPasswordRequestModelImplCopyWith<$Res> {
   __$$UpdateUserPasswordRequestModelImplCopyWithImpl(
-      _$UpdateUserPasswordRequestModelImpl _value,
-      $Res Function(_$UpdateUserPasswordRequestModelImpl) _then)
+      _$UpdateUserPasswordRequestModelImpl _value, $Res Function(_$UpdateUserPasswordRequestModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -120,14 +111,12 @@ class __$$UpdateUserPasswordRequestModelImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UpdateUserPasswordRequestModelImpl
-    implements _UpdateUserPasswordRequestModel {
+class _$UpdateUserPasswordRequestModelImpl implements _UpdateUserPasswordRequestModel {
   const _$UpdateUserPasswordRequestModelImpl(
       {@JsonKey(name: 'current_password') required this.currentPassword,
       @JsonKey(name: 'new_password') required this.newPassword});
 
-  factory _$UpdateUserPasswordRequestModelImpl.fromJson(
-          Map<String, dynamic> json) =>
+  factory _$UpdateUserPasswordRequestModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$UpdateUserPasswordRequestModelImplFromJson(json);
 
   @override
@@ -147,10 +136,8 @@ class _$UpdateUserPasswordRequestModelImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateUserPasswordRequestModelImpl &&
-            (identical(other.currentPassword, currentPassword) ||
-                other.currentPassword == currentPassword) &&
-            (identical(other.newPassword, newPassword) ||
-                other.newPassword == newPassword));
+            (identical(other.currentPassword, currentPassword) || other.currentPassword == currentPassword) &&
+            (identical(other.newPassword, newPassword) || other.newPassword == newPassword));
   }
 
   @JsonKey(ignore: true)
@@ -160,10 +147,8 @@ class _$UpdateUserPasswordRequestModelImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateUserPasswordRequestModelImplCopyWith<
-          _$UpdateUserPasswordRequestModelImpl>
-      get copyWith => __$$UpdateUserPasswordRequestModelImplCopyWithImpl<
-          _$UpdateUserPasswordRequestModelImpl>(this, _$identity);
+  _$$UpdateUserPasswordRequestModelImplCopyWith<_$UpdateUserPasswordRequestModelImpl> get copyWith =>
+      __$$UpdateUserPasswordRequestModelImplCopyWithImpl<_$UpdateUserPasswordRequestModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -173,13 +158,10 @@ class _$UpdateUserPasswordRequestModelImpl
   }
 }
 
-abstract class _UpdateUserPasswordRequestModel
-    implements UpdateUserPasswordRequestModel {
+abstract class _UpdateUserPasswordRequestModel implements UpdateUserPasswordRequestModel {
   const factory _UpdateUserPasswordRequestModel(
       {@JsonKey(name: 'current_password') required final String currentPassword,
-      @JsonKey(name: 'new_password')
-      required final String
-          newPassword}) = _$UpdateUserPasswordRequestModelImpl;
+      @JsonKey(name: 'new_password') required final String newPassword}) = _$UpdateUserPasswordRequestModelImpl;
 
   factory _UpdateUserPasswordRequestModel.fromJson(Map<String, dynamic> json) =
       _$UpdateUserPasswordRequestModelImpl.fromJson;
@@ -192,7 +174,6 @@ abstract class _UpdateUserPasswordRequestModel
   String get newPassword;
   @override
   @JsonKey(ignore: true)
-  _$$UpdateUserPasswordRequestModelImplCopyWith<
-          _$UpdateUserPasswordRequestModelImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateUserPasswordRequestModelImplCopyWith<_$UpdateUserPasswordRequestModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

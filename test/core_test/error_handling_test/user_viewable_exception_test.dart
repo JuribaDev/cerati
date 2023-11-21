@@ -1,4 +1,4 @@
-import 'package:ny_articles_clean_architecture/core/error_handling/user_viewable_exception.dart';
+import 'package:cerati/core/error_handling/user_viewable_exception.dart';
 import 'package:test/test.dart';
 
 void main() {

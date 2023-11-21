@@ -1,4 +1,4 @@
-import 'package:cerati/common/constants/storage_constants.dart';
+import 'package:cerati/core/constants/storage_constants.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

@@ -30,7 +30,7 @@ void main() {
 
       test('returns Failure when register throws a AllHttpException', () async {
         // Arrange
-        final exception = FormatException();
+        const exception = FormatException();
         when(() => apiClient.register(registerRequestModelTest)).thenThrow(exception);
         // Act
         final res = await registerRepository.register(registerRequestModel: registerRequestModelTest);

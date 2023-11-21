@@ -1,8 +1,33 @@
-import 'package:cerati/common/constants/api_constants.dart';
+import 'package:cerati/core/constants/api_constants.dart';
+import 'package:cerati/core/constants/network.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('ApiConstants Test', () {
+    group('Configuration constants', () {
+      test('Timeout is 30 seconds', () {
+        expect(ApiConstants.timeout, const Duration(seconds: 30));
+      });
+
+      test('Retries is set to 5', () {
+        expect(ApiConstants.retries, 5);
+      });
+
+      test('Retry delays are as expected', () {
+        expect(ApiConstants.retryDelays, [
+          const Duration(seconds: 1),
+          const Duration(seconds: 3),
+          const Duration(seconds: 5),
+          const Duration(seconds: 7),
+          const Duration(seconds: 9),
+        ]);
+      });
+
+      test('Base URL is correct', () {
+        expect(ApiConstants.baseUrl, 'http://localhost/api/');
+      });
+    });
+
     test('Verify Auth Endpoints', () {
       final auth = ApiConstants.auth;
 

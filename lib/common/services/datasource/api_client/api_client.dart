@@ -1,11 +1,11 @@
 // ignore_for_file: inference_failure_on_function_invocation, avoid_dynamic_calls
 
-import 'package:cerati/common/constants/api_constants.dart';
 import 'package:cerati/common/error_handling/parse_http_errors.dart';
 import 'package:cerati/common/model/api_list_response_wrapper.dart';
 import 'package:cerati/common/model/api_response_wrapper.dart';
 import 'package:cerati/common/services/datasource/api_client/api_client_interface.dart';
 import 'package:cerati/common/services/network_manager/network_manager.dart';
+import 'package:cerati/core/constants/api_constants.dart';
 import 'package:cerati/features/login/model/login_request_model.dart';
 import 'package:cerati/features/login/model/login_response_model.dart';
 import 'package:cerati/features/register/model/register_request_model.dart';
